@@ -1,34 +1,48 @@
 ## Component Hierarchy
 
-### Login screen
-**Login page**
- - Login method
- - Login form
- - Sign-up form
- - Login features
+### LoginScreen
+**LoginMethod**
+**LoginForm**
+**SignUpForm**
+**LoginFeatures**
 
 ### App
-**Header**
+**MainHeader**
 
-**Navbar container**
- - Browser index
-  * Broswer header
-  * Broswer index item
- - Playlist index
-  * Playlist index
-  * Playlist index item
+**NavbarContainer**
+ - BrowserIndex
+  * BroswerHeader
+  * BroswerIndexItem
+ - PlaylistIndex
+  * PlaylistIndex
+  * PlaylistIndexItem
 
-**Audio player**
+**AudioPlayer**
 
-**Main content**
- - Artist Screen
-  * Album index
-    + Song list
- - Card collection
-  * Card index
+**MainContent**
+ - ArtistScreen
+  * AlbumIndex
+    + SongList
+ - CardCollection
+  * CardIndex
     + Card
- - Song list
-  * Play button
-  * Song list index
-  * Song list index header
-  * Song list index item
+ - SongList
+  * PlayButton
+  * SongListIndex
+  * SongListIndexHeader
+  * SongListIndexItem
+
+  ## Routes
+
+  |Path   | Component   |
+  |-------|-------------|
+  | "/login" | "LoginMethod" |
+  | "/login/sign-in" | "LoginForm" |
+  | "/login/sign-up" | "SignUpForm" |
+  | "/app" | "CardCollection" |
+  | "/app/playlists" | "CardCollection" |
+  | "/app/playlist/:playlistId" | "SongList" |
+  | "/app/artists" | "CardCollection" |
+  | "/app/artists/:artistId" | "ArtistScreen" |
+  | "/app/albums" | "CardCollection" |
+  | "/app/album/:albumId" | "SongList" |
