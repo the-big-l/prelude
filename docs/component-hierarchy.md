@@ -1,11 +1,13 @@
 ## Component Hierarchy
 
+### Login screen
 **Login page**
  - Login method
  - Login form
  - Sign-up form
  - Login features
 
+### App
 **Header**
 
 **Navbar container**
