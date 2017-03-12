@@ -27,7 +27,7 @@
  - Card collection
   * Card index
     + Card
- -Song list
+ - Song list
   * Play button
   * Song list index
   * Song list index header
