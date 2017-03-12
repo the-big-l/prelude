@@ -32,17 +32,17 @@
   * SongListIndexHeader
   * SongListIndexItem
 
-  ## Routes
+## Routes
 
-  |Path   | Component   |
-  |-------|-------------|
-  | "/login" | "LoginMethod" |
-  | "/login/sign-in" | "LoginForm" |
-  | "/login/sign-up" | "SignUpForm" |
-  | "/app" | "CardCollection" |
-  | "/app/playlists" | "CardCollection" |
-  | "/app/playlist/:playlistId" | "SongList" |
-  | "/app/artists" | "CardCollection" |
-  | "/app/artists/:artistId" | "ArtistScreen" |
-  | "/app/albums" | "CardCollection" |
-  | "/app/album/:albumId" | "SongList" |
+|Path   | Component   |
+|-------|-------------|
+| "/login" | "LoginMethod" |
+| "/login/sign-in" | "LoginForm" |
+| "/login/sign-up" | "SignUpForm" |
+| "/app" | "CardCollection" |
+| "/app/playlists" | "CardCollection" |
+| "/app/playlist/:playlistId" | "SongList" |
+| "/app/artists" | "CardCollection" |
+| "/app/artists/:artistId" | "ArtistScreen" |
+| "/app/albums" | "CardCollection" |
+| "/app/album/:albumId" | "SongList" |
