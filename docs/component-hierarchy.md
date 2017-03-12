@@ -14,7 +14,7 @@
   * BroswerHeader
   * BroswerIndexItem
  - PlaylistIndex
-  * PlaylistIndex
+  * PlaylistHeader
   * PlaylistIndexItem
 
 **AudioPlayer**
