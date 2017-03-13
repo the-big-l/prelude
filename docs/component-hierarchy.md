@@ -19,10 +19,12 @@
  - PlaylistIndex
   * PlaylistHeader
   * PlaylistIndexItem
+ - CreatePlaylistForm
 
 **AudioPlayer**
 
 **MainContent**
+ - AddToPlaylistDropdown
  - ArtistScreen
   * AlbumIndex
     + SongList
