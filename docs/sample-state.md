@@ -21,8 +21,24 @@
     }
   },
   queue: [
-    'https://p.scdn.co/mp3-preview/bf9e33b1bb53c281c5eea0da6c317f2cd7c3eb58?cid=null',
-    'https://p.scdn.co/mp3-preview/7fd27386664a73671658bce5a9d18ca7ec1936d4?cid=null'
+    {
+      id: "5qlcQM9xWIIQ46b7daFDlb",
+      artists: "Rebelution",
+      album: "Falling into Place",
+      track_number: '1'
+      track: "Know It All",
+      duration_ms: '188313',
+      song_url: "https://p.scdn.co/mp3-preview/248be51d5e94b617744624ce66ca8e6fafd52a4d?cid=null",
+    },
+    {
+      id: "5qlcQM9xWIIQ46b7daFDlb",
+      artists: "Rebelution",
+      album: "Falling into Place",
+      track_number: '1'
+      track: "Know It All",
+      duration_ms: '188313',
+      song_url: "https://p.scdn.co/mp3-preview/248be51d5e94b617744624ce66ca8e6fafd52a4d?cid=null",
+    }
   ],
   artists: [
     {
@@ -42,10 +58,31 @@
     albumList: ['42yEoHnWz6GXL3NVgSNkIe', '3TsqZMEQhGAnQ1nph9M22A'],
     albums: [
       {
-
-      },
-      {
-
+        id: '3TsqZMEQhGAnQ1nph9M22A',
+        name: 'Falling into Place',
+        artists: 'Rebelution',
+        songs: '11',
+        img_url: 'https://i.scdn.co/image/60b67e8edb9a27784e71c8c65e8f5cee7e4201a4',
+        tracks: [
+          {
+            id: "5qlcQM9xWIIQ46b7daFDlb",
+            artists: "Rebelution",
+            album: "Falling into Place",
+            track_number: '1'
+            track: "Know It All",
+            duration_ms: '188313',
+            song_url: "https://p.scdn.co/mp3-preview/248be51d5e94b617744624ce66ca8e6fafd52a4d?cid=null",
+          },
+          {
+            id: "5qlcQM9xWIIQ46b7daFDlb",
+            artists: "Rebelution",
+            album: "Falling into Place",
+            track_number: '1'
+            track: "Know It All",
+            duration_ms: '188313',
+            song_url: "https://p.scdn.co/mp3-preview/248be51d5e94b617744624ce66ca8e6fafd52a4d?cid=null",
+          }
+        ]
       }
     ]
   },
@@ -66,11 +103,49 @@
     }
   ],
   album: {
-
+    id: '3TsqZMEQhGAnQ1nph9M22A',
+    name: 'Falling into Place',
+    artists: 'Rebelution',
+    songs: '11',
+    img_url: 'https://i.scdn.co/image/60b67e8edb9a27784e71c8c65e8f5cee7e4201a4',
+    tracks: [
+      {
+        id: "5qlcQM9xWIIQ46b7daFDlb",
+        artists: "Rebelution",
+        album: "Falling into Place",
+        track_number: '1'
+        track: "Know It All",
+        duration_ms: '188313',
+        song_url: "https://p.scdn.co/mp3-preview/248be51d5e94b617744624ce66ca8e6fafd52a4d?cid=null",
+      },
+      {
+        id: "5qlcQM9xWIIQ46b7daFDlb",
+        artists: "Rebelution",
+        album: "Falling into Place",
+        track_number: '2'
+        track: "Know It All",
+        duration_ms: '188313',
+        song_url: "https://p.scdn.co/mp3-preview/248be51d5e94b617744624ce66ca8e6fafd52a4d?cid=null",
+      ]
   },
   songList: {
     1: {
-      name:
+      id: "5qlcQM9xWIIQ46b7daFDlb",
+      artists: "Rebelution",
+      album: "Falling into Place",
+      track_number: '1'
+      track: "Know It All",
+      duration_ms: '188313',
+      song_url: "https://p.scdn.co/mp3-preview/248be51d5e94b617744624ce66ca8e6fafd52a4d?cid=null",
+    },
+    2: {
+      id: "5qlcQM9xWIIQ46b7daFDlb",
+      artists: "Rebelution",
+      album: "Falling into Place",
+      track_number: '2'
+      track: "Know It All",
+      duration_ms: '188313',
+      song_url: "https://p.scdn.co/mp3-preview/248be51d5e94b617744624ce66ca8e6fafd52a4d?cid=null",
     }
   }
 }
