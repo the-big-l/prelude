@@ -41,11 +41,11 @@
       song_url: "https://p.scdn.co/mp3-preview/248be51d5e94b617744624ce66ca8e6fafd52a4d?cid=null",
     },
     {
-      id: "5qlcQM9xWIIQ46b7daFDlb",
+      id: "60j4KO4XiFxLM6qy2Enic2",
       artists: "Rebelution",
       album: "Falling into Place",
       track_number: '1'
-      track: "Know It All",
+      track: "Inhale Exhale (feat. Protoje)",
       duration_ms: '188313',
       song_url: "https://p.scdn.co/mp3-preview/248be51d5e94b617744624ce66ca8e6fafd52a4d?cid=null",
     }
@@ -84,11 +84,11 @@
             song_url: "https://p.scdn.co/mp3-preview/248be51d5e94b617744624ce66ca8e6fafd52a4d?cid=null",
           },
           {
-            id: "5qlcQM9xWIIQ46b7daFDlb",
+            id: "60j4KO4XiFxLM6qy2Enic2",
             artists: "Rebelution",
             album: "Falling into Place",
             track_number: '1'
-            track: "Know It All",
+            track: "Inhale Exhale (feat. Protoje)",
             duration_ms: '188313',
             song_url: "https://p.scdn.co/mp3-preview/248be51d5e94b617744624ce66ca8e6fafd52a4d?cid=null",
           }
@@ -129,11 +129,11 @@
         song_url: "https://p.scdn.co/mp3-preview/248be51d5e94b617744624ce66ca8e6fafd52a4d?cid=null",
       },
       {
-        id: "5qlcQM9xWIIQ46b7daFDlb",
+        id: "60j4KO4XiFxLM6qy2Enic2",
         artists: "Rebelution",
         album: "Falling into Place",
         track_number: '2'
-        track: "Know It All",
+        track: "Inhale Exhale (feat. Protoje)",
         duration_ms: '188313',
         song_url: "https://p.scdn.co/mp3-preview/248be51d5e94b617744624ce66ca8e6fafd52a4d?cid=null",
       ]
@@ -149,11 +149,11 @@
       song_url: "https://p.scdn.co/mp3-preview/248be51d5e94b617744624ce66ca8e6fafd52a4d?cid=null",
     },
     2: {
-      id: "5qlcQM9xWIIQ46b7daFDlb",
+      id: "60j4KO4XiFxLM6qy2Enic2",
       artists: "Rebelution",
       album: "Falling into Place",
       track_number: '2'
-      track: "Know It All",
+      track: "Inhale Exhale (feat. Protoje)",
       duration_ms: '188313',
       song_url: "https://p.scdn.co/mp3-preview/248be51d5e94b617744624ce66ca8e6fafd52a4d?cid=null",
     }
