@@ -20,6 +20,16 @@
       errors: ['name can\'t be blank']
     }
   },
+  playLists: [
+    {
+      id: 1,
+      name: 'work out tunes'
+    },
+    {
+      id: 2,
+      name: 'songs to cry to'
+    }
+  ],
   queue: [
     {
       id: "5qlcQM9xWIIQ46b7daFDlb",
