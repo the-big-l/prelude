@@ -1,7 +1,7 @@
 {
   "name": "prelude",
   "version": "1.0.0",
-  "description": "[Heroku link][heroku] This will be a link to my production site",
+  "description": "Prelude is a web application inspired by Spotify built using Ruby on Rails and React/Redux.",
   "main": "index.js",
   "directories": {
     "doc": "docs",
