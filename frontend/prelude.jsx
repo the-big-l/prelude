@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
+import Root from './components/root';
 
 // test
 import { login, signup, logout } from './actions/session_actions';
@@ -18,5 +19,5 @@ document.addEventListener('DOMContentLoaded', () => {
     window.logout = logout;
     window.store = store;
 
-    ReactDOM.render(<h1>Welcome to Prelude</h1>, root);
+    ReactDOM.render(<Root store={store} />, root);
 });
