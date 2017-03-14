@@ -16,9 +16,9 @@ sufficient CSS styling:
 
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
+- [ ] Continuous play while navigating site
 - [ ] Playlist CRUD
 - [ ] Playlist sharing
-- [ ] Continuous play while navigating site
 - [ ] Following/Friending
 - [ ] Production README [sample](docs/production_readme.md)
 
