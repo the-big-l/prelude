@@ -6,6 +6,7 @@ import {
   IndexRoute,
   hashHistory } from 'react-router';
   import App from './app';
+  import LoginMethodContainer from './session/login_method_container';
 
 const Root = (props) => {
   const _redirectIfLoggedIn = () => {
@@ -21,17 +22,17 @@ const Root = (props) => {
           <Route path='/' component={App} />
           <Route
             path='/method'
-            component={SignupFlow}
+            component={LoginMethodContainer}
             onEnter={_redirectIfLoggedIn}
             />
           <Route
             path='/login'
-            component={Login}
+            component={LoginMethodContainer}
             onEnter={_redirectIfLoggedIn}
             />
           <Route
             path='/signup'
-            component={Signup}
+            component={LoginMethodContainer}
             onEnter={_redirectIfLoggedIn}
             />
         </Router>
