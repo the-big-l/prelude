@@ -6,7 +6,9 @@ import {
   IndexRoute,
   hashHistory } from 'react-router';
   import App from './app';
-  import LoginMethodContainer from './session/login_method_container';
+  import SignupFlowContainer from './session/signup_flow_container';
+  import LoginMethodContainer from './session/login_container';
+  import LoginMethodContainer from './session/signup_container';
 
 const Root = (props) => {
   const _redirectIfLoggedIn = () => {
@@ -16,28 +18,26 @@ const Root = (props) => {
   };
 
   return (
-    <div>
-      <Provider store={props.store}>
-        <Router history={hashHistory}>
-          <Route path='/' component={App} />
-          <Route
-            path='/method'
-            component={LoginMethodContainer}
-            onEnter={_redirectIfLoggedIn}
-            />
-          <Route
-            path='/login'
-            component={LoginMethodContainer}
-            onEnter={_redirectIfLoggedIn}
-            />
-          <Route
-            path='/signup'
-            component={LoginMethodContainer}
-            onEnter={_redirectIfLoggedIn}
-            />
-        </Router>
-      </Provider>
-    </div>
+    <Provider store={props.store}>
+      <Router history={hashHistory}>
+        <Route path="/" component={App} />
+        <Route
+          path='/method'
+          component={SignupFlowContainer}
+          onEnter={_redirectIfLoggedIn}
+          />
+        <Route
+          path='/login'
+          component={LoginContainer}
+          onEnter={_redirectIfLoggedIn}
+          />
+        <Route
+          path='/signup'
+          component={SignupContainer}
+          onEnter={_redirectIfLoggedIn}
+          />
+      </Router>
+    </Provider>
   );
 }
 
