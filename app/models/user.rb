@@ -38,7 +38,7 @@ class User < ApplicationRecord
     self.session_token ||= generate_token
   end
 
-  def ensure_session_token_uniqueness
+  def ensure_token_uniqueness
     while User.find_by(session_token: self.session_token)
       self.session_token = generate_token
     end
