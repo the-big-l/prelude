@@ -4,8 +4,8 @@ class User < ApplicationRecord
   validates :username, :session_token, presence: true, uniqueness: true
   validates :password_digest, presence: true
 
-  after_initialize :ensure_token
-  before_validation :ensure_token_uniqueness
+  after_initialize :ensure_session_token
+  before_validation :ensure_session_token_uniqueness
 
   def self.find_by_credentials(username, password)
     user = User.find_by_username(username)
@@ -18,7 +18,7 @@ class User < ApplicationRecord
   end
 
   def reset_session_token!
-    self.session_token = new_session_token
+    self.session_token = generate_session_token
     ensure_session_token_uniqueness
     self.save
     self.session_token
@@ -30,17 +30,17 @@ class User < ApplicationRecord
 
   private
 
-  def generate_token
+  def generate_session_token
     SecureRandom.urlsafe_base64(16)
   end
 
-  def ensure_token
-    self.session_token ||= generate_token
+  def ensure_session_token
+    self.session_token ||= generate_session_token
   end
 
-  def ensure_token_uniqueness
+  def ensure_session_token_uniqueness
     while User.find_by(session_token: self.session_token)
-      self.session_token = generate_token
+      self.session_token = generate_session_token
     end
   end
 end
