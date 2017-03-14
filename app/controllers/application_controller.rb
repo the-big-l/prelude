@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def logged_in?
-    !!current_user
+    !current_user.nil?
   end
 
   def login!(user)
@@ -26,8 +26,7 @@ class ApplicationController < ActionController::Base
   end
 
   def require_logged_in
-    render json: {base: ['invalid credentials']}, status: 401 if !current_user
-  end
-
+    return if current_user
+    render json: { base: ['invalid credentials'] }, status: 401
   end
 end
