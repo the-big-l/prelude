@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 
-class SessionForm extends React.Component {
+class LoginForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = { username: "", password: "" };
@@ -53,13 +53,13 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit} className="login-form-box">
           {this.renderErrors()}
           <div className="login-form">
-            <input type="password"
+            <input type="text"
               placeholder="username"
               value={this.state.username}
               onChange={this.update("username")}
               className="login-input" />
 
-            <input type="text"
+            <input type="password"
               placeholder="password"
               value={this.state.password}
               onChange={this.update("password")}
@@ -73,4 +73,4 @@ class SessionForm extends React.Component {
   }
 }
 
-export default withRouter(SessionForm);
+export default withRouter(LoginForm);
