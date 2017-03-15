@@ -1,0 +1,10 @@
+div.welcome-screen {
+  font-family: "proxima_nova","Helvetica Neue","Helvetica","Arial",sans-serif
+  background-image: url("https://play.spotify.edgekey.net/client/a59725d/images/login-background.jpg")
+}
+
+div.welcome-container {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+}
