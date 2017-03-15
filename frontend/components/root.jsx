@@ -7,8 +7,8 @@ import {
   hashHistory } from 'react-router';
   import App from './app';
   import SignupFlowContainer from './session/signup_flow_container';
-  import LoginMethodContainer from './session/login_container';
-  import LoginMethodContainer from './session/signup_container';
+  import LoginFormContainer from './session/login_form_container';
+  import SignupFormContainer from './session/signup_form_container';
 
 const Root = (props) => {
   const _redirectIfLoggedIn = () => {
