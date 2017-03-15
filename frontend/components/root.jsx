@@ -28,12 +28,12 @@ const Root = (props) => {
           />
         <Route
           path='/login'
-          component={LoginContainer}
+          component={LoginFormContainer}
           onEnter={_redirectIfLoggedIn}
           />
         <Route
           path='/signup'
-          component={SignupContainer}
+          component={SignupFormContainer}
           onEnter={_redirectIfLoggedIn}
           />
       </Router>
