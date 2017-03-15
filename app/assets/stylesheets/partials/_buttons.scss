@@ -1,0 +1,25 @@
+div.welcome-screen button {
+    background-color: transparent;
+    border: solid 1.5px #FFF;
+    border-radius: 50px;
+    color: #FFF;
+    font-size: 13px;
+    letter-spacing: .03em;
+    line-height: 1.25em;
+    margin: 20px auto;
+    max-width: 320px;
+    height: 41px;
+    padding: 2px 15px 0;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+div.welcome-screen button.guest {
+  background-color: $light-green;
+  border-color: $light-green;
+}
+
+button {
+  cursor: pointer;
+}

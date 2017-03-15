@@ -1,0 +1,29 @@
+div.features-container {
+  width: 630px;
+  padding: 45px;
+  border-left: solid 1px #999;
+  height: 430px;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+div.features-container .login-features h1 {
+  color: $light-green;
+  font-size: 57px;
+  font-weight: bold;
+}
+
+div.features-container .login-features h2 {
+  font-weight: 100;
+  font-size: 28px;
+  margin: 35px 0 40px;
+}
+
+div.features-container .login-features ul li {
+  background: url(asset-path('checkmark.png')) no-repeat 0 0;
+  font-size: 1.15em;
+  list-style-type: none;
+  margin: 0;
+  padding: .225em 0 .625em 2.250em;
+  vertical-align: middle;
+}
