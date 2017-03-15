@@ -9,9 +9,13 @@ const handleGuestLogin = login => e => {
 
 const SignupFlow = ({ login }) => (
   <div className='signup-flow'>
-    <button onClick={handleGuestLogin(login)}>Guest</button>
+    <img src='https://play.spotify.edgekey.net/client/a59725d/images/logo.png' />
+    <button className='button' onClick={handleGuestLogin(login)}>Guest</button>
     <Link to='/signup'>
-      <button>Sign up with your email address</button>
+      <button className='button' >Sign up with your email address</button>
+    </Link>
+    <Link to='/login'>
+      <p>Already have an account? Log in here.</p>
     </Link>
   </div>
 );
