@@ -6,9 +6,7 @@ import {
   IndexRoute,
   hashHistory } from 'react-router';
   import App from './app';
-  import SignupFlowContainer from './session/signup_flow_container';
-  import LoginFormContainer from './session/login_form_container';
-  import SignupFormContainer from './session/signup_form_container';
+  import WelcomeScreenContainer from './welcome/welcome_screen_container';
 
 const Root = (props) => {
   const _redirectIfLoggedIn = () => {
@@ -22,18 +20,18 @@ const Root = (props) => {
       <Router history={hashHistory}>
         <Route path="/" component={App} />
         <Route
-          path='/method'
-          component={SignupFlowContainer}
+          path='/welcome'
+          component={WelcomeScreenContainer}
           onEnter={_redirectIfLoggedIn}
           />
         <Route
           path='/login'
-          component={LoginFormContainer}
+          component={WelcomeScreenContainer}
           onEnter={_redirectIfLoggedIn}
           />
         <Route
           path='/signup'
-          component={SignupFormContainer}
+          component={WelcomeScreenContainer}
           onEnter={_redirectIfLoggedIn}
           />
       </Router>
