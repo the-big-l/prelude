@@ -1,5 +1,3 @@
-import { receiveCurrentUser, receiveErrors } from '../actions/session_actions';
-
 export const login = (user) => {
   return $.ajax({
     method: 'POST',
@@ -11,7 +9,7 @@ export const login = (user) => {
 export const signup = (user) => {
   return $.ajax({
     method: 'POST',
-    url: '/api/user',
+    url: '/api/users',
     data: user
   });
 };
