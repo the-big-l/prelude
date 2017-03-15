@@ -10,6 +10,10 @@ main {
   height: 100%;
 }
 
+a {
+  cursor: pointer;
+}
+
 div.welcome-screen {
   background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),
     url("https://play.spotify.edgekey.net/client/a59725d/images/login-background.jpg");
@@ -30,7 +34,6 @@ div.welcome-container {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 1040px;
-  margin: 0 auto;
 }
 
 div.welcome-screen .login-method {
@@ -42,4 +45,12 @@ div.welcome-screen .login-method {
 
 div.welcome-screen .text-small {
   font-size: 12px;
+}
+
+div.welcome-screen .large-logo img {
+    display: block;
+    height: 80px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    width: 268px;
 }
