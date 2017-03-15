@@ -23,7 +23,9 @@ class WelcomeScreen extends React.Component {
           <div className='login-method'>
             {this.renderLoginMethod()}
           </div>
-          <LoginFeatures />
+          <div className='features-container'>
+            <LoginFeatures />
+          </div>
         </div>
       </div>
     );
