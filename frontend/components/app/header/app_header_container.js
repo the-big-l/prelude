@@ -1,8 +1,9 @@
-import AppHeader from './login_form';
-import { logout } from '../../actions/session_actions';
+import { connect } from 'react-redux';
+import AppHeader from './app_header';
+import { logout } from '../../../actions/session_actions';
 
 const mapStateToProps = ({ session }) => ({
-  currentUser
+  currentUser: session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({
