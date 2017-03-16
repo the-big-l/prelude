@@ -39,7 +39,7 @@ class LoginForm extends React.Component {
     return e => {
       const user = {username: 'guest', password: 'password'};
       login({user});
-      hashHistory.push('/');
+      this.props.router.push("/");
     }
   };
 
