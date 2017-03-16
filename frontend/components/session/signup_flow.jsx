@@ -15,7 +15,7 @@ const SignupFlow = ({ login }) => (
     <button className='guest' onClick={handleGuestLogin(login)}>Sign in as a guest</button>
     <button onClick={e => hashHistory.push('/signup')}>Sign up with your email address</button>
     <hr/>
-    <div className='text-small has-account'>
+    <div className='text-small footer'>
       <Link to='/login'>
         Already have an account? Log in here.
       </Link>

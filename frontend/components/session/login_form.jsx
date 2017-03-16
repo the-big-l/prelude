@@ -57,6 +57,7 @@ class LoginForm extends React.Component {
         <div className='small-logo'>
           <img src='https://play.spotify.edgekey.net/client/a59725d/images/logo.png' />
         </div>
+        {this.renderErrors()}
         <button
           className='guest'
           onClick={this.handleGuestLogin(login)}>
@@ -64,7 +65,6 @@ class LoginForm extends React.Component {
         </button>
         <h1 className='spacer'>or</h1>
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          {this.renderErrors()}
           <div className="login-form">
             <label>Username</label>
             <input type="text"
@@ -83,6 +83,9 @@ class LoginForm extends React.Component {
             <button type="submit">Login</button>
           </div>
         </form>
+        <div className='text-small footer'>
+          Don't have an account? <Link to='/welcome'>Sign up here!</Link>
+        </div>
       </div>
     );
   }

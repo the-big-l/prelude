@@ -12,6 +12,7 @@ main {
 
 a {
   cursor: pointer;
+  font-weight: bold;
 }
 
 a:hover {
@@ -49,4 +50,9 @@ div.welcome-screen .login-method {
 
 div.welcome-screen .text-small {
   font-size: 12px;
+}
+
+div.welcome-screen .footer {
+  margin-top: 20px;
+  text-align: center;
 }

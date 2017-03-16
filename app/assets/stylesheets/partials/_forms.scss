@@ -1,5 +1,7 @@
 div.login-method ul.form-errors {
-  
+  color: $error-red;
+  text-align: center;
+  width: 100%;
 }
 
 div.login-method input[type='text'], input[type='password'] {
@@ -8,7 +10,7 @@ div.login-method input[type='text'], input[type='password'] {
   height: 27px;
   line-height: 27px;
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 9px;
 }
 
 div.login-method label {
