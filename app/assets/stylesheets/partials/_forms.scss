@@ -1,0 +1,54 @@
+div.login-method ul.form-errors {
+  
+}
+
+div.login-method input[type='text'], input[type='password'] {
+  display: block;
+  border-bottom: solid 1px #FFF;
+  height: 27px;
+  line-height: 27px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+div.login-method label {
+  color: $lightest-grey;
+  display: block;
+  font-size: 13px;
+  margin-top: 18px;
+  margin-bottom: 6px;
+}
+
+div.login-method h1.spacer {
+    overflow: hidden;
+    text-align: center;
+    margin-bottom: 6px;
+}
+div.login-method h1.spacer {
+  font-size: 13px;
+}
+div.login-method h1.spacer:before,
+div.login-method h1.spacer:after {
+  background-color: $white;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 50%;
+}
+div.login-method h1.spacer:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+div.login-method h1.spacer:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: $white;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: $white;
+}
