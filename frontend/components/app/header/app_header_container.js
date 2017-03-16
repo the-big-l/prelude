@@ -3,6 +3,7 @@ import AppHeader from './app_header';
 import { logout } from '../../../actions/session_actions';
 
 const mapStateToProps = ({ session }) => ({
+  loggedIn: !!session.currentUser,
   currentUser: session.currentUser
 });
 
