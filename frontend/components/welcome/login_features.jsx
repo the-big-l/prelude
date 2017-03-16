@@ -7,7 +7,7 @@ const LoginFeatures = () => (
   <ul>
     <li>Search & discover music you'll love</li>
     <li>Create playlists of your favorite music</li>
-    <li>Spotify Radio - unlimited stations and skips</li>
+    <li>Prelude sharing - share your playlists with your friends</li>
   </ul>
 </div>
 );

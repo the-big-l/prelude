@@ -12,6 +12,10 @@ class SignupForm extends React.Component {
     this.redirectIfLoggedIn();
   }
 
+  componentWillUnmount() {
+    this.props.clearErrors();
+  }
+
   redirectIfLoggedIn() {
     if (this.props.loggedIn) {
       this.props.router.push("/");
@@ -19,9 +23,10 @@ class SignupForm extends React.Component {
   }
 
   update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
+    return e => {
+      this.props.clearErrors();
+      this.setState({[field]: e.currentTarget.value});
+    };
   }
 
   handleSubmit(e) {
@@ -30,13 +35,9 @@ class SignupForm extends React.Component {
     this.props.signup({user});
   }
 
-  navLink() {
-  return <Link to="/login">log in instead</Link>;
-  }
-
   renderErrors() {
     return(
-      <ul>
+      <ul className='form-errors'>
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>
             {error}
@@ -49,24 +50,33 @@ class SignupForm extends React.Component {
   render() {
     return (
       <div className="signup-form-container">
+        <div className='small-logo'>
+          <img src='https://play.spotify.edgekey.net/client/a59725d/images/logo.png' />
+        </div>
+        {this.renderErrors()}
+        <h3>Create your free Prelude account</h3>
         <form onSubmit={this.handleSubmit} className="signup-form-box">
-          {this.renderErrors()}
           <div className="signup-form">
+            <label>Username</label>
             <input type="text"
               placeholder="username"
               value={this.state.username}
               onChange={this.update("username")}
               className="signup-input" />
 
+            <label>Password</label>
             <input type="password"
               placeholder="password"
               value={this.state.password}
               onChange={this.update("password")}
               className="signup-input" />
 
-            <input type="submit" value="Submit" />
+            <button type="submit">Sign up</button>
           </div>
         </form>
+        <div className='text-small footer'>
+          <Link to='/welcome'>« Go back</Link>
+        </div>
       </div>
     );
   }

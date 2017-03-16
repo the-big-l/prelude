@@ -12,6 +12,10 @@ class LoginForm extends React.Component {
     this.redirectIfLoggedIn();
   }
 
+  componentWillUnmount() {
+    this.props.clearErrors();
+  }
+
   redirectIfLoggedIn() {
     if (this.props.loggedIn) {
       this.props.router.push("/");
@@ -19,14 +23,14 @@ class LoginForm extends React.Component {
   }
 
   update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
+    return e => {
+      this.props.clearErrors();
+      this.setState({[field]: e.currentTarget.value});
+    };
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.state);
     const user = this.state;
     this.props.login({user});
   }
