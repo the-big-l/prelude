@@ -4,7 +4,7 @@
 
 [Trello link][trello]
 
-[heroku]: http://www.herokuapp.com
+[heroku]: http://prelude-music.herokuapp.com
 [trello]: https://trello.com/b/RbVSsXx9/prelude-spotify-clone
 
 ## Minimum Viable Product
