@@ -33,16 +33,15 @@ div.welcome-screen {
   color: $white;
   height: 100%;
   width: 100%;
-  display: table;
+  min-width: 1040px;
+  display: flex;
   vertical-align: middle;
   position: relative;
+  min-height: 855px;
 }
 
 div.welcome-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin: auto;
   width: 1040px;
 }
 
