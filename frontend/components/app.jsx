@@ -5,10 +5,12 @@ import MainContentContainer from './app/main/main_content_container';
 
 
 const App = ({ children }) => (
-  <div className='app'>
+  <div id='app'>
     <AppHeaderContainer />
-    <MainNav />
-    <MainContentContainer />
+    <div id='main-content-wrapper'>
+      <MainNav />
+      <MainContentContainer />
+    </div>
   </div>
 );
 
