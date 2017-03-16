@@ -1,4 +1,5 @@
-import MainContent from './login_form';
+import { connect } from 'react-redux';
+import MainContent from './main_content';
 
 const mapStateToProps = props => ({
 
