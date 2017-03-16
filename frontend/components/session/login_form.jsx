@@ -6,6 +6,7 @@ class LoginForm extends React.Component {
     super(props);
     this.state = { username: "", password: "" };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleGuestLogin = this.handleGuestLogin.bind(this);
   }
 
   componentDidUpdate() {
@@ -35,13 +36,10 @@ class LoginForm extends React.Component {
     this.props.login({user});
   }
 
-  handleGuestLogin(login) {
-    return e => {
-      const user = {username: 'guest', password: 'password'};
-      login({user});
-      this.props.router.push("/");
-    }
-  };
+  handleGuestLogin(e) {
+    const user = {username: 'guest', password: 'password'};
+    this.props.login({user});
+  }
 
   renderErrors() {
     return(
@@ -64,7 +62,7 @@ class LoginForm extends React.Component {
         {this.renderErrors()}
         <button
           className='guest'
-          onClick={this.handleGuestLogin(login)}>
+          onClick={this.handleGuestLogin}>
             Sign in as a guest
         </button>
         <h1 className='spacer'>or</h1>
