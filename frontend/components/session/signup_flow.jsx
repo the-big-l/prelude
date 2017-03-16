@@ -13,9 +13,7 @@ const SignupFlow = ({ login }) => (
       <img src='https://play.spotify.edgekey.net/client/a59725d/images/logo.png' />
     </div>
     <button className='guest' onClick={handleGuestLogin(login)}>Sign in as a guest</button>
-    <Link to='/signup'>
-      <button>Sign up with your email address</button>
-    </Link>
+    <button onClick={e => hashHistory.push('/signup')}>Sign up with your email address</button>
     <hr/>
     <div className='text-small has-account'>
       <Link to='/login'>
