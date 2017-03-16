@@ -15,10 +15,17 @@ const Root = (props) => {
     }
   };
 
+  const _ensureLoggedIn = (nextState, replace) => {
+    const currentUser = store.getState().session.currentUser;
+    if (!currentUser) {
+      replace('/welcome');
+    }
+  };
+
   return (
     <Provider store={props.store}>
       <Router history={hashHistory}>
-        <Route path="/" component={App} />
+        <Route path="/" onEnter={_ensureLoggedIn} component={App} />
         <Route
           path='/welcome'
           component={WelcomeScreenContainer}
