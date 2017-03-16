@@ -6,12 +6,8 @@ class AppHeader extends React.Component {
     super(props);
   }
 
-  componentDidUpdate() {
-    this.redirectUnlessLoggedIn();
-  }
-
-  redirectUnlessLoggedIn() {
-    if (!this.props.loggedIn) {
+  componentWillReceiveProps(nextProps) {
+    if (!nextProps.loggedIn) {
       this.props.router.push("/welcome");
     }
   }
