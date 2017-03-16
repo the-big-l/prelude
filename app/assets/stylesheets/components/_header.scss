@@ -1,21 +1,21 @@
-div.app header.app-header {
+div#app header.app-header {
   display: flex;
   background-color: $black;
   flex-direction: row;
   justify-content: flex-end;
 }
 
-div.app header.app-header .right-nav {
+div#app header.app-header .right-nav {
   display: flex;
   flex-direction: row;
   color: $white;
   position: relative;
 }
 
-div.app header.app-header .right-nav .current-user-info {
+div#app header.app-header .right-nav .current-user-info {
   margin: 10px;
 }
-div.app header.app-header .right-nav .user-dropdown {
+div#app header.app-header .right-nav .user-dropdown {
   background-color: $lighter-grey;
   position: absolute;
   top: 50px;
