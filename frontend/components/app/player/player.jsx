@@ -1,13 +1,58 @@
 import React from 'react';
 import ReactHowler from 'react-howler';
+import TimeFormat from 'format-duration';
 
 class Player extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      seek: 0,
+      duration: 0
+    };
+    this.renderSeekPos = this.renderSeekPos.bind(this);
+    this.handleOnLoad = this.handleOnLoad.bind(this);
+    this.handleSeekPos = this.handleSeekPos.bind(this);
+  }
+
+  componentWillUnmount() {
+    if (this.props.playing) {
+      this.props.togglePlay();
+    }
   }
 
   togglePlayButton() {
     return this.props.playing ? 'pause' : 'play'
+  }
+
+  renderSeekPos() {
+    this.setState({
+      seek: this.player.seek()
+    });
+    if (this.props.playing) {
+      setTimeout(() => this.renderSeekPos(), 100/6);
+    }
+  }
+
+  handleSeekPos(e) {
+    this.player.seek(e.currentTarget.value / 100 * this.state.duration);
+  }
+
+  thumbPosition() {
+    return this.state.seek / this.state.duration * 100;
+  }
+
+  handleOnLoad() {
+    this.setState({
+      duration: this.player.duration()
+    })
+  }
+
+  currentSongPosition() {
+    return TimeFormat(this.state.seek * 1000);
+  }
+
+  currentSongDuration() {
+    return TimeFormat(this.state.duration * 1000);
   }
 
   render() {
@@ -52,7 +97,17 @@ class Player extends React.Component {
             </button>
           </div>
           <div id='player-seek'>
-            <input type='range'></input>
+            <div className='song-pos'>
+              {this.currentSongPosition()}
+            </div>
+            <input
+              type='range'
+              value={this.thumbPosition()}
+              onChange={this.handleSeekPos}>
+            </input>
+            <div className='song-pos'>
+              {this.currentSongDuration()}
+            </div>
           </div>
         </div>
         <div id='player-volume'>---+--</div>
@@ -63,6 +118,10 @@ class Player extends React.Component {
             playing={playing}
             mute={mute}
             loop={loop}
+            onLoad={this.handleOnLoad}
+            onPlay={this.renderSeekPos}
+            onEnd={nextSong}
+            ref={(ref) => (this.player = ref)}
             />
         </div>
       </div>
