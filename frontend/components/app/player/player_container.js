@@ -6,6 +6,7 @@ import {
   toggleMute,
   previousSong,
   nextSong,
+  shuffleSongs,
   changeVolume,
   replaceQueue } from '../../../actions/player_actions';
 
@@ -23,6 +24,7 @@ const mapDispatchToProps = dispatch => ({
   toggleMute: () => dispatch(toggleMute()),
   previousSong: () => dispatch(previousSong()),
   nextSong: () => dispatch(nextSong()),
+  shuffleSongs: () => dispatch(shuffleSongs()),
   changeVolume: volume => dispatch(changeVolume(volume))
 });
 

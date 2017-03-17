@@ -37,16 +37,10 @@ div#player-buttons {
   flex: 0 0 37px;
 }
 
-div#player-seek {
-  width: 100%;
-  text-align: center;
-}
-
 div#player-controls #player-buttons button {
   flex: 0 0 33px;
   height: 33px;
   background-position: center;
-  fill: #FFF;
   background-size: 50%;
   background-repeat: no-repeat;
 }
@@ -59,18 +53,22 @@ div#player-buttons button.loop {
   background-image: url(asset_path('touchbar_repeat.svg'));
 }
 
+div#player-buttons button.shuffle {
+  background-image: url(asset_path('touchbar_shuffle.svg'));
+}
+
 div#player-buttons button.prev-song {
   background-image: url(asset_path('touchbar_skip_previous.svg'));
 }
 
 div#player-buttons button.play {
-  border: 1.5px solid $white;
+  border: 1.5px solid #7F7F7F;
   border-radius: 100px;
   background-image: url(asset_path('touchbar_play.svg'));
 }
 
 div#player-buttons button.pause {
-  border: 1.5px solid $white;
+  border: 1.5px solid #7F7F7F;
   border-radius: 100px;
   background-image: url(asset_path('touchbar_pause.svg'));
 }
@@ -81,4 +79,76 @@ div#player-buttons button.next-song {
 
 div#player-buttons button.mute {
   background-image: url(asset_path('touchbar_pause.svg'));
+}
+
+div#player-buttons button.loop:hover {
+  background-image: url(asset_path('touchbar_repeat_white.svg'));
+}
+
+div#player-buttons button.shuffle:hover {
+  background-image: url(asset_path('touchbar_shuffle_white.svg'));
+}
+
+div#player-buttons button.prev-song:hover {
+  background-image: url(asset_path('touchbar_skip_previous_white.svg'));
+}
+
+div#player-buttons button.play:hover {
+  border: 1.5px solid $white;
+  border-radius: 100px;
+  background-size: 66%;
+  background-image: url(asset_path('touchbar_play_white.svg'));
+}
+
+div#player-buttons button.pause:hover {
+  border: 1.5px solid $white;
+  border-radius: 100px;
+  background-size: 66%;
+  background-image: url(asset_path('touchbar_pause_white.svg'));
+}
+
+div#player-buttons button.next-song:hover {
+  background-image: url(asset_path('touchbar_skip_next_white.svg'));
+}
+
+div#player-buttons button.mute:hover {
+  background-image: url(asset_path('touchbar_pause_white.svg'));
+}
+
+div#player-seek {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+/* Special styling for WebKit/Blink */
+div#player-seek input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 18px;
+  width: 18px;
+  border-radius: 100px;
+  background: #ffffff;
+  cursor: pointer;
+  margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+
+/* All the same stuff for Firefox */
+div#player-seek input[type=range]::-moz-range-thumb {
+  height: 18px;
+  width: 18px;
+  border-radius: 100px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+/* All the same stuff for IE */
+div#player-seek input[type=range]::-ms-thumb {
+  height: 18px;
+  width: 18px;
+  border-radius: 100px;
+  background: #ffffff;
+  cursor: pointer;
 }
