@@ -67,12 +67,20 @@ class Player extends React.Component {
       playing,
       loop,
       mute,
-      source
+      song
     } = this.props;
 
     return (
       <div id='player'>
-        <div id='now-playing'>{source.slice(source.length - 20, -4)}</div>
+        <div id='now-playing'>
+          <div className='album-art small'>
+            {song.album_image}
+          </div>
+          <div className='song-info'>
+            <div className='song-name'>{song.title}</div>
+            <div className='artist-name'>{song.artist}</div>
+          </div>
+        </div>
         <div id='player-controls'>
           <div id='player-buttons'>
             <button
@@ -113,7 +121,7 @@ class Player extends React.Component {
         <div id='player-volume'>---+--</div>
         <div className='hidden'>
           <ReactHowler
-            src={source}
+            src={song.src}
             html5={true}
             playing={playing}
             mute={mute}
