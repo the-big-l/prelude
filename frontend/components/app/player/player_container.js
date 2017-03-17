@@ -15,7 +15,7 @@ const mapStateToProps = ({ player }) => ({
   loop: player.loop,
   mute: player.mute,
   volume: player.volume,
-  source: player.queue[player.currentSong],
+  song: player.queue[player.currentSong],
 });
 
 const mapDispatchToProps = dispatch => ({
