@@ -49,6 +49,8 @@ const _shuffleSongs = q => {
         let j = Math.floor(Math.random() * i);
         [q[i - 1], q[j]] = [q[j], q[i - 1]];
     }
+
+    return q;
 }
 
 const playerReducer = (state = _defaultPlayer, action) => {
