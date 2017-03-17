@@ -1,7 +1,77 @@
+div.hidden {
+  display: none;
+  position: absolute;
+}
+
 div#player {
   color: $white;
-  min-height: 70px;
+  flex: 0 0 70px;
   background-color: $black;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+div#now-playing {
+  flex: 0 0 250px
+}
+
+div#player-controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 50px;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+div#player-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 300px;
+  flex: 0 0 37px;
+}
+
+div#player-seek {
+  width: 100%;
+  text-align: center;
+}
+
+div#player-controls #player-buttons button {
+  flex: 0 0 33px;
+  height: 33px;
+  background-position: center;
+  fill: #FFF;
+  background-size: 50%;
+  background-repeat: no-repeat;
+}
+
+div#player-volume {
+  flex: 0 0 200px;
+}
+
+button#loop {
+  background-image: url(asset_path('touchbar_repeat.svg'));
+}
+
+button#prev-song {
+  background-image: url(asset_path('touchbar_skip_previous.svg'));
+}
+
+button#play-pause {
+  border: 1.5px solid $white;
+  border-radius: 100px;
+  background-image: url(asset_path('touchbar_play.svg'));
+}
+
+button#next-song {
+  background-image: url(asset_path('touchbar_skip_next.svg'));
+}
+
+button#mute {
+  background-image: url(asset_path('touchbar_pause.svg'));
 }
