@@ -9,7 +9,7 @@ import {
   REPLACE_QUEUE } from '../actions/player_actions.js';
 
 const sampleQueue = [
-  "http://www.bensound.com/bensound-music/bensound-dubstep.mp3",
+  "https://s3-us-west-1.amazonaws.com/prelude-prd/halo-cea-gregorian-chant-1.mp3",
   "http://www.bensound.com/bensound-music/bensound-cute.mp3",
   "http://www.bensound.com/bensound-music/bensound-energy.mp3"
 ]
