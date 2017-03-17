@@ -4,27 +4,35 @@ import ReactHowler from 'react-howler';
 class Player extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      playing: false,
-      source: 'https://ia802508.us.archive.org/5/items/testmp3testfile/mpthreetest.mp3'
-    };
-    this.togglePlay = this.togglePlay.bind(this);
   }
-
-  togglePlay(e) {
-    e.preventDefault();
-    console.log(this.state.playing);
-    this.setState({playing: !this.state.playing});
-  }
-
 
   render() {
+    const {
+      togglePlay,
+      toggleLoop,
+      toggleMute,
+      previousSong,
+      nextSong,
+      changeVolume,
+      playing,
+      loop,
+      mute,
+      source
+    } = this.props;
+
     return (
       <div id='player'>
-        <button id='play-pause' onClick={this.togglePlay}>play/pause</button>
+        <div id='now-playing'>{source}</div>
+        <button id='loop' onClick={e => toggleLoop()}>loop</button>
+        <button id='prev-song' onClick={e => previousSong()}>prev</button>
+        <button id='play-pause' onClick={e => togglePlay()}>play/pause</button>
+        <button id='next-song' onClick={e => nextSong()}>next</button>
+        <button id='mute' onClick={e => toggleMute()}>mute</button>
         <ReactHowler
-          src={this.state.source}
-          playing={this.state.playing}
+          src={source}
+          playing={playing}
+          mute={mute}
+          loop={loop}
         />
       </div>
     );
