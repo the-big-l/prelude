@@ -22,18 +22,27 @@ class Player extends React.Component {
 
     return (
       <div id='player'>
-        <div id='now-playing'>{source}</div>
-        <button id='loop' onClick={e => toggleLoop()}>loop</button>
-        <button id='prev-song' onClick={e => previousSong()}>prev</button>
-        <button id='play-pause' onClick={e => togglePlay()}>play/pause</button>
-        <button id='next-song' onClick={e => nextSong()}>next</button>
-        <button id='mute' onClick={e => toggleMute()}>mute</button>
-        <ReactHowler
-          src={source}
-          playing={playing}
-          mute={mute}
-          loop={loop}
-        />
+        <div id='now-playing'>{source.slice(source.length - 20, -4)}</div>
+        <div id='player-controls'>
+          <div id='player-buttons'>
+            <button id='loop' onClick={e => toggleLoop()}></button>
+            <button id='prev-song' onClick={e => previousSong()}></button>
+            <button id='play-pause' onClick={e => togglePlay()}></button>
+            <button id='next-song' onClick={e => nextSong()}></button>
+            <button id='mute' onClick={e => toggleMute()}></button>
+          </div>
+          <div id='player-seek'>1:00 ---------+-------------- 3:00</div>
+        </div>
+        <div id='player-volume'>---+--</div>
+        <div className='hidden'>
+          <ReactHowler
+            src={source}
+            html5={true}
+            playing={playing}
+            mute={mute}
+            loop={loop}
+            />
+        </div>
       </div>
     );
   }
