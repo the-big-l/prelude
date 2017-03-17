@@ -33,6 +33,7 @@ div#player-buttons {
   flex-direction: row;
   justify-content: space-between;
   width: 300px;
+  padding: 0 30px;
   flex: 0 0 37px;
 }
 
@@ -54,24 +55,30 @@ div#player-volume {
   flex: 0 0 200px;
 }
 
-button#loop {
+div#player-buttons button.loop {
   background-image: url(asset_path('touchbar_repeat.svg'));
 }
 
-button#prev-song {
+div#player-buttons button.prev-song {
   background-image: url(asset_path('touchbar_skip_previous.svg'));
 }
 
-button#play-pause {
+div#player-buttons button.play {
   border: 1.5px solid $white;
   border-radius: 100px;
   background-image: url(asset_path('touchbar_play.svg'));
 }
 
-button#next-song {
+div#player-buttons button.pause {
+  border: 1.5px solid $white;
+  border-radius: 100px;
+  background-image: url(asset_path('touchbar_pause.svg'));
+}
+
+div#player-buttons button.next-song {
   background-image: url(asset_path('touchbar_skip_next.svg'));
 }
 
-button#mute {
+div#player-buttons button.mute {
   background-image: url(asset_path('touchbar_pause.svg'));
 }
