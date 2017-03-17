@@ -5,6 +5,7 @@ import {
   TOGGLE_MUTE,
   PREVIOUS_SONG,
   NEXT_SONG,
+  SHUFFLE_SONGS,
   CHANGE_VOLUME,
   REPLACE_QUEUE } from '../actions/player_actions.js';
 
@@ -43,8 +44,17 @@ const _defaultPlayer = Object.freeze({
   queue: sampleQueue
 });
 
+const _shuffleSongs = q => {
+    for (let i = q.length; i; i--) {
+        let j = Math.floor(Math.random() * i);
+        [q[i - 1], q[j]] = [q[j], q[i - 1]];
+    }
+}
+
 const playerReducer = (state = _defaultPlayer, action) => {
   Object.freeze(state)
+  let currentSong;
+  let queue;
   switch(action.type) {
     case TOGGLE_PLAY:
       const playing = !state.playing;
@@ -57,16 +67,19 @@ const playerReducer = (state = _defaultPlayer, action) => {
       return merge({}, state, {mute});
     case PREVIOUS_SONG:
       let temp = state.currentSong - 1;
-      const prevPos = temp < 0 ? 0 : temp;
-      return merge({}, state, {currentSong: prevPos});
+      currentSong = temp < 0 ? 0 : temp;
+      return merge({}, state, {currentSong});
     case NEXT_SONG:
-      const nextPos = (state.currentSong + 1) % state.queue.length;
-      return merge({}, state, {currentSong: nextPos});
+      currentSong = (state.currentSong + 1) % state.queue.length;
+      return merge({}, state, {currentSong});
+    case SHUFFLE_SONGS:
+      queue = _shuffleSongs(state.queue.slice());
+      return merge({}, state, {queue, currentSong: 0});
     case CHANGE_VOLUME:
       const volume = action.volume;
       return merge({}, state, {volume});
     case REPLACE_QUEUE:
-      const queue = action.newQueue;
+      queue = action.newQueue;
       return merge({}, state, {queue});
     default:
       return state;
