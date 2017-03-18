@@ -24,6 +24,10 @@ class Player extends React.Component {
     return this.props.playing ? 'pause' : 'play'
   }
 
+  muteButton() {
+    return this.props.mute ? 'muted' : 'not-muted'
+  }
+
   renderSeekPos() {
     this.setState({
       seek: this.player.seek()
@@ -64,6 +68,7 @@ class Player extends React.Component {
       nextSong,
       shuffleSongs,
       changeVolume,
+      volume,
       playing,
       loop,
       mute,
@@ -104,7 +109,7 @@ class Player extends React.Component {
               onClick={e => toggleLoop()}>
             </button>
           </div>
-          <div id='player-seek'>
+          <div id='player-seek' className='slider'>
             <div className='song-pos'>
               {this.currentSongPosition()}
             </div>
@@ -118,8 +123,17 @@ class Player extends React.Component {
             </div>
           </div>
         </div>
-        <div id='player-volume'>
-          <input type='range'></input>
+        <div id='player-volume' className='slider'>
+          <button
+            id='volume'
+            className={this.muteButton()}
+            onClick={e => toggleMute()}>
+          </button>
+          <input
+            className='volume'
+            type='range'
+            onChange={e => changeVolume(e.currentTarget.value / 100)}>
+          </input>
         </div>
         <div className='hidden'>
           <ReactHowler
@@ -128,6 +142,7 @@ class Player extends React.Component {
             playing={playing}
             mute={mute}
             loop={loop}
+            volume={volume}
             onLoad={this.handleOnLoad}
             onPlay={this.renderSeekPos}
             onEnd={nextSong}
