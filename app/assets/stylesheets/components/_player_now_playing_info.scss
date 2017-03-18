@@ -5,7 +5,6 @@ div#now-playing {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  padding: 0 12px;
   height: 100%;
   box-sizing: border-box;
 }
@@ -25,6 +24,17 @@ div#now-playing .song-info {
   box-sizing: border-box;
   padding: 14px 0;
   overflow: hidden;
+  position: relative;
+}
+
+div#now-playing .song-info:after {
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  content: '';
+  background: linear-gradient(to right, rgba(0,0,0,0) 85%, $lighter-grey 100%);
+  pointer-events: none;
 }
 
 div#now-playing .song-info .song-title {
@@ -46,8 +56,8 @@ div#now-playing .song-info .song-title:hover {
 }
 
 div#now-playing .song-info .artist-name {
-  font-size: 12px;
-  text-overflow: ellipsis;
+  color: $lightest-grey;
+  font-size: 13px;
   white-space: nowrap;
   width: 140px;
   display:inline-block;
