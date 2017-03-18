@@ -73,11 +73,11 @@ class Player extends React.Component {
     return (
       <div id='player'>
         <div id='now-playing'>
-          <div className='album-art small'>
-            {song.album_image}
+          <div className='album-art'>
+            {}
           </div>
           <div className='song-info'>
-            <div className='song-name'>{song.title}</div>
+            <div className='song-title'>{song.title}</div>
             <div className='artist-name'>{song.artist}</div>
           </div>
         </div>
@@ -118,7 +118,9 @@ class Player extends React.Component {
             </div>
           </div>
         </div>
-        <div id='player-volume'>---+--</div>
+        <div id='player-volume'>
+          <input type='range'></input>
+        </div>
         <div className='hidden'>
           <ReactHowler
             src={song.src}

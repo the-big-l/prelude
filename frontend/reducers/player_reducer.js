@@ -12,7 +12,7 @@ import {
 const sampleQueue = [
   {
     src: "https://s3-us-west-1.amazonaws.com/prelude-prd/Keane%20-%20Strangeland%20%5B2012%2CCD%2CCherrytree%20Records%2CB0016739-02%5D%20-%20V0%2FKeane%20-%20Strangeland%20-%201-1%20-%20You%20Are%20Young.mp3",
-    title: 'You Are Young',
+    title: 'King Without a Crown - Live',
     album_image: 'Strangeland',
     artist: 'Keane'
   },
@@ -20,7 +20,7 @@ const sampleQueue = [
     src: "https://s3-us-west-1.amazonaws.com/prelude-prd/Keane%20-%20Strangeland%20%5B2012%2CCD%2CCherrytree%20Records%2CB0016739-02%5D%20-%20V0%2FKeane%20-%20Strangeland%20-%201-10%20-%20Day%20Will%20Come.mp3",
     title: 'Day Will Come',
     album_image: 'Strangeland',
-    artist: 'Keane'
+    artist: 'Really, really long artist name (Keane)'
   },
     {
     src: "https://s3-us-west-1.amazonaws.com/prelude-prd/Keane-Perfect_Symmetry-2008-V0%2F02-Keane-The_Lovers_Are_Losing.mp3",
