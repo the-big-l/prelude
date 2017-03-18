@@ -42,7 +42,7 @@ class Player extends React.Component {
   }
 
   thumbPosition() {
-    return this.state.seek / this.state.duration * 100;
+    return (this.state.seek / this.state.duration * 100).toFixed(2);
   }
 
   handleOnLoad() {
