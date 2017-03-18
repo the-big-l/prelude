@@ -23,9 +23,6 @@ div#now-playing .song-info {
   height: 100%;
   box-sizing: border-box;
   padding: 14px 0;
-
-  // these are interfering with each other
-  // will need to add container or pseudo element
   overflow: hidden;
   position: relative;
 }
@@ -36,8 +33,7 @@ div#now-playing .song-info:after {
   height: 100%;
   width: 100%;
   content: '';
-  // bad on safari :(
-  // background: linear-gradient(to right, rgba(0,0,0,0) 85%, $lighter-grey 100%);
+  background: linear-gradient(to right, rgba(0,0,0,0) 85%, $lighter-grey 100%);
   pointer-events: none;
 }
 
