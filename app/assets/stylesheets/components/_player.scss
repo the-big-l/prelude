@@ -8,6 +8,8 @@ div#player {
   flex: 0 0 70px;
   background-color: $lighter-grey;
   display: flex;
+  padding: 0 10px;
+  box-sizing: border-box;
   justify-content: space-between;
   align-items: center;
   position: relative;
@@ -26,4 +28,29 @@ div#player-controls {
 
 div#player-volume {
   flex: 0 0 200px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+div#player-volume .volume {
+  width: 70px;
+}
+
+div#player-volume button.muted {
+  background-image: url(asset_path('mute_icon.svg'));
+}
+
+div#player-volume button.muted:hover {
+  background-image: url(asset_path('mute_icon_white.svg'));
+}
+
+div#player-volume button.not-muted {
+  background-image: url(asset_path('speaker_icon.svg'));
+}
+
+div#player-volume button.not-muted:hover {
+  background-image: url(asset_path('speaker_icon_white.svg'));
 }
