@@ -15,9 +15,9 @@ div#player button {
   background-repeat: no-repeat;
 
   // experimental (bad on safari)
-  -webkit-transition: 0.2s;
-  -moz-transition: 0.2s;
-  transition: 0.2s;
+  // -webkit-transition: 0.2s;
+  // -moz-transition: 0.2s;
+  // transition: 0.2s;
 }
 
 div#player-buttons button.loop {
