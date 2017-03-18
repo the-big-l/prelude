@@ -13,5 +13,8 @@ class Playlist < ApplicationRecord
   validates :name, :user_id, presence: true
 
   belongs_to :user
-  has
+  has_many :playlist_members
+  has_many :tracks,
+    through: :playlist_members,
+    source: :track
 end
