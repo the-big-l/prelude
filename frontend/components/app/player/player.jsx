@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactHowler from 'react-howler';
-import TimeFormat from 'format-duration';
+import hhmmss from 'hhmmss';
 
 class Player extends React.Component {
   constructor(props) {
@@ -49,14 +49,6 @@ class Player extends React.Component {
     this.setState({
       duration: this.player.duration()
     })
-  }
-
-  currentSongPosition() {
-    return TimeFormat(this.state.seek * 1000);
-  }
-
-  currentSongDuration() {
-    return TimeFormat(this.state.duration * 1000);
   }
 
   render() {
@@ -111,7 +103,7 @@ class Player extends React.Component {
           </div>
           <div id='player-seek' className='slider'>
             <div className='song-pos'>
-              {this.currentSongPosition()}
+              {hhmmss(this.state.seek)}
             </div>
             <input
               type='range'
@@ -119,7 +111,7 @@ class Player extends React.Component {
               onChange={this.handleSeekPos}>
             </input>
             <div className='song-pos'>
-              {this.currentSongDuration()}
+              {hhmmss(this.state.duration)}
             </div>
           </div>
         </div>
