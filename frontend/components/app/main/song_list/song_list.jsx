@@ -10,20 +10,26 @@ class SongList extends React.Component {
     this.props.requestSongs();
   }
 
+
   render() {
     const songs = this.props.songList.map(song => <li>{song.title}</li>);
+    const isPlaylist = true;
 
     return (
       <div className='song-list'>
-        <header>
+        <header className='song-list'>
           <ListBillboard
-            type={'index'}
+            type={'playlist'}
             title={'SONGS'}
             subTitle={'All the songs'}
             author={'guest'}
             count={this.props.songList.length}
             />
         </header>
+        <div className='play-follow'>
+          <button className='play'>Play</button>
+          {isPlaylist ? <button>Follow</button> : null}
+        </div>
         <ul>
           {songs}
         </ul>
