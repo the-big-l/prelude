@@ -1,0 +1,35 @@
+div.list-billboard {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  color: $lightest-grey;
+}
+
+div.list-billboard figure.album-art {
+  background-color: blue;
+  width: 140px;
+  height: 140px;
+  margin-right: 25px;
+}
+
+div.list-billboard .media-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 14px;
+}
+
+div.list-billboard .type,
+div.list-billboard .title {
+  color: $white;
+}
+
+div.list-billboard .type {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+div.list-billboard .title {
+  font-size: 36px;
+  font-weight: bold;
+}
