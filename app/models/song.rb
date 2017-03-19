@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: tracks
+# Table name: songs
 #
 #  id         :integer          not null, primary key
 #  title      :string           not null
@@ -8,9 +8,11 @@
 #  album_id   :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  track_url  :string           not null
+#  track_no   :integer          not null
 #
 
-class Track < ApplicationRecord
+class Song < ApplicationRecord
   validates :title, :artist_id, :album_id, presence: true
 
   belongs_to :artist

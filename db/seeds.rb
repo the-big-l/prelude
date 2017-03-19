@@ -680,13 +680,13 @@ albums = [
 albums.each do |seed_album|
   artist = Artist.create(name: seed_album[:artist])
   album = Album.create(artist_id: artist[:id], title: seed_album[:title])
-  seed_album[:tracks].each_with_index do |track, idx|
-    Track.create(
-      title: track[:title],
+  seed_album[:tracks].each_with_index do |song, idx|
+    Song.create(
+      title: song[:title],
       track_no: idx + 1,
       album_id: album.id,
       artist_id: artist.id,
-      track_url: track[:url]
+      song_url: song[:url]
     )
   end
 end
@@ -695,5 +695,5 @@ guest = User.create(username: 'guest', password: 'password')
 guest_playlist = Playlist.create(name: 'favorites', user: guest)
 
 10.times do
-  PlaylistMember.create(playlist: guest_playlist, track_id: rand(Track.count))
+  PlaylistMember.create(playlist: guest_playlist, song_id: rand(Song.count))
 end

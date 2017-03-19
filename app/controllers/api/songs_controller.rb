@@ -1,6 +1,6 @@
-class Api::TracksController < ApplicationController
+class Api::SongsController < ApplicationController
   def index
-    @tracks = Track.all
+    @songs = Song.all
       .includes(:artist, :album)
       .order('artists.name', 'albums.title', :track_no)
   end
