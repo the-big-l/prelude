@@ -20,7 +20,7 @@ class ListBillboard extends React.Component {
           <h4 className='type'>{type}</h4>
           <h1 className='title'>{title}</h1>
           <p className='sub-title'>{subTitle}</p>
-          <p className='meta'>created by: {author} * {count} songs</p>
+          <p className='meta'>Created by: {author} · {count} songs</p>
         </aside>
       </div>
     );
