@@ -6,7 +6,7 @@ const MainNav = () => (
     <h1>Browse</h1>
     <ul>
       <li><Link to='/songs'>Songs</Link></li>
-      <li>Users</li>
+      <li><Link to='/main'>Main</Link></li>
       <li>Playlists</li>
     </ul>
   </div>
