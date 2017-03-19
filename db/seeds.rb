@@ -690,3 +690,10 @@ albums.each do |seed_album|
     )
   end
 end
+
+guest = User.create(username: 'guest', password: 'password')
+guest_playlist = Playlist.create(name: 'favorites', user: guest)
+
+10.times do
+  PlaylistMember.create(playlist: guest_playlist, track_id: rand(Track.count))
+end
