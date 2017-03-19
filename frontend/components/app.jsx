@@ -1,7 +1,6 @@
 import React from 'react';
 import AppHeaderContainer from './app/header/app_header_container';
 import MainNav from './app/main_nav';
-import MainContentContainer from './app/main/main_content_container';
 import PlayerContainer from './app/player/player_container';
 
 const App = ({ children }) => (
@@ -9,7 +8,9 @@ const App = ({ children }) => (
     <AppHeaderContainer />
     <div id='main-content-wrapper'>
       <MainNav />
-      <MainContentContainer />
+      <div id='main'>
+        {children}
+      </div>
     </div>
     <PlayerContainer />
   </div>
