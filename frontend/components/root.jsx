@@ -7,6 +7,8 @@ import {
   hashHistory } from 'react-router';
   import App from './app';
   import WelcomeScreenContainer from './welcome/welcome_screen_container';
+  import SongListContainer from './app/main/song_list/song_list_container';
+  import MainContentContainer from './app/main/main_content_container';
 
 const Root = (props) => {
   const _redirectIfLoggedIn = () => {
@@ -25,7 +27,10 @@ const Root = (props) => {
   return (
     <Provider store={props.store}>
       <Router history={hashHistory}>
-        <Route path="/" onEnter={_ensureLoggedIn} component={App} />
+        <Route path="/" onEnter={_ensureLoggedIn} component={App}>
+          <Route path='/songs' component={SongListContainer} />
+          <Route path='/main' component={MainContentContainer} />
+        </Route>
         <Route
           path='/welcome'
           component={WelcomeScreenContainer}
