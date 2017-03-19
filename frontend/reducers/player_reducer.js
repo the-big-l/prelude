@@ -41,12 +41,12 @@ const _defaultPlayer = Object.freeze({
 });
 
 const _shuffleSongs = q => {
-    for (let i = q.length; i; i--) {
-        let j = Math.floor(Math.random() * i);
-        [q[i - 1], q[j]] = [q[j], q[i - 1]];
-    }
+  for (let i = q.length; i; i--) {
+      let j = Math.floor(Math.random() * i);
+      [q[i - 1], q[j]] = [q[j], q[i - 1]];
+  }
 
-    return q;
+  return q;
 }
 
 const playerReducer = (state = _defaultPlayer, action) => {
