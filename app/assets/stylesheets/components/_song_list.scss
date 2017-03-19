@@ -1,0 +1,19 @@
+div.song-list {
+  overflow-y: scroll;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 32px;
+}
+
+div.song-list header.song-list {
+  margin-bottom: 20px;
+}
+
+div.play-follow {
+  margin: 20px 0;
+}
+
+div.play-follow > button {
+  margin-right: 14px;
+}
