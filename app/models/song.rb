@@ -8,7 +8,7 @@
 #  album_id   :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  track_url  :string           not null
+#  song_url   :string           not null
 #  track_no   :integer          not null
 #
 
