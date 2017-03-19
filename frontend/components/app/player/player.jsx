@@ -21,7 +21,7 @@ class Player extends React.Component {
   }
 
   togglePlayButton() {
-    return this.props.playing ? 'pause' : 'play'
+    return this.props.playing ? 'pause' : 'player-play'
   }
 
   muteButton() {
