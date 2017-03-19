@@ -1,14 +1,32 @@
 import React from 'react';
+import ListBillboard from './list_billboard';
 
 class SongList extends React.Component {
   constructor(props) {
     super(props);
   }
 
+  componentWillMount() {
+    this.props.requestSongs();
+  }
+
   render() {
+    const songs = this.props.songList.map(song => <li>{song.title}</li>);
+
     return (
       <div className='song-list'>
-        <h1>this is all the songs in the thing</h1>
+        <header>
+          <ListBillboard
+            type={'index'}
+            title={'SONGS'}
+            subTitle={'All the songs'}
+            author={'guest'}
+            count={this.props.songList.length}
+            />
+        </header>
+        <ul>
+          {songs}
+        </ul>
       </div>
     );
   }
