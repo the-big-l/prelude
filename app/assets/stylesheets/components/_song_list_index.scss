@@ -1,0 +1,51 @@
+div.song-list-index {
+  table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+
+    thead {
+      color: $lightest-grey;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+
+    tbody {
+      color: $light-white;
+      font-size: 14px
+    }
+
+    td, th {
+      border-bottom: 0.5px solid $medium-grey;
+      padding: 12px 12px;
+    }
+
+    td, td > div {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    tr:hover {
+      button.playlist-add {
+        background-image: url(asset_path('add-plus-button.svg'));
+      }
+    }
+
+    th.playlist-add {
+      width: 40px;
+    }
+
+    th.track-no {
+      width: 43px;
+    }
+
+    button.playlist-add {
+      width: 13px;
+      height: 13px;
+      background-position: center;
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+  }
+}
