@@ -16,9 +16,26 @@ div.welcome-screen button {
     box-sizing: border-box;
 }
 
-div.welcome-screen button.guest {
+div.play-follow button {
+    background-color: transparent;
+    border: solid 1.5px $lightest-grey;
+    border-radius: 50px;
+    color: $light-green;
+    font-size: 13px;
+    letter-spacing: .03em;
+    line-height: 1.25em;
+    height: 38px;
+    padding: 2px 40px 0;
+    text-align: center;
+    text-transform: uppercase;
+    box-sizing: border-box;
+}
+
+div.welcome-screen button.guest,
+div.play-follow button.play {
   background-color: $light-green;
   border-color: $light-green;
+  color: $white;
 }
 
 button {

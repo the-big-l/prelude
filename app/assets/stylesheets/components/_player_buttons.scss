@@ -32,7 +32,7 @@ div#player-buttons button.prev-song {
   background-image: url(asset_path('touchbar_skip_previous.svg'));
 }
 
-div#player-buttons button.play {
+div#player-buttons button.player-play {
   border: 1.5px solid #7F7F7F;
   border-radius: 100px;
   background-image: url(asset_path('touchbar_play.svg'));
@@ -64,7 +64,7 @@ div#player-buttons button.prev-song:hover {
   background-image: url(asset_path('touchbar_skip_previous_white.svg'));
 }
 
-div#player-buttons button.play:hover {
+div#player-buttons button.player-play:hover {
   border: 1.5px solid $white;
   border-radius: 100px;
   background-image: url(asset_path('touchbar_play_white.svg'));
