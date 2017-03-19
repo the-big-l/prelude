@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import SongList from './song_list';
 
-const mapStateToProps = props => ({
-
+const mapStateToProps = ({songList}) => ({
+  songList
 });
 
 const mapDispatchToProps = dispatch => ({
