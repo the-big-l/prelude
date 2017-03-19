@@ -1,5 +1,6 @@
 import React from 'react';
 import ListBillboard from './list_billboard';
+import SongListIndex from './song_list_index';
 
 class SongList extends React.Component {
   constructor(props) {
@@ -12,17 +13,16 @@ class SongList extends React.Component {
 
 
   render() {
-    const songs = this.props.songList.map(song => <li>{song.title}</li>);
-    const isPlaylist = true;
+    const isPlaylist = false;
 
     return (
       <div className='song-list'>
         <header className='song-list'>
           <ListBillboard
-            type={'playlist'}
+            type={'browse'}
             title={'SONGS'}
             subTitle={'All the songs'}
-            author={'guest'}
+            author={'Prelude'}
             count={this.props.songList.length}
             />
         </header>
@@ -30,9 +30,7 @@ class SongList extends React.Component {
           <button className='play'>Play</button>
           {isPlaylist ? <button>Follow</button> : null}
         </div>
-        <ul>
-          {songs}
-        </ul>
+        <SongListIndex songList={this.props.songList} />
       </div>
     );
   }
