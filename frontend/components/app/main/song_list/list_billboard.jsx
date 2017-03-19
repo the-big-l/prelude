@@ -15,12 +15,12 @@ class ListBillboard extends React.Component {
 
     return (
       <div className='list-billboard'>
-        <figure>picture here</figure>
+        <figure className='album-art'>picture here</figure>
         <aside className='media-info'>
-          <h4>{type}</h4>
-          <h1>{title}</h1>
-          <p>{this.subTitle}</p>
-          <p>create by: {author} * {count} songs</p>
+          <h4 className='type'>{type}</h4>
+          <h1 className='title'>{title}</h1>
+          <p className='sub-title'>{subTitle}</p>
+          <p className='meta'>created by: {author} * {count} songs</p>
         </aside>
       </div>
     );
