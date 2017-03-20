@@ -20,15 +20,16 @@ div.song-list-index {
       padding: 12px 12px;
     }
 
-    td, td > div {
+    td:nth-of-type(n+2),
+    td:nth-of-type(n+2) > div {
       text-overflow: ellipsis;
       overflow: hidden;
       white-space: nowrap;
     }
 
-    tr:hover {
-      button.playlist-add {
-        background-image: url(asset_path('add-plus-button.svg'));
+    tbody {
+      tr:hover {
+        background-color: $lighter-grey;
       }
     }
 
@@ -40,12 +41,8 @@ div.song-list-index {
       width: 43px;
     }
 
-    button.playlist-add {
-      width: 13px;
-      height: 13px;
-      background-position: center;
-      background-size: 100%;
-      background-repeat: no-repeat;
+    th.song {
+      width: 43%;
     }
   }
 }
