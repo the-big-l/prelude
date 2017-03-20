@@ -20,6 +20,8 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
   before_validation :ensure_session_token_uniqueness
 
+  has_many :playlists
+
   def self.find_by_credentials(username, password)
     user = User.find_by_username(username)
     user && user.valid_password?(password) ? user : nil
