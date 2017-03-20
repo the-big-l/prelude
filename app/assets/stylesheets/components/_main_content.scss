@@ -1,4 +1,5 @@
 div#app #main {
+  overflow-y: scroll;
   background-color: $light-grey;
   width: 100%;
 }

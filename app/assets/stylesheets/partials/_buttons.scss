@@ -20,7 +20,7 @@ div.play-follow button {
     background-color: transparent;
     border: solid 1.5px $lightest-grey;
     border-radius: 50px;
-    color: $light-green;
+    color: $lighter-green;
     font-size: 13px;
     letter-spacing: .03em;
     line-height: 1.25em;
@@ -29,13 +29,31 @@ div.play-follow button {
     text-align: center;
     text-transform: uppercase;
     box-sizing: border-box;
+    transition: all .1s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
 }
 
-div.welcome-screen button.guest,
+div.welcome-screen button.guest {
+  background-color: $lighter-green;
+  border-color: $lighter-green;
+  color: $white;
+}
+
 div.play-follow button.play {
   background-color: $light-green;
   border-color: $light-green;
+  color: $light-white;
+  transition: all .1s;
+}
+
+div.play-follow button.play:hover {
+  background-color: $lighter-green;
+  border-color: $lighter-green;
   color: $white;
+  transform: scale(1.1);
 }
 
 button {

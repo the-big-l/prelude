@@ -21,12 +21,14 @@ div.list-billboard .media-info {
 
 div.list-billboard .type,
 div.list-billboard .title {
-  color: $white;
+  color: $light-white;
 }
 
 div.list-billboard .type {
   font-size: 12px;
   text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 300;
 }
 
 div.list-billboard .title {

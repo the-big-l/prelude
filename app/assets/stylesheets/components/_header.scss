@@ -3,12 +3,13 @@ div#app header.app-header {
   background-color: $black;
   flex-direction: row;
   justify-content: flex-end;
+  flex: 0 0 36px;
 }
 
 div#app header.app-header .right-nav {
   display: flex;
   flex-direction: row;
-  color: $white;
+  color: $light-white;
   position: relative;
 }
 

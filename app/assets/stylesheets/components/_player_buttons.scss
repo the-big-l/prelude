@@ -17,7 +17,7 @@ div#player button {
   // experimental (bad on safari)
   // -webkit-transition: 0.2s;
   // -moz-transition: 0.2s;
-  // transition: 0.2s;
+  // transition: all 0.2s;
 }
 
 div#player-buttons button.loop {
@@ -49,7 +49,8 @@ div#player-buttons button.next-song {
 }
 
 div#player-buttons button:hover {
-  background-size: 66%;
+  // background-size: 66%;
+  transform: scale(1.1);
 }
 
 div#player-buttons button.loop:hover {
