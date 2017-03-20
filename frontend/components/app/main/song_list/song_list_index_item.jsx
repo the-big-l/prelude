@@ -4,21 +4,25 @@ import PlayListDropdownContainer from './playlist_dropdown_container';
 class SongListIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {playlistDropdown: false};
+    this.state = {isOpen: false};
     this.toggleDropdown = this.toggleDropdown.bind(this);
   }
 
   renderDropdown() {
-    if (this.state.playlistDropdown) {
+    if (this.state.isOpen) {
       return (
-        <PlayListDropdownContainer toggleDropdown={this.toggleDropdown} songId={this.props.song.id} />
+        <PlayListDropdownContainer
+          toggleDropdown={this.toggleDropdown}
+          songId={this.props.song.id}
+          isOpen={this.state.isOpen}
+        />
       );
     }
   }
 
   toggleDropdown(e) {
     this.setState({
-      playlistDropdown: !this.state.playlistDropdown
+      isOpen: !this.state.isOpen
     })
   }
 
