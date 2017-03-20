@@ -1,13 +1,17 @@
 import { connect } from 'react-redux';
 import PlaylistDropdown from './playlist_dropdown';
-import { requestUserPlaylists } from '../../../../actions/playlist_actions';
+import { addToPlaylist, requestUserPlaylists } from '../../../../actions/playlist_actions';
 
-const mapStateToProps = ({userPlaylists}) => ({
-  userPlaylists
+const mapStateToProps = ({userPlaylists, session}, ownProps) => ({
+  userPlaylists,
+  currentUser: session.currentUser,
+  toggleDropdown: ownProps.toggleDropdown,
+  songId: ownProps.songId
 });
 
 const mapDispatchToProps = dispatch => ({
-
+  requestUserPlaylists: user => dispatch(requestUserPlaylists(user)),
+  addToPlaylist: playlistMember => dispatch(addToPlaylist(playlistMember))
 });
 
 export default connect(
