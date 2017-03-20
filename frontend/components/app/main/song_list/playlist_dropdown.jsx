@@ -1,5 +1,5 @@
 import React from 'react';
-import enhanceWithClickOutside from 'react-click-outside';
+import Modal from 'react-modal';
 
 class PlaylistDropdown extends React.Component {
   constructor(props) {
@@ -26,6 +26,10 @@ class PlaylistDropdown extends React.Component {
     this.props.toggleDropdown();
   }
 
+  getParent() {
+    return document.querySelector('#main-nav');
+  }
+
   render() {
     const playlists = this.props.userPlaylists.map((playlist, idx) => {
       return (
@@ -33,12 +37,49 @@ class PlaylistDropdown extends React.Component {
       );
     });
 
+    const { isOpen, toggleDropdown} = this.props;
+
+    const customStyle = {
+      overlay : {
+        position          : 'fixed',
+        top               : 0,
+        left              : 0,
+        right             : 0,
+        bottom            : 0,
+        backgroundColor   : 'rgba(0, 0, 0, 0.3)'
+      },
+      content : {
+        position                   : 'absolute',
+        top                        : '40px',
+        left                       : '40px',
+        right                      : '40px',
+        bottom                     : '40px',
+        border                     : '1px solid #ccc',
+        background                 : '#fff',
+        overflow                   : 'auto',
+        WebkitOverflowScrolling    : 'touch',
+        borderRadius               : '4px',
+        outline                    : 'none',
+        padding                    : '20px'
+
+      }
+    }
+
     return (
-      <ul className='playlist-dropdown'>
-        {playlists}
-      </ul>
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={toggleDropdown}
+        parentSelector={this.getParent}
+        closeTimeoutMS={300}
+        style={customStyle}
+        contentLabel="Modal"
+      >
+        <ul className='playlist-dropdown'>
+          {playlists}
+        </ul>
+      </Modal>
     );
   }
 }
 
-export default enhanceWithClickOutside(PlaylistDropdown);
+export default PlaylistDropdown;
