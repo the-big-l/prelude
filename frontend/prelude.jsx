@@ -4,7 +4,8 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 // test
-import { login, signup, logout } from './actions/session_actions';
+import { requestUserPlaylists, addToPlaylist } from './actions/playlist_actions';
+import { fetchUserPlaylists } from './util/playlist_util';
 
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
@@ -14,9 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
       configureStore();
 
     // Testing
-    window.login = login;
-    window.signup = signup;
-    window.logout = logout;
+    window.requestUserPlaylists = requestUserPlaylists;
+    window.addToPlaylist = addToPlaylist;
+    window.fetchUserPlaylists = fetchUserPlaylists;
     window.store = store;
 
     ReactDOM.render(<Root store={store} />, root);
