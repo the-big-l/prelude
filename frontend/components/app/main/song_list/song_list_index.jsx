@@ -9,7 +9,11 @@ class SongListIndex extends React.Component {
   render() {
     const {
       songList } = this.props;
-    const songs = songList.map((song, idx) => <SongListIndexItem key={idx} song={song} />);
+    const songs = songList.map((song, idx) => <SongListIndexItem
+      key={idx}
+      song={song}
+      trackNo={idx + 1}
+    />);
 
     return (
       <div className='song-list-index'>
