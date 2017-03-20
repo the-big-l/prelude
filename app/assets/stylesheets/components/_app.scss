@@ -3,6 +3,12 @@ div#app {
   display: flex;
   flex-direction: column;
   font-family: $prelude-font;
+  cursor: default;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 div#main-content-wrapper {
