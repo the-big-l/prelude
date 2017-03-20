@@ -11,7 +11,7 @@ class SongListIndexItem extends React.Component {
   renderDropdown() {
     if (this.state.playlistDropdown) {
       return (
-        <PlayListDropdownContainer songId={this.props.song.id} />
+        <PlayListDropdownContainer toggleDropdown={this.toggleDropdown} songId={this.props.song.id} />
       );
     }
   }
@@ -23,12 +23,7 @@ class SongListIndexItem extends React.Component {
   }
 
   render() {
-    const {song: {
-      // track_no,
-      title,
-      artist,
-      album
-    }} = this.props;
+    const {song: {title, artist, album}} = this.props;
 
     return (
       <tr className='song-list-index_item'>
@@ -38,7 +33,7 @@ class SongListIndexItem extends React.Component {
             {this.renderDropdown()}
           </div>
         </td>
-        <td><div>{'99'}</div></td>
+        <td><div>{this.props.trackNo}</div></td>
         <td><div className='song'>{title}</div></td>
         <td><div>{artist}</div></td>
         <td><div>{album}</div></td>
