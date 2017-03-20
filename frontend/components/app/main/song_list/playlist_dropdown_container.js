@@ -6,7 +6,8 @@ const mapStateToProps = ({userPlaylists, session}, ownProps) => ({
   userPlaylists,
   currentUser: session.currentUser,
   toggleDropdown: ownProps.toggleDropdown,
-  songId: ownProps.songId
+  songId: ownProps.songId,
+  isOpen: ownProps.isOpen
 });
 
 const mapDispatchToProps = dispatch => ({
