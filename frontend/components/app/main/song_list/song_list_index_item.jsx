@@ -4,26 +4,35 @@ import PlayListDropdownContainer from './playlist_dropdown_container';
 class SongListIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {isOpen: false};
-    this.toggleDropdown = this.toggleDropdown.bind(this);
+    this.state = {
+      playlistIsOpen: false,
+      playlistIsShown: false
+    };
+    this.openPlaylistModal = this.openPlaylistModal.bind(this);
+    this.closePlaylistModal = this.closePlaylistModal.bind(this);
   }
 
   renderDropdown() {
-    if (this.state.isOpen) {
+    if (this.state.playlistIsOpen) {
       return (
         <PlayListDropdownContainer
-          toggleDropdown={this.toggleDropdown}
+          closePlaylistModal={this.closePlaylistModal}
+          playlistIsShown={this.state.playlistIsShown}
           songId={this.props.song.id}
-          isOpen={this.state.isOpen}
+          isOpen={this.state.playlistIsOpen}
         />
       );
     }
   }
 
-  toggleDropdown(e) {
-    this.setState({
-      isOpen: !this.state.isOpen
-    })
+  openPlaylistModal() {
+    this.setState({ playlistIsOpen: true });
+    setTimeout(() => this.setState({ playlistIsShown: true }), 0);
+  }
+
+  closePlaylistModal() {
+    this.setState({ playlistIsShown: false });
+    setTimeout(() => this.setState({ playlistIsOpen: false }), 500);
   }
 
   render() {
@@ -33,7 +42,10 @@ class SongListIndexItem extends React.Component {
       <tr className='song-list-index_item'>
         <td>
           <div className='add-btn-wrapper'>
-            <button onClick={this.toggleDropdown} className='playlist-add'></button>
+            <button
+              onClick={this.openPlaylistModal}
+              className='playlist-add'>
+            </button>
             {this.renderDropdown()}
           </div>
         </td>
