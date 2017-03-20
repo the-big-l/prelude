@@ -6,13 +6,15 @@ div.hidden {
 div#player {
   color: $white;
   flex: 0 0 70px;
+  width: 100%;
   background-color: $lighter-grey;
   display: flex;
   padding: 0 10px;
   box-sizing: border-box;
   justify-content: space-between;
   align-items: center;
-  position: relative;
+  position: absolute;
+  bottom: 0px;
   border-top: 1.5px solid $black;
 }
 
