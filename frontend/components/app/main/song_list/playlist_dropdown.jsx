@@ -8,7 +8,7 @@ class PlaylistDropdown extends React.Component {
   }
 
   componentWillMount() {
-    this.props.requestUserPlaylists(currentUser);
+    this.props.requestUserPlaylists(this.props.currentUser);
   }
 
   handleAdd(playlistId) {
@@ -22,12 +22,8 @@ class PlaylistDropdown extends React.Component {
     };
   }
 
-  handleClickOutside() {
-    this.props.toggleDropdown();
-  }
-
-  getParent() {
-    return document.querySelector('#main-nav');
+  playlistShown() {
+    return this.props.playlistIsShown ? 'show' : 'hide';
   }
 
   render() {
@@ -37,44 +33,17 @@ class PlaylistDropdown extends React.Component {
       );
     });
 
-    const { isOpen, toggleDropdown} = this.props;
-
-    const customStyle = {
-      overlay : {
-        position          : 'fixed',
-        top               : 0,
-        left              : 0,
-        right             : 0,
-        bottom            : 0,
-        backgroundColor   : 'rgba(0, 0, 0, 0.3)'
-      },
-      content : {
-        position                   : 'absolute',
-        top                        : '40px',
-        left                       : '40px',
-        right                      : '40px',
-        bottom                     : '40px',
-        border                     : '1px solid #ccc',
-        background                 : '#fff',
-        overflow                   : 'auto',
-        WebkitOverflowScrolling    : 'touch',
-        borderRadius               : '4px',
-        outline                    : 'none',
-        padding                    : '20px'
-
-      }
-    }
+    const { isOpen, closePlaylistModal, playlistIsShown } = this.props;
 
     return (
       <Modal
         isOpen={isOpen}
-        onRequestClose={toggleDropdown}
-        parentSelector={this.getParent}
-        closeTimeoutMS={300}
-        style={customStyle}
-        contentLabel="Modal"
-      >
-        <ul className='playlist-dropdown'>
+        onRequestClose={closePlaylistModal}
+        className={`playlist-dropdown ${this.playlistShown()}`}
+        overlayClassName={`playlist-dropdown-overlay ${this.playlistShown()}`}
+        contentLabel="Modal">
+        <h4>Add to playlist</h4>
+        <ul className='playlist-dropdown-list'>
           {playlists}
         </ul>
       </Modal>
