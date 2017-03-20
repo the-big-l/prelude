@@ -5,8 +5,9 @@ import { addToPlaylist, requestUserPlaylists } from '../../../../actions/playlis
 const mapStateToProps = ({userPlaylists, session}, ownProps) => ({
   userPlaylists,
   currentUser: session.currentUser,
-  toggleDropdown: ownProps.toggleDropdown,
   songId: ownProps.songId,
+  closePlaylistModal: ownProps.closePlaylistModal,
+  playlistIsShown: ownProps.playlistIsShown,
   isOpen: ownProps.isOpen
 });
 
