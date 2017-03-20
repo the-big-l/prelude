@@ -18,7 +18,7 @@ class SongListIndex extends React.Component {
             <tr>
               <th className='playlist-add'></th>
               <th className='track-no'>#</th>
-              <th>Song</th>
+              <th className='song'>Song</th>
               <th>Artist</th>
               <th>Album</th>
             </tr>
