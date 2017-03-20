@@ -1,0 +1,29 @@
+div.song-list-index {
+  table {
+    tr:hover {
+      button.playlist-add {
+        background-image: url(asset_path('add-plus-button.svg'));
+      }
+    }
+
+    div.add-btn-wrapper {
+      position: relative;
+      ul.playlist-dropdown {
+        position: absolute;
+        width: 100px;
+        height: 200px;
+        background-color: grey;
+        z-index: 100;
+      }
+    }
+
+
+    button.playlist-add {
+      width: 13px;
+      height: 13px;
+      background-position: center;
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+  }
+}
