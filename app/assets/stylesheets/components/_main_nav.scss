@@ -2,4 +2,40 @@ div#app #main-nav {
   background-color: $black;
   color: $lightest-grey;
   flex: 0 0 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  aside.new-playlist-btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    border-top: 1.5px solid $medium-grey;
+    height: 60px;
+    box-sizing: border-box;
+    padding: 4px 16px;
+
+    &:hover {
+      color: $light-white;
+      cursor: pointer;
+
+      .plus-icon {
+        border: 1.5px solid $light-white;
+        background-image: url(asset_path('add-plus-button-white.svg'));
+      }
+    }
+
+    .plus-icon {
+      margin-right: 8px;
+      width: 25px;
+      height: 25px;
+      border: 1.5px solid $lightest-grey;
+      border-radius: 100px;
+      background-position: center;
+      background-size: 50%;
+      background-repeat: no-repeat;
+      background-image: url(asset_path('add-plus-button.svg'));
+    }
+  }
 }
