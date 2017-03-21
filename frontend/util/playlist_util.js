@@ -5,6 +5,14 @@ export const fetchUserPlaylists = (user) => {
   });
 }
 
+export const sendPlaylist = (playlist) => {
+  return $.ajax({
+    method: 'POST',
+    url: 'api/playlists',
+    data: playlist
+  });
+}
+
 export const sendPlaylistMember = (playlist_member) => {
   return $.ajax({
     method: 'POST',
