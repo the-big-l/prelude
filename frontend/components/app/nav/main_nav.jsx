@@ -30,7 +30,7 @@ class MainNav extends React.Component {
   render() {
     const playlists = this.props.userPlaylists.map((playlist, idx) => {
       return (
-        <Link to={`/playlists/${playlist.id}`} key={idx}><li>{playlist.name}</li></Link>
+        <Link to={`/playlists/${playlist.id}`} key={playlist.id}><li>{playlist.name}</li></Link>
       );
     });
 
