@@ -6,7 +6,7 @@ import Modal from 'react-modal';
 
 // test
 import { requestUserPlaylists, addToPlaylist } from './actions/playlist_actions';
-import { fetchUserPlaylists } from './util/playlist_util';
+import { sendPlaylist } from './util/playlist_util';
 
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Testing
     window.requestUserPlaylists = requestUserPlaylists;
     window.addToPlaylist = addToPlaylist;
-    window.fetchUserPlaylists = fetchUserPlaylists;
+    window.sendPlaylist = sendPlaylist;
     window.store = store;
 
     ReactDOM.render(<Root store={store} />, root);
