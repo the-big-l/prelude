@@ -1,6 +1,6 @@
 import React from 'react';
 import AppHeaderContainer from './app/header/app_header_container';
-import MainNav from './app/main_nav';
+import MainNav from './app/nav/main_nav';
 import PlayerContainer from './app/player/player_container';
 
 const App = ({ children }) => (
