@@ -1,4 +1,5 @@
 import * as PlayerUtil from '../util/playlist_util';
+import { populateSongList } from './song_list_actions.js';
 
 export const RECEIVE_PLAYLISTS = 'RECEIVE_PLAYLISTS';
 export const RECEIVE_PLAYLIST_ERRORS = 'RECEIVE_PLAYLIST_ERRORS';
@@ -31,10 +32,13 @@ export const requestUserPlaylists = user => dispatch => (
     .then(userPlaylists => dispatch(receivePlaylists(userPlaylists)))
 );
 
-export const requestPlaylist = playlist => dispatch => (
-  PlayerUtil.fetchPlaylist(playlist)
-    .then(playlist => dispatch(receivePlaylist(playlist)))
-    .then(playlist => dispatch(receiveSongList(playlist.songs)))
+export const requestPlaylist = playlistId => dispatch => (
+  PlayerUtil.fetchPlaylist(playlistId)
+    .then(playlist => {
+      dispatch(receivePlaylist(playlist));
+      dispatch(populateSongList(playlist.songs));
+    })
+    // .then(playlist => dispatch(populateSongList(playlist.songs)))
 );
 
 export const addToPlaylist = playlistMember => dispatch => {
