@@ -12,7 +12,7 @@ div#app #main-nav {
     justify-content: flex-start;
     align-items: center;
     border-top: 1.5px solid $medium-grey;
-    height: 60px;
+    flex: 0 0 60px;
     box-sizing: border-box;
     padding: 4px 16px;
 
