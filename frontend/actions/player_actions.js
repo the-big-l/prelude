@@ -38,6 +38,6 @@ export const changeVolume = (volume) => ({
 });
 
 export const replaceQueue = (newQueue) => ({
-  type: CHANGE_VOLUME,
+  type: REPLACE_QUEUE,
   newQueue
 });
