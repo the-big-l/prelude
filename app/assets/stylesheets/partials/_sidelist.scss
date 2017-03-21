@@ -1,23 +1,30 @@
-div.side-list-container {
-  h4 {
-    text-transform: uppercase;
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 0.1em;
-    margin-bottom: 8px;
-    padding: 16px 16px 0 16px;
+div.list-holder {
+  overflow-y: scroll;
+
+  a:hover {
+    text-decoration: none;
   }
+  .side-list-container {
+    h4 {
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+      padding: 16px 16px 0 16px;
+    }
 
-  ul.side-list {
-    // border-top: 1px solid $medium-grey;
-    margin-bottom: 4px;
+    ul.side-list {
+      // border-top: 1px solid $medium-grey;
+      margin-bottom: 4px;
 
-    li {
-      padding: 4px 16px;
-      cursor: pointer;
+      li {
+        padding: 4px 16px;
+        cursor: pointer;
 
-      &:hover {
-        background-color: $lighter-grey;
+        &:hover {
+          background-color: $lighter-grey;
+        }
       }
     }
   }
