@@ -20,6 +20,10 @@ tr, th, td {
   background: transparent;
 }
 
+html::-webkit-scrollbar {
+  width: 0px;
+}
+
 // prevent selection
 body {
   cursor: default;
