@@ -20,7 +20,7 @@ export const receivePlaylistsErrors = errors => ({
 });
 
 // async
-export const createPlaylist = playlist => dipatch (
+export const createPlaylist = playlist => dispatch => (
   PlayerUtil.sendPlaylist(playlist)
     .then(playlist => dispatch(receivePlaylist(playlist)))
     .fail(errors => dispatch(receivePlaylistErrors(errors)))
