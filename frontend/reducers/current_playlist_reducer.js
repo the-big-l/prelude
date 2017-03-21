@@ -5,7 +5,8 @@ const _nullPlaylist = {
   errors: [],
   name: null,
   description: null,
-  songs: []
+  songs: [],
+  author: null
 };
 
 const currentPlaylistReducer = (state = _nullPlaylist, action) => {
