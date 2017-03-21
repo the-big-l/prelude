@@ -1,7 +1,7 @@
 import * as PlayerUtil from '../util/playlist_util';
 
 export const RECEIVE_PLAYLISTS = 'RECEIVE_PLAYLISTS';
-export const RECEIVE_PLAYLISTS_ERRORS = 'RECEIVE_PLAYLISTS_ERRORS';
+export const RECEIVE_PLAYLIST_ERRORS = 'RECEIVE_PLAYLIST_ERRORS';
 export const RECEIVE_PLAYLIST = 'RECEIVE_PLAYLIST';
 
 export const receivePlaylists = userPlaylists => ({
@@ -14,8 +14,8 @@ export const receivePlaylist = playlist => ({
   playlist
 });
 
-export const receivePlaylistsErrors = errors => ({
-  type:RECEIVE_PLAYLISTS_ERRORS,
+export const receivePlaylistErrors = errors => ({
+  type:RECEIVE_PLAYLIST_ERRORS,
   errors
 });
 
