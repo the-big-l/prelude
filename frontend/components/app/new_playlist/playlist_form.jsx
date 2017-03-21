@@ -7,15 +7,16 @@ class PlaylistForm extends React.Component {
     super(props);
     this.state = { name: "", description: "" };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleCancel = this.handleCancel.bind(this);
   }
 
   componentWillUnmount() {
-    this.props.clearErrors();
+    // this.props.clearErrors();
   }
 
   update(field) {
     return e => {
-      this.props.clearErrors();
+      // this.props.clearErrors();
       this.setState({[field]: e.currentTarget.value});
     };
   }
@@ -23,8 +24,13 @@ class PlaylistForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const playlist = this.state;
-    this.props.createPlaylist({playlist});
-    this.props.closeFormModal
+    this.props.createPlaylist({playlist})
+      .then(() => this.props.closeFormModal());
+  }
+
+  handleCancel(e) {
+    e.preventDefault();
+    this.props.closeFormModal();
   }
 
   renderErrors() {
@@ -54,9 +60,9 @@ class PlaylistForm extends React.Component {
         overlayClassName={`playlist-form-overlay ${this.formShown()}`}
         contentLabel="Modal">
         <div className="playlist-form-container">
-          <h3>Create Playlist</h3>
           {this.renderErrors()}
           <form onSubmit={this.handleSubmit} className="playlist-form-box">
+            <h3>Create Playlist</h3>
             <div className="playlist-form">
               <label>Name</label>
               <input type="text"
@@ -71,9 +77,10 @@ class PlaylistForm extends React.Component {
                 value={this.state.description}
                 onChange={this.update("description")}
                 className="playlist-input" />
-
-              <button>Cancel</button>
-              <button type="submit">create</button>
+            </div>
+            <div className='button-wrapper'>
+              <button onClick={this.handleCancel} className='cancel'>Cancel</button>
+              <button className='create' type="submit">create</button>
             </div>
           </form>
         </div>
