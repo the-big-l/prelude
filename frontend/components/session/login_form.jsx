@@ -57,7 +57,7 @@ class LoginForm extends React.Component {
     return (
       <div className="login-form-container">
         <div className='small-logo'>
-          <img src='https://play.spotify.edgekey.net/client/a59725d/images/logo.png' />
+          <img src='https://s3-us-west-1.amazonaws.com/prelude-prd/images/logo.png' />
         </div>
         {this.renderErrors()}
         <button

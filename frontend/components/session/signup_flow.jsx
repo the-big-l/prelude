@@ -27,7 +27,7 @@ class SignupFlow extends React.Component {
     return (
       <div className='signup-flow'>
         <div className='large-logo'>
-          <img src='https://play.spotify.edgekey.net/client/a59725d/images/logo.png' />
+          <img src='https://s3-us-west-1.amazonaws.com/prelude-prd/images/logo.png' />
         </div>
         <button className='guest' onClick={this.handleGuestLogin}>Sign in as a guest</button>
         <button onClick={e => this.props.router.push('/signup')}>Sign up with your email address</button>
