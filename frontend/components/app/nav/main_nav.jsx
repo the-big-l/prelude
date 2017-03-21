@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import PlaylistFormContainer from '../new_playlist/playlist_form_container';
+import PlaylistFormContainer from '../playlist_form/playlist_form_container';
 
 class MainNav extends React.Component {
   constructor(props) {
