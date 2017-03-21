@@ -24,19 +24,18 @@ form.playlist-form-box button {
     font-size: 13px;
     letter-spacing: .03em;
     line-height: 1.25em;
-    height: 38px;
+    height: 34px;
     padding: 2px 40px 0;
     text-align: center;
     text-transform: uppercase;
     box-sizing: border-box;
     transition: all .1s;
-
-    .cancel {
-      color: $lightest-grey;
-    }
+    color: $light-green;
 
     &:hover {
       transform: scale(1.1);
+      border-color: $white;
+      color: $lighter-green;
     }
 }
 
