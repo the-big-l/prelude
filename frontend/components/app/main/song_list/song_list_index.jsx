@@ -10,7 +10,7 @@ class SongListIndex extends React.Component {
     const {
       songList } = this.props;
     const songs = songList.map((song, idx) => <SongListIndexItem
-      key={idx}
+      key={song.id}
       song={song}
       trackNo={idx + 1}
     />);
