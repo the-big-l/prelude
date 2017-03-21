@@ -9,7 +9,7 @@
   align-items: center;
 
   &.show {
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.5);
     transition: all 0.5s;
   }
 
@@ -21,7 +21,7 @@
 
 .playlist-form-modal {
   width: 600px;
-  height: 400px;
+  height: 360px;
   border: none;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
@@ -45,27 +45,51 @@
 
   .playlist-form-container {
     padding: 32px;
+    height: 100%;
 
     h3 {
       text-align: center;
+      font-weight: bold;
+      font-size: 24px;
+      border-bottom: 1px solid grey;
+      padding-bottom: 4px;
+      color: $white;
     }
 
     .playlist-form-box {
-      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
 
       input.playlist-input {
         width: 100%;
         background-color: white;
-        border-radius: 3px;
         font-size: 16px;
         color: black;
+        height: 30px;
+        border-radius: 5px;
+        padding: 0 16px;
+        margin: 16px 0;
       }
 
       textarea.playlist-input {
         width: 100%;
         background-color: white;
-        border-radius: 3px;
-        height: 50px;
+        border-radius: 5px;
+        height: 70px;
+        margin: 16px 0;
+        padding: 8px;
+      }
+
+      .button-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      button {
+        margin: 0 16px;
       }
     }
 
