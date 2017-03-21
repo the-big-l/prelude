@@ -5,6 +5,7 @@ import SongListIndex from './song_list_index';
 class SongList extends React.Component {
   constructor(props) {
     super(props);
+    this.handlePlay = this.handlePlay.bind(this);
   }
 
   componentWillMount() {
@@ -27,9 +28,14 @@ class SongList extends React.Component {
     return this.props.type === 'playlist';
   }
 
+  handlePlay(e) {
+    e.preventDefault();
+    this.props.replaceQueue(this.props.songList);
+  }
+
   render() {
     const isPlaylist = false;
-    const {description, songList, title, type } = this.props;
+    const {description, songList, title, type, author } = this.props;
 
     return (
       <div className='song-list'>
@@ -38,12 +44,12 @@ class SongList extends React.Component {
             type={type}
             title={title}
             subTitle={description}
-            author={'Prelude'}
+            author={author}
             count={songList.length}
             />
         </header>
         <div className='play-follow'>
-          <button className='play'>Play</button>
+          <button onClick={this.handlePlay} className='play'>Play</button>
           {this.isPlaylist() ? <button>Follow</button> : null}
         </div>
         <SongListIndex songList={this.props.songList} />
