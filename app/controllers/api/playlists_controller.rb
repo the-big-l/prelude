@@ -8,7 +8,7 @@ class Api::PlaylistsController < ApplicationController
     @playlist.user = current_user
 
     if @playlist.save
-      render json: ['successfully saved'], status: 200
+      render json: @playlist
     else
       render json: @playlist.errors.full_messages, status: 422
     end
