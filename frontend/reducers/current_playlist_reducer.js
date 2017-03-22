@@ -6,7 +6,8 @@ const _nullPlaylist = {
   name: null,
   description: null,
   songs: [],
-  author: null
+  author: null,
+  id: null
 };
 
 const currentPlaylistReducer = (state = _nullPlaylist, action) => {
@@ -17,7 +18,7 @@ const currentPlaylistReducer = (state = _nullPlaylist, action) => {
       const errors = action.errors;
       return merge({}, _nullPlaylist, {errors});
     case RECEIVE_PLAYLIST:
-      return merge({}, state, action.playlist)
+      return merge(newState, action.playlist)
     default:
       return state;
   }
