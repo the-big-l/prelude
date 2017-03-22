@@ -4,7 +4,13 @@ import { removeSong } from '../../../../actions/playlist_actions';
 
 const mapStateToProps = ({currentPlaylist}, ownProps) => ({
   currentPlaylist,
-  deleteId: ownProps.id
+  deleteId: ownProps.id,
+  closeContextDropdown: ownProps.closeContextDropdown,
+  playlistIsShown: ownProps.playlistIsShown,
+  isOpen: ownProps.isOpen,
+  isShown: ownProps.dropdownIsShown,
+  parentEl: ownProps.parentEl,
+  listItem: ownProps.listItem
 });
 
 const mapDispatchToProps = dispatch => ({
