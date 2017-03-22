@@ -20,6 +20,13 @@ export const sendPlaylist = (playlist) => {
   });
 }
 
+export const deletePlaylist = (playlistId) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `/api/playlists/${playlistId}`
+  });
+}
+
 export const sendPlaylistMember = (playlist_member) => {
   return $.ajax({
     method: 'POST',
