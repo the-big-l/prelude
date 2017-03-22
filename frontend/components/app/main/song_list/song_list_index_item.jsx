@@ -12,7 +12,7 @@ class SongListIndexItem extends React.Component {
     this.closePlaylistModal = this.closePlaylistModal.bind(this);
   }
 
-  renderDropdown() {
+  renderAddPlaylist() {
     if (this.state.playlistIsOpen) {
       return (
         <PlayListDropdownContainer
@@ -20,6 +20,19 @@ class SongListIndexItem extends React.Component {
           playlistIsShown={this.state.playlistIsShown}
           songId={this.props.song.id}
           isOpen={this.state.playlistIsOpen}
+        />
+      );
+    }
+  }
+
+  renderContextDropdown() {
+    if (this.state.contextDropdownIsOpen) {
+      return (
+        <SongContextDropdownContainer
+          closeDropdownModal={this.closeDropdown}
+          dropdownIsShown={this.state.dropdownIsShown}
+          songId={this.props.song.id}
+          isOpen={this.state.dropdownIsOpen}
         />
       );
     }
@@ -46,13 +59,16 @@ class SongListIndexItem extends React.Component {
               onClick={this.openPlaylistModal}
               className='playlist-add'>
             </button>
-            {this.renderDropdown()}
+            {this.renderAddPlaylist()}
           </div>
         </td>
         <td><div>{this.props.trackNo}</div></td>
         <td><div className='song'>{title}</div></td>
         <td><div>{artist}</div></td>
         <td><div>{album}</div></td>
+        <td>
+          <button className='context-btn-wrapper'>{'...'}{this.renderContextDropdown()}</button>
+        </td>
       </tr>
     );
   }
