@@ -15,6 +15,7 @@ class SongListIndex extends React.Component {
         song={listItem.song}
         order={idx + 1}
         listItem={listItem}
+        type={this.props.type}
       />
     ));
 
