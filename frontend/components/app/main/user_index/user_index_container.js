@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import UserIndex from './main_content';
+import UserIndex from './user_index';
 
 const mapStateToProps = props => ({
 

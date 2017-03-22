@@ -8,7 +8,7 @@ import {
   import App from './app';
   import WelcomeScreenContainer from './welcome/welcome_screen_container';
   import SongListContainer from './app/main/song_list/song_list_container';
-  import UserIndexContainer from './app/main/user_index_container';
+  import UserIndexContainer from './app/main/user_index/user_index_container';
   import PlaylistContainer from './app/main/playlist/playlist_container';
 
 const Root = (props) => {
