@@ -33,11 +33,15 @@ export const updateListItems = listItem => ({
   listItem
 })
 
-
-
 // async
 export const createPlaylist = playlist => dispatch => (
   Playlist.sendPlaylist(playlist)
+    .then(playlist => dispatch(receivePlaylist(playlist)))
+    .fail(errors => dispatch(receivePlaylistErrors(errors)))
+);
+
+export const updatePlaylist = playlist => dispatch => (
+  Playlist.updatePlaylist(playlist)
     .then(playlist => dispatch(receivePlaylist(playlist)))
     .fail(errors => dispatch(receivePlaylistErrors(errors)))
 );
