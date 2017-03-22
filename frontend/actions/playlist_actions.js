@@ -71,5 +71,4 @@ export const removePlaylist = playlistId => dispatch => (
 
 export const addToPlaylist = playlistMember => dispatch => {
   Playlist.sendPlaylistMember(playlistMember)
-    .then(song => dispatch(updateListItems(song)));
 };
