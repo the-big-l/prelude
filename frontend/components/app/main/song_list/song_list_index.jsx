@@ -25,6 +25,7 @@ class SongListIndex extends React.Component {
               <th className='song'>Song</th>
               <th>Artist</th>
               <th>Album</th>
+              <th className='context-column'></th>
             </tr>
           </thead>
           <tbody>
