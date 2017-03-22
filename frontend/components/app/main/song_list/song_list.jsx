@@ -50,7 +50,7 @@ class SongList extends React.Component {
           <button onClick={this.handlePlay} className='play'>Play</button>
           {this.isPlaylist() ? <button>Follow</button> : null}
         </div>
-        <SongListIndex listItems={this.props.listItems} />
+        <SongListIndex listItems={this.props.listItems} type={type}/>
       </div>
     );
   }
