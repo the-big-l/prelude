@@ -28,10 +28,10 @@ export const sendPlaylistMember = (playlist_member) => {
   });
 };
 
-export const deletePlaylistMember = member => {
+export const deletePlaylistMember = memberId => {
   return $.ajax({
     method: 'DELETE',
-    url: `api/playlist_members/${member.id}`
+    url: `api/playlist_members/${memberId}`
   })
 };
 
