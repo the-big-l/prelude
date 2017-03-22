@@ -5,7 +5,7 @@ import { Link, withRouter } from 'react-router';
 class PlaylistForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { name: "", description: "" };
+    this.state = props.initialState;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
   }
@@ -24,7 +24,7 @@ class PlaylistForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const playlist = this.state;
-    this.props.createPlaylist({playlist})
+    this.props.submitFunction({playlist})
       .then(res => this.props.router.push(`/playlists/${res.playlist.id}`))
       .then(() => this.props.closeFormModal());
   }
@@ -51,7 +51,7 @@ class PlaylistForm extends React.Component {
   }
 
   render() {
-    const { isOpen, closeFormModal } = this.props;
+    const { isOpen, closeFormModal, titleText, submitText } = this.props;
 
     return (
       <Modal
@@ -63,7 +63,7 @@ class PlaylistForm extends React.Component {
         <div className="playlist-form-container">
           {this.renderErrors()}
           <form onSubmit={this.handleSubmit} className="playlist-form-box">
-            <h3>Create Playlist</h3>
+            <h3>{titleText}</h3>
             <div className="playlist-form">
               <label>Name</label>
               <input type="text"
@@ -81,7 +81,7 @@ class PlaylistForm extends React.Component {
             </div>
             <div className='button-wrapper'>
               <button onClick={this.handleCancel} className='cancel'>Cancel</button>
-              <button className='create' type="submit">create</button>
+              <button className='create' type="submit">{submitText}</button>
             </div>
           </form>
         </div>
