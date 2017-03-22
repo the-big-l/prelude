@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import PlaylistFormContainer from '../playlist_form/playlist_form_container';
+import CreatePlaylistFormContainer from '../playlist_form/create_playlist_form_container';
 
 class MainNav extends React.Component {
   constructor(props) {
@@ -57,7 +57,7 @@ class MainNav extends React.Component {
           <div className='plus-icon'></div>
           <p>New Playlist</p>
         </aside>
-        <PlaylistFormContainer
+        <CreatePlaylistFormContainer
           isOpen={this.state.isFormOpen}
           isFormShown={this.state.isFormShown}
           closeFormModal={this.closeFormModal}
