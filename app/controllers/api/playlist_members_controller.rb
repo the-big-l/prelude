@@ -15,6 +15,7 @@ class Api::PlaylistMembersController < ApplicationController
       render json: @playlist_member
     else
       render json: @playlist_member.errors.full_messages, status: 404
+    end
   end
 
   def playlist_member_params
