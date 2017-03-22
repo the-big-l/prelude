@@ -35,7 +35,7 @@ class SongListIndexItem extends React.Component {
       return (
         <SongContextDropdownContainer
           parentEl={`btn-context-${this.props.idx}`}
-          closeDropdownModal={this.closeContextDropdown}
+          closeDropdown={this.closeContextDropdown}
           dropdownIsShown={this.state.dropdownIsShown}
           songId={this.props.song.id}
           isOpen={this.state.dropdownIsOpen}
@@ -53,7 +53,7 @@ class SongListIndexItem extends React.Component {
 
   closePlaylistModal() {
     this.setState({ playlistIsShown: false });
-    setTimeout(() => this.setState({ playlistIsOpen: false }), 500);
+    setTimeout(() => this.setState({ playlistIsOpen: false }), 250);
   }
 
   openContextDropdown() {
@@ -63,7 +63,7 @@ class SongListIndexItem extends React.Component {
 
   closeContextDropdown() {
     this.setState({ dropdownIsShown: false });
-    setTimeout(() => this.setState({ dropdownIsOpen: false }), 500);
+    setTimeout(() => this.setState({ dropdownIsOpen: false }), 250);
   }
 
   render() {
