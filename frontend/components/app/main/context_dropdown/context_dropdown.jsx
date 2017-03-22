@@ -24,6 +24,16 @@ class ContextDropdown extends React.Component {
 
   render() {
     const { isOpen, closeDropdown } = this.props;
+    // .position() uses position relative to the offset parent
+    const pos = $(`#${this.props.parentEl}`).position();
+    // .outerWidth() takes into account border and padding
+    const width = $(`#${this.props.parentEl}`).outerWidth();
+    const customStyle = {
+      content : {
+        top : `${pos.top + 20}px`,
+        left: `${(pos.left + width - 200)}px`
+      }
+    }
 
     return (
       <Modal
@@ -32,6 +42,7 @@ class ContextDropdown extends React.Component {
         onRequestClose={closeDropdown}
         className={`context-dropdown-modal ${this.dropdownShown()}`}
         overlayClassName={`context-dropdown-overlay ${this.dropdownShown()}`}
+        style={customStyle}
         contentLabel="Modal">
         <div className="context-dropdown">
           <ul>
