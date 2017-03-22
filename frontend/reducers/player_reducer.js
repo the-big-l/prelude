@@ -37,7 +37,7 @@ const _defaultPlayer = Object.freeze({
   mute: false,
   volume: 1.0,
   currentSong: 0,
-  queue: sampleQueue
+  queue: [{song: {title: '', album: ''}}]
 });
 
 const _shuffleSongs = q => {
