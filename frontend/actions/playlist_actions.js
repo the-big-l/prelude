@@ -1,10 +1,12 @@
 import * as Playlist from '../util/playlist_util';
 import { populateSongList } from './song_list_actions.js';
+import {hashHistory} from 'react-router';
 
 export const RECEIVE_PLAYLISTS = 'RECEIVE_PLAYLISTS';
 export const RECEIVE_PLAYLIST_ERRORS = 'RECEIVE_PLAYLIST_ERRORS';
 export const RECEIVE_PLAYLIST = 'RECEIVE_PLAYLIST';
 export const REMOVE_SONG = 'REMOVE_SONG';
+export const ADD_TO_LIST = 'ADD_TO_LIST';
 
 export const receivePlaylists = userPlaylists => ({
   type:RECEIVE_PLAYLISTS,
@@ -25,6 +27,13 @@ export const deletePlaylistMember = member => ({
   type:REMOVE_SONG,
   member
 })
+
+export const updateListItems = listItem => ({
+  type:ADD_TO_LIST,
+  listItem
+})
+
+
 
 // async
 export const createPlaylist = playlist => dispatch => (
@@ -51,6 +60,12 @@ export const removeSong = memberId => dispatch => (
     .then(member => dispatch(deletePlaylistMember(member)))
 );
 
+export const removePlaylist = playlistId => dispatch => (
+  Playlist.deletePlaylist(playlistId)
+    .then(() => hashHistory.push('/songs'))
+)
+
 export const addToPlaylist = playlistMember => dispatch => {
-  Playlist.sendPlaylistMember(playlistMember);
+  Playlist.sendPlaylistMember(playlistMember)
+    .then(song => dispatch(updateListItems(song)));
 };
