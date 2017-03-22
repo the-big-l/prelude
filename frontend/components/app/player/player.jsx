@@ -128,18 +128,22 @@ class Player extends React.Component {
           </input>
         </div>
         <div className='hidden'>
-          <ReactHowler
-            src={song.src}
-            html5={true}
-            playing={playing}
-            mute={mute}
-            loop={loop}
-            volume={volume}
-            onLoad={this.handleOnLoad}
-            onPlay={this.renderSeekPos}
-            onEnd={nextSong}
-            ref={(ref) => (this.player = ref)}
-            />
+          {
+            !song.src ?
+              undefined :
+              <ReactHowler
+              src={song.src}
+              html5={true}
+              playing={playing}
+              mute={mute}
+              loop={loop}
+              volume={volume}
+              onLoad={this.handleOnLoad}
+              onPlay={this.renderSeekPos}
+              onEnd={nextSong}
+              ref={(ref) => (this.player = ref)}
+              />
+          }
         </div>
       </div>
     );
