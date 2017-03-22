@@ -1,11 +1,19 @@
 import React from 'react';
 import Modal from 'react-modal';
+import UpdatePlaylistFormContainer from '../../playlist_form/update_playlist_form_container';
 
 class ContextDropdown extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      isFormOpen: false,
+      isFormShown: false
+    };
     this.getParent = this.getParent.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleUpdate = this.handleUpdate.bind(this);
+    this.openFormModal = this.openFormModal.bind(this);
+    this.closeFormModal = this.closeFormModal.bind(this);
   }
 
   handleDelete(e) {
@@ -13,6 +21,11 @@ class ContextDropdown extends React.Component {
     const playlist = this.state;
     this.props.deleteFunction(this.props.deleteId);
     this.props.closeDropdown();
+  }
+
+  handleUpdate(e) {
+    e.preventDefault();
+    this.openFormModal();
   }
 
   dropdownShown() {
@@ -23,11 +36,22 @@ class ContextDropdown extends React.Component {
     return document.querySelector(`#${this.props.parentEl}`);
   }
 
+  openFormModal() {
+    this.setState({ isFormOpen: true });
+    setTimeout(() => this.setState({ isFormShown: true }), 0);
+  }
+
+  closeFormModal() {
+    this.setState({ isFormShown: false });
+    this.props.closeDropdown();
+    setTimeout(() => this.setState({ isFormOpen: false }), 500);
+  }
+
   isPlaylist() {
     if (this.props.type === "playlist") {
       return (
         <ul>
-          {this.props.isSong ? null : <li>Update</li>}
+          {this.props.isSong ? null : <li onClick={this.handleUpdate}>Update</li>}
           <li onClick={this.handleDelete}>Delete</li>
         </ul>
       );
@@ -60,6 +84,11 @@ class ContextDropdown extends React.Component {
         <div className="context-dropdown">
           {this.isPlaylist()}
         </div>
+        <UpdatePlaylistFormContainer
+          isOpen={this.state.isFormOpen}
+          isFormShown={this.state.isFormShown}
+          closeFormModal={this.closeFormModal}
+        />
       </Modal>
     );
   }
