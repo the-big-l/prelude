@@ -12,6 +12,7 @@ class ContextDropdown extends React.Component {
     e.preventDefault();
     const playlist = this.state;
     this.props.deleteFunction(this.props.deleteId);
+    this.props.closeDropdown();
   }
 
   dropdownShown() {
@@ -46,7 +47,6 @@ class ContextDropdown extends React.Component {
     return (
       <Modal
         isOpen={isOpen}
-        parentSelector={this.getParent}
         onRequestClose={closeDropdown}
         className={`context-dropdown-modal ${this.props.dropdownShown}`}
         overlayClassName={`context-dropdown-overlay ${this.props.dropdownShown}`}
