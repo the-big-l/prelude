@@ -30,7 +30,7 @@ class PlaylistDropdown extends React.Component {
   render() {
     const playlists = this.props.userPlaylists.map((playlist, idx) => {
       return (
-        <li onClick={this.handleAdd(playlist.id)} key={idx}>{playlist.name}</li>
+        <li onClick={this.handleAdd(playlist.id)} key={playlist.id}>{playlist.name}</li>
       );
     });
 
