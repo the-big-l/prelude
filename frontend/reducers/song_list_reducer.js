@@ -6,7 +6,7 @@ const songListReducer = (state = _emptySongList, action) => {
   Object.freeze(state)
   switch(action.type) {
     case POPULATE_SONG_LIST:
-      return action.songList;
+      return action.listItems;
     default:
       return state;
   }

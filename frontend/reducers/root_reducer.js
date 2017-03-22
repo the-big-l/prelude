@@ -8,7 +8,7 @@ import currentPlaylistReducer from './current_playlist_reducer';
 const rootReducer = combineReducers({
   session: sessionReducer,
   player: playerReducer,
-  songList: songListReducer,
+  listItems: songListReducer,
   userPlaylists: playlistReducer,
   currentPlaylist: currentPlaylistReducer
 });
