@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import ContextDropdown from '../context_dropdown/context_dropdown';
+import ContextDropdown from './context_dropdown';
 import { removeSong } from '../../../../actions/playlist_actions';
 
 const mapStateToProps = (state, ownProps) => ({

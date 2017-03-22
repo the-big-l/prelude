@@ -1,6 +1,6 @@
 import React from 'react';
 import PlayListDropdownContainer from './playlist_dropdown_container';
-import SongContextDropdownContainer from './song_context_dropdown_container';
+import SongContextDropdownContainer from '../context_dropdown/song_context_dropdown_container';
 
 class SongListIndexItem extends React.Component {
   constructor(props) {

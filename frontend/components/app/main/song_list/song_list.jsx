@@ -1,7 +1,7 @@
 import React from 'react';
 import ListBillboard from './list_billboard';
 import SongListIndex from './song_list_index';
-import PlaylistContextDropdownContainer from './playlist_context_dropdown_container';
+import PlaylistContextDropdownContainer from '../context_dropdown/playlist_context_dropdown_container';
 
 class SongList extends React.Component {
   constructor(props) {

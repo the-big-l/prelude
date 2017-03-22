@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import ContextDropdown from '../context_dropdown/context_dropdown';
+import ContextDropdown from './context_dropdown';
 import { removePlaylist } from '../../../../actions/playlist_actions';
 import { hashHistory } from 'react-router';
 
