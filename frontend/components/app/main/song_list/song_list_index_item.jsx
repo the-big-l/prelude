@@ -1,15 +1,20 @@
 import React from 'react';
 import PlayListDropdownContainer from './playlist_dropdown_container';
+import SongContextDropdownContainer from './song_context_dropdown_container';
 
 class SongListIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       playlistIsOpen: false,
-      playlistIsShown: false
+      playlistIsShown: false,
+      dropdownIsOpen: false,
+      dropdownIsShown: false
     };
     this.openPlaylistModal = this.openPlaylistModal.bind(this);
     this.closePlaylistModal = this.closePlaylistModal.bind(this);
+    this.openContextDropdown = this.openContextDropdown.bind(this);
+    this.closeContextDropdown = this.closeContextDropdown.bind(this);
   }
 
   renderAddPlaylist() {
@@ -26,14 +31,16 @@ class SongListIndexItem extends React.Component {
   }
 
   renderContextDropdown() {
-    if (this.state.contextDropdownIsOpen) {
+    if (this.state.dropdownIsOpen) {
       return (
         <SongContextDropdownContainer
-          closeDropdownModal={this.closeDropdown}
+          parentEl={`btn-context-${this.props.idx}`}
+          closeDropdownModal={this.closeContextDropdown}
           dropdownIsShown={this.state.dropdownIsShown}
           songId={this.props.song.id}
           isOpen={this.state.dropdownIsOpen}
           listItem={this.props.listItem}
+          deleteId={this.props.listItem.member_id}
         />
       );
     }
@@ -47,6 +54,16 @@ class SongListIndexItem extends React.Component {
   closePlaylistModal() {
     this.setState({ playlistIsShown: false });
     setTimeout(() => this.setState({ playlistIsOpen: false }), 500);
+  }
+
+  openContextDropdown() {
+    this.setState({ dropdownIsOpen: true });
+    setTimeout(() => this.setState({ dropdownIsShown: true }), 0);
+  }
+
+  closeContextDropdown() {
+    this.setState({ dropdownIsShown: false });
+    setTimeout(() => this.setState({ dropdownIsOpen: false }), 500);
   }
 
   render() {
@@ -68,7 +85,9 @@ class SongListIndexItem extends React.Component {
         <td><div>{song.artist}</div></td>
         <td><div>{song.album}</div></td>
         <td>
-          <button className='context-btn-wrapper'>{'...'}{this.renderContextDropdown()}</button>
+          <button
+            id={`btn-context-${this.props.idx}`}
+            onClick={this.openContextDropdown}>{'...'}{this.renderContextDropdown()}</button>
         </td>
       </tr>
     );
