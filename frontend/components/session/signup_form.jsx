@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router';
 class SignupForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { username: "", password: "" };
+    this.state = { username: '', password: '', first_name: '', last_name: '' };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -57,6 +57,20 @@ class SignupForm extends React.Component {
         <h3>Create your free Prelude account</h3>
         <form onSubmit={this.handleSubmit} className="signup-form-box">
           <div className="signup-form">
+            <label>First Name</label>
+            <input type="text"
+              placeholder="e.g. John"
+              value={this.state.first_name}
+              onChange={this.update("first_name")}
+              className="signup-input" />
+
+            <label>Last Name</label>
+            <input type="text"
+              placeholder="e.g. Doe"
+              value={this.state.last_name}
+              onChange={this.update("last_name")}
+              className="signup-input" />
+
             <label>Username</label>
             <input type="text"
               placeholder="username"
