@@ -56,7 +56,7 @@ class ContextDropdown extends React.Component {
         </ul>
       );
     } else {
-      return (<li onClick={this.props.closeDropdown}>{'no-op'}</li>);
+      return (<ul><li onClick={this.props.closeDropdown}>{'no-op'}</li></ul>);
     }
   }
 
