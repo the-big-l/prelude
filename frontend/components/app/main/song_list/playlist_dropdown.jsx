@@ -19,6 +19,7 @@ class PlaylistDropdown extends React.Component {
         playlist_id: playlistId
       };
       that.props.addToPlaylist({playlist_member});
+      that.props.closePlaylistModal();
     };
   }
 
