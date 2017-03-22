@@ -1,11 +1,15 @@
 import React from 'react';
 import ListBillboard from './list_billboard';
 import SongListIndex from './song_list_index';
+import PlaylistContextDropdownContainer from './playlist_context_dropdown_container';
 
 class SongList extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {isOpen: false}
     this.handlePlay = this.handlePlay.bind(this);
+    this.closeDropdown = this.closeDropdown.bind(this);
+    this.openDropdown = this.openDropdown.bind(this);
   }
 
   componentWillMount() {
@@ -31,6 +35,26 @@ class SongList extends React.Component {
     this.props.replaceQueue(this.props.listItems);
   }
 
+  closeDropdown() {
+    this.setState({isOpen: false});
+  }
+
+  openDropdown() {
+    this.setState({isOpen: true});
+  }
+
+  renderContextDropdown() {
+    if (this.state.isOpen) {
+      return (
+        <PlaylistContextDropdownContainer
+          closeDropdown={this.closeDropdown}
+          isOpen={this.state.isOpen}
+          parentEl={'btn-context-playlist-billboard'}
+        />
+      );
+    }
+  }
+
   render() {
     const isPlaylist = false;
     const {description, listItems, title, type, author } = this.props;
@@ -49,7 +73,9 @@ class SongList extends React.Component {
         <div className='play-follow'>
           <button onClick={this.handlePlay} className='play'>Play</button>
           {this.isPlaylist() ? <button>Follow</button> : null}
+          {this.isPlaylist() ? <button id={'btn-context-playlist-billboard'} onClick={this.openDropdown}>{'...'}</button> : null}
         </div>
+        {this.renderContextDropdown()}
         <SongListIndex listItems={this.props.listItems} type={type}/>
       </div>
     );
