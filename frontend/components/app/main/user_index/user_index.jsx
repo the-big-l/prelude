@@ -1,17 +1,17 @@
 import React from 'react';
 
-class MainContent extends React.Component {
+class UserIndex extends React.Component {
   constructor(props) {
     super(props);
   }
 
   render() {
     return (
-      <div className='main'>
+      <div className='user-index'>
         <h1>content goes here</h1>
       </div>
     );
   }
 }
 
-export default MainContent;
+export default UserIndex;
