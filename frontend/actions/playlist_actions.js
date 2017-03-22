@@ -53,10 +53,8 @@ export const requestUserPlaylists = user => dispatch => (
 
 export const requestPlaylist = playlistId => dispatch => (
   Playlist.fetchPlaylist(playlistId)
-    .then(playlist => {
-      dispatch(receivePlaylist(playlist));
-      dispatch(populateSongList(playlist.members));
-    })
+    .then(playlist => dispatch(receivePlaylist(playlist)))
+    .then(res => dispatch(populateSongList(res.playlist.members)))
 );
 
 export const removeSong = memberId => dispatch => (
