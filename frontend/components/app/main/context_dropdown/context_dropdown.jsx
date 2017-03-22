@@ -4,6 +4,7 @@ import Modal from 'react-modal';
 class ContextDropdown extends React.Component {
   constructor(props) {
     super(props);
+    this.getParent = this.getParent.bind(this);
   }
 
   handleDelete(e) {
@@ -18,7 +19,7 @@ class ContextDropdown extends React.Component {
   }
 
    getParent() {
-    return document.querySelector('#btn-context');
+    return document.querySelector(`#${this.props.parentEl}`);
   }
 
   render() {
@@ -27,7 +28,7 @@ class ContextDropdown extends React.Component {
     return (
       <Modal
         isOpen={isOpen}
-        arentSelector={getParent}
+        parentSelector={this.getParent}
         onRequestClose={closeDropdown}
         className={`context-dropdown-modal ${this.dropdownShown()}`}
         overlayClassName={`context-dropdown-overlay ${this.dropdownShown()}`}
