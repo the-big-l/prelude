@@ -8,7 +8,7 @@ class Api::PlaylistsController < ApplicationController
     @playlist.user = current_user
 
     if @playlist.save
-      render json: @playlist
+      render :show
     else
       render json: @playlist.errors.full_messages, status: 422
     end
@@ -19,6 +19,13 @@ class Api::PlaylistsController < ApplicationController
   end
 
   def update
+    @playlist = Playlist.includes(:user, songs: [:artist, :album]).find(params[:id])
+
+    if @playlist.update(playlist_params)
+      render :show
+    else
+      render json: @playlist.errors.full_messages, status: 422
+    end
   end
 
   def destroy
