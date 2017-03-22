@@ -35,12 +35,13 @@ class SongListIndexItem extends React.Component {
       return (
         <SongContextDropdownContainer
           parentEl={`btn-context-${this.props.idx}`}
-          closeDropdown={this.closeContextDropdown}
+          closeContextDropdown={this.closeContextDropdown}
           dropdownIsShown={this.state.dropdownIsShown}
           songId={this.props.song.id}
           isOpen={this.state.dropdownIsOpen}
           listItem={this.props.listItem}
           deleteId={this.props.listItem.member_id}
+          type={this.props.type}
         />
       );
     }
