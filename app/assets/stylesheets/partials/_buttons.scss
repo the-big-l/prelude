@@ -39,6 +39,11 @@ form.playlist-form-box button {
     }
 }
 
+
+button#btn-context-playlist-billboard {
+  padding: 0 14px;
+}
+
 div.welcome-screen button.guest {
   background-color: $lighter-green;
   border-color: $lighter-green;
