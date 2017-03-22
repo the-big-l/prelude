@@ -12,11 +12,13 @@ class Api::PlaylistMembersController < ApplicationController
   def destroy
     @playlist_member = PlaylistMember.find(params[:id])
     if @playlist_member.destroy
-      render json: @playlist_member
+      render json: @playlist_member, status: 200
     else
       render json: @playlist_member.errors.full_messages, status: 404
     end
   end
+
+  private
 
   def playlist_member_params
     params.require(:playlist_member).permit(:song_id, :playlist_id)

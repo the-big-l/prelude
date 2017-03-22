@@ -21,6 +21,17 @@ class Api::PlaylistsController < ApplicationController
   def update
   end
 
+  def destroy
+    @playlist = Playlist.find(params[:id])
+    if @playlist.destroy
+      render json: @playlist, status: 200
+    else
+      render json: @playlist.errors.full_messages, status: 404
+    end
+  end
+
+  private
+
   def playlist_params
     params.require(:playlist).permit(:name, :description)
   end
