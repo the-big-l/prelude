@@ -28,4 +28,11 @@ export const sendPlaylistMember = (playlist_member) => {
   });
 };
 
+export const deletePlaylistMember = member => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `api/playlist_members/${member.id}`
+  })
+};
+
 export const doNothing = () => {};
