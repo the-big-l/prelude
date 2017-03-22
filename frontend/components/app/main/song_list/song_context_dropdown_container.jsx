@@ -10,7 +10,8 @@ const mapStateToProps = (state, ownProps) => ({
   isShown: ownProps.dropdownIsShown,
   parentEl: ownProps.parentEl,
   listItem: ownProps.listItem,
-  type: ownProps.type
+  type: ownProps.type,
+  isSong: true
 });
 
 const mapDispatchToProps = dispatch => ({

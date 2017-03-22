@@ -25,7 +25,12 @@ class ContextDropdown extends React.Component {
 
   isPlaylist() {
     if (this.props.type === "playlist") {
-      return (<li onClick={this.handleDelete}>Delete</li>);
+      return (
+        <ul>
+          {this.props.isSong ? null : <li>Update</li>}
+          <li onClick={this.handleDelete}>Delete</li>
+        </ul>
+      );
     } else {
       return (<li onClick={this.props.closeDropdown}>{'no-op'}</li>);
     }
@@ -53,9 +58,7 @@ class ContextDropdown extends React.Component {
         style={customStyle}
         contentLabel="Modal">
         <div className="context-dropdown">
-          <ul>
-            {this.isPlaylist()}
-          </ul>
+          {this.isPlaylist()}
         </div>
       </Modal>
     );

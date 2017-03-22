@@ -9,7 +9,8 @@ const mapStateToProps = ({currentPlaylist}, ownProps) => ({
   isOpen: ownProps.isOpen,
   parentEl: ownProps.parentEl,
   type: 'playlist',
-  currentPlaylist
+  currentPlaylist,
+  isSong: false
 });
 
 const mapDispatchToProps = dispatch => ({
