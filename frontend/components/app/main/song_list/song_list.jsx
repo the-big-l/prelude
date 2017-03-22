@@ -16,8 +16,6 @@ class SongList extends React.Component {
     if (this.props.params.id !== nextProps.params.id) {
       this.props.requestSongs(nextProps.params.id);
     }
-    console.log('song list');
-    console.log(this.props.songList);
   }
 
   params() {
