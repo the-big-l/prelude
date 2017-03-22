@@ -5,13 +5,13 @@ class ContextDropdown extends React.Component {
   constructor(props) {
     super(props);
     this.getParent = this.getParent.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   handleDelete(e) {
     e.preventDefault();
     const playlist = this.state;
-    this.props.handleDelete(this.props.deleteId)
-      .then(() => this.props.closeDropdown());
+    this.props.deleteFunction(this.props.deleteId);
   }
 
   dropdownShown() {
@@ -20,6 +20,14 @@ class ContextDropdown extends React.Component {
 
    getParent() {
     return document.querySelector(`#${this.props.parentEl}`);
+  }
+
+  isPlaylist() {
+    if (this.props.type === "playlist") {
+      return (<li onClick={this.handleDelete}>Delete</li>);
+    } else {
+      return (<li onClick={this.props.closeDropdown}>{'no-op'}</li>);
+    }
   }
 
   render() {
@@ -40,13 +48,13 @@ class ContextDropdown extends React.Component {
         isOpen={isOpen}
         parentSelector={this.getParent}
         onRequestClose={closeDropdown}
-        className={`context-dropdown-modal ${this.dropdownShown()}`}
-        overlayClassName={`context-dropdown-overlay ${this.dropdownShown()}`}
+        className={`context-dropdown-modal ${this.props.dropdownShown}`}
+        overlayClassName={`context-dropdown-overlay ${this.props.dropdownShown}`}
         style={customStyle}
         contentLabel="Modal">
         <div className="context-dropdown">
           <ul>
-            <li onClick={this.handleDelete}>Delete</li>
+            {this.isPlaylist()}
           </ul>
         </div>
       </Modal>
