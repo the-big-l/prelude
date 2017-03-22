@@ -41,7 +41,7 @@ input[type=range]::-webkit-slider-runnable-track {
   height: 5px;
   cursor: pointer;
   animate: 0.2s;
-  background: $lightest-grey;
+  background: $text-light-grey;
   border-radius: 100px;
 }
 
@@ -50,7 +50,7 @@ input[type=range]::-moz-range-track {
   height: 5px;
   cursor: pointer;
   animate: 0.2s;
-  background: $lightest-grey;
+  background: $text-light-grey;
   border-radius: 100px;
 }
 
@@ -64,10 +64,10 @@ input[type=range]::-ms-track {
   color: transparent;
 }
 input[type=range]::-ms-fill-lower {
-  background: $lightest-grey;
+  background: $text-light-grey;
   border-radius: 100px;
 }
 input[type=range]::-ms-fill-upper {
-  background: $lightest-grey;
+  background: $text-light-grey;
   border-radius: 100px;
 }
