@@ -10,8 +10,8 @@ class SongListIndex extends React.Component {
     const { listItems } = this.props;
     const songs = listItems.map((listItem, idx) => (
       <SongListIndexItem
-        key={listItem.song.id}
-        idx={idx}
+        key={listItem.song.id.toString() + idx.toString()}
+        idx={listItem.song.id.toString() + idx.toString()}
         song={listItem.song}
         order={idx + 1}
         listItem={listItem}
