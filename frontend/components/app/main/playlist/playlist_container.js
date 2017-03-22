@@ -8,7 +8,8 @@ const mapStateToProps = ({currentPlaylist, listItems}, ownProps) => ({
   description: currentPlaylist.description,
   title: currentPlaylist.name,
   type: 'playlist',
-  author: currentPlaylist.author
+  author: currentPlaylist.author,
+  currentPlaylist
 });
 
 const mapDispatchToProps = dispatch => ({
