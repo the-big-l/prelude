@@ -2,15 +2,18 @@ import { connect } from 'react-redux';
 import PlaylistForm from './playlist_form';
 import { createPlaylist } from '../../../actions/playlist_actions';
 
-const mapStateToProps = (state, {closeFormModal, isFormShown, isOpen}) => ({
+const mapStateToProps = ({currentPlaylist}, {closeFormModal, isFormShown, isOpen}) => ({
   closeFormModal,
   isFormShown,
   isOpen,
-  errors: state.currentPlaylist.errors
+  titleText: 'Create Playlist',
+  submitText: 'Create',
+  initialState: {name: '', description: '', id: null},
+  errors: currentPlaylist.errors
 });
 
 const mapDispatchToProps = dispatch => ({
-  createPlaylist: playlist => dispatch(createPlaylist(playlist))
+  submitFunction: playlist => dispatch(createPlaylist(playlist))
 });
 
 export default connect(
