@@ -28,12 +28,12 @@ class SongList extends React.Component {
 
   handlePlay(e) {
     e.preventDefault();
-    this.props.replaceQueue(this.props.songList);
+    this.props.replaceQueue(this.props.listItems);
   }
 
   render() {
     const isPlaylist = false;
-    const {description, songList, title, type, author } = this.props;
+    const {description, listItems, title, type, author } = this.props;
 
     return (
       <div className='song-list'>
@@ -43,14 +43,14 @@ class SongList extends React.Component {
             title={title}
             subTitle={description}
             author={author}
-            count={songList.length}
+            count={listItems.length}
             />
         </header>
         <div className='play-follow'>
           <button onClick={this.handlePlay} className='play'>Play</button>
           {this.isPlaylist() ? <button>Follow</button> : null}
         </div>
-        <SongListIndex songList={this.props.songList} />
+        <SongListIndex listItems={this.props.listItems} />
       </div>
     );
   }

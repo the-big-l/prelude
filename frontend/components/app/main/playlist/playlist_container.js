@@ -3,8 +3,8 @@ import SongList from '../song_list/song_list';
 import { requestPlaylist } from '../../../../actions/playlist_actions';
 import {replaceQueue} from '../../../../actions/player_actions';
 
-const mapStateToProps = ({currentPlaylist, songList}, ownProps) => ({
-  songList: songList,
+const mapStateToProps = ({currentPlaylist, listItems}, ownProps) => ({
+  listItems,
   description: currentPlaylist.description,
   title: currentPlaylist.name,
   type: 'playlist',

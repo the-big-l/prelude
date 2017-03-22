@@ -33,6 +33,7 @@ class SongListIndexItem extends React.Component {
           dropdownIsShown={this.state.dropdownIsShown}
           songId={this.props.song.id}
           isOpen={this.state.dropdownIsOpen}
+          listItem={this.props.listItem}
         />
       );
     }
@@ -49,7 +50,7 @@ class SongListIndexItem extends React.Component {
   }
 
   render() {
-    const {song: {title, artist, album}} = this.props;
+    const {listItem: {song}} = this.props;
 
     return (
       <tr className='song-list-index_item'>
@@ -62,10 +63,10 @@ class SongListIndexItem extends React.Component {
             {this.renderAddPlaylist()}
           </div>
         </td>
-        <td><div>{this.props.trackNo}</div></td>
-        <td><div className='song'>{title}</div></td>
-        <td><div>{artist}</div></td>
-        <td><div>{album}</div></td>
+        <td><div>{this.props.order}</div></td>
+        <td><div className='song'>{song.title}</div></td>
+        <td><div>{song.artist}</div></td>
+        <td><div>{song.album}</div></td>
         <td>
           <button className='context-btn-wrapper'>{'...'}{this.renderContextDropdown()}</button>
         </td>
