@@ -8,7 +8,7 @@ import {
   import App from './app';
   import WelcomeScreenContainer from './welcome/welcome_screen_container';
   import SongListContainer from './app/main/song_list/song_list_container';
-  import MainContentContainer from './app/main/main_content_container';
+  import UserIndexContainer from './app/main/user_index_container';
   import PlaylistContainer from './app/main/playlist/playlist_container';
 
 const Root = (props) => {
@@ -30,7 +30,7 @@ const Root = (props) => {
       <Router history={hashHistory}>
         <Route path="/" onEnter={_ensureLoggedIn} component={App}>
           <Route path='/songs' component={SongListContainer} />
-          <Route path='/main' component={MainContentContainer} />
+          <Route path='/users' component={UserIndexContainer} />
           <Route path='/playlists/:id' component={PlaylistContainer} />
         </Route>
         <Route
