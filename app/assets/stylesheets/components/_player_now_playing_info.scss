@@ -37,7 +37,7 @@ div#now-playing .song-info:after {
   width: 100%;
   content: '';
   // bad on safari :(
-  // background: linear-gradient(to right, rgba(0,0,0,0) 85%, $lighter-grey 100%);
+  // background: linear-gradient(to right, rgba(0,0,0,0) 85%, $background-lighter-grey 100%);
   pointer-events: none;
 }
 
@@ -60,7 +60,7 @@ div#now-playing .song-info .song-title:hover {
 }
 
 div#now-playing .song-info .artist-name {
-  color: $lightest-grey;
+  color: $text-light-grey;
   font-size: 13px;
   white-space: nowrap;
   width: 140px;

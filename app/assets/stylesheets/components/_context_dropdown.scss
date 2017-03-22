@@ -19,8 +19,8 @@
   outline: none;
   padding: 8px;
   font-family: $prelude-font;
-  color: $lightest-grey;
-  background-color: $lighter-grey;
+  color: $text-light-grey;
+  background-color: $background-lighter-grey;
   box-sizing: border-box;
   border-radius: 0px;
   box-shadow: 0px 0px 6px 1px black;
@@ -41,7 +41,7 @@
       cursor: pointer;
 
       &:hover {
-        background-color: $lighter-grey;
+        background-color: $background-lightest-grey;
       }
     }
   }

@@ -1,6 +1,6 @@
 div#app #main-nav {
   background-color: $black;
-  color: $lightest-grey;
+  color: $text-light-grey;
   flex: 0 0 200px;
   display: flex;
   flex-direction: column;
@@ -30,7 +30,7 @@ div#app #main-nav {
       margin-right: 8px;
       width: 25px;
       height: 25px;
-      border: 1.5px solid $lightest-grey;
+      border: 1.5px solid $text-light-grey;
       border-radius: 100px;
       background-position: center;
       background-size: 50%;

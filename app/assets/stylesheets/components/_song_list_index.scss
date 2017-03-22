@@ -6,7 +6,7 @@ div.song-list-index {
     margin-bottom: 28px;
 
     thead {
-      color: $lightest-grey;
+      color: $text-light-grey;
       text-transform: uppercase;
       font-size: 12px;
     }
@@ -30,7 +30,7 @@ div.song-list-index {
 
     tbody {
       tr:hover {
-        background-color: $lighter-grey;
+        background-color: $background-lighter-grey;
       }
     }
 
