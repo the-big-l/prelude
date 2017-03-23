@@ -17,11 +17,11 @@ div#app #main-nav {
     padding: 4px 16px;
 
     &:hover {
-      color: $light-white;
+      color: $text-light-white;
       cursor: pointer;
 
       .plus-icon {
-        border: 1.5px solid $light-white;
+        border: 1.5px solid $text-light-white;
         background-image: url(asset_path('add-plus-button-white.svg'));
       }
     }

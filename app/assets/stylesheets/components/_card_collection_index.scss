@@ -1,0 +1,26 @@
+.cc-index {
+  .cc-wrapper {
+    background: $background-light-grey;
+  }
+
+  header.cc-index-header {
+    display: flex;
+    align-items: flex-end;
+    box-sizing: border-box;
+    padding: 32px 32px 0 32px;
+    height: 140px;
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,000000+100 */
+    background: $background-light-grey; /* Old browsers */
+    background: -moz-linear-gradient(top,  $background-lightest-grey 0%, $background-light-grey 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  $background-lightest-grey 0%,$background-light-grey 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  $background-lightest-grey 0%,$background-light-grey 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+
+    h1 {
+      font-size: 48px;
+      font-weight: bold;
+      color: white;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+.card-collection {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 16px;
+
+  .mc-wrapper {
+    width: 155px;
+    background: $background-lighter-grey;
+    margin: 12px;
+
+    &:hover {
+      background: $background-lightest-grey;
+    }
+  }
+
+  .media-card {
+    padding: 16px;
+    h2 {
+      font-size: 28px;
+      color: $text-light-grey;
+      font-weight: bold;
+    }
+
+    h3 {
+      color: $text-light-white;
+      margin-bottom: 16px;
+    }
+
+    p.footer {
+      color: $text-light-grey;
+      font-size:  14px;
+    }
+  }
+}
