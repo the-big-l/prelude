@@ -6,6 +6,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+# require 'database_cleaner'
+# DatabaseCleaner.strategy = :transaction
+# DatabaseCleaner.clean
+
 albums = [
   {
     artist: 'Ariana Grande',
@@ -691,9 +695,58 @@ albums.each do |seed_album|
   end
 end
 
-guest = User.create(username: 'guest', password: 'password')
-guest_playlist = Playlist.create(name: 'favorites', user: guest)
+guest = User.create(
+  username: 'guest',
+  password: 'password',
+  first_name: 'John',
+  last_name: 'Doe'
+)
+guest_playlist = Playlist.create(
+  name: 'favorites',
+  user: guest,
+  description: 'all the best tracks'
+)
 
-10.times do
-  PlaylistMember.create(playlist: guest_playlist, song_id: rand(Song.count))
+guest_playlist2 = Playlist.create(
+  name: 'morning workout',
+  user: guest,
+  description: 'these will pump you up!!!'
+)
+
+song_count = Song.count
+
+40.times do
+  PlaylistMember.create(playlist: guest_playlist, song_id: rand(song_count))
+end
+
+15.times do
+  PlaylistMember.create(playlist: guest_playlist2, song_id: rand(song_count))
+end
+
+jane_the_main = User.create(
+  username: 'jane_the_main',
+  password: 'password',
+  first_name: 'Jane',
+  last_name: 'Roe'
+)
+jane_playlist = Playlist.create(
+  name: 'relaxing songs',
+  user: jane_the_main,
+  description: 'all the smoothest tunes'
+)
+
+jane_playlist2 = Playlist.create(
+  name: 'morning commute',
+  user: jane_the_main,
+  description: 'spice up your boring ride'
+)
+
+song_count = Song.count
+
+40.times do
+  PlaylistMember.create(playlist: jane_playlist, song_id: rand(song_count))
+end
+
+15.times do
+  PlaylistMember.create(playlist: jane_playlist2, song_id: rand(song_count))
 end
