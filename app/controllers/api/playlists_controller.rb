@@ -15,7 +15,11 @@ class Api::PlaylistsController < ApplicationController
   end
 
   def show
-    @playlist = Playlist.includes(:user, songs: [:artist, :album]).find(params[:id])
+    @playlist = Playlist.includes(
+      :user,
+      :followers,
+      songs: [:artist, :album]
+    ).find(params[:id])
   end
 
   def update
