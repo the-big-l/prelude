@@ -40,8 +40,8 @@ class MainNav extends React.Component {
           <div className='side-list-container'>
             <h4>Browse</h4>
             <ul className='side-list'>
-              <li><Link to='/songs'>Songs</Link></li>
-              <li><Link to='/main'>Main</Link></li>
+              <Link to='/songs'><li>Songs</li></Link>
+              <Link to='/users'><li>Users</li></Link>
             </ul>
           </div>
           <div className='side-list-container'>
