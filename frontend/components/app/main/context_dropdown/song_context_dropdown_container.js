@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ContextDropdown from './context_dropdown';
-import { removeSong } from '../../../../actions/playlist_actions';
+import { removeSong } from '../../../../actions/current_playlist_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   deleteId: ownProps.listItem.member_id,
