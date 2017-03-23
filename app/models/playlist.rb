@@ -18,4 +18,8 @@ class Playlist < ApplicationRecord
   has_many :songs,
     through: :playlist_members,
     source: :song
+  has_many :playlist_follows
+  has_many :followers,
+    through: :playlist_follows,
+    source: :user
 end
