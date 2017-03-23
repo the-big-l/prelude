@@ -10,6 +10,7 @@ import {
   import SongListContainer from './app/main/song_list/song_list_container';
   import UserIndexContainer from './app/main/user_index/user_index_container';
   import PlaylistContainer from './app/main/playlist/playlist_container';
+  import UserProfileContainer from './app/main/user_profile/user_profile_container';
 
 const Root = (props) => {
   const _redirectIfLoggedIn = () => {
@@ -31,6 +32,7 @@ const Root = (props) => {
         <Route path="/" onEnter={_ensureLoggedIn} component={App}>
           <Route path='/songs' component={SongListContainer} />
           <Route path='/users' component={UserIndexContainer} />
+          <Route path='/users/:id' component={UserProfileContainer} />
           <Route path='/playlists/:id' component={PlaylistContainer} />
         </Route>
         <Route
