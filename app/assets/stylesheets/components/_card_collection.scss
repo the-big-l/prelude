@@ -16,14 +16,28 @@
   .media-card {
     padding: 16px;
     h2 {
+      height: 72px;
       font-size: 28px;
       color: $text-light-grey;
       font-weight: bold;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      // below works on webkit browsers
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
     }
 
     h3 {
+      height: 38px;
       color: $text-light-white;
       margin-bottom: 16px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      // below works on webkit browsers
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
     }
 
     p.footer {
