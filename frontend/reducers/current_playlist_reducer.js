@@ -1,4 +1,4 @@
-import { RECEIVE_PLAYLIST, RECEIVE_PLAYLIST_ERRORS } from '../actions/playlist_actions';
+import { RECEIVE_PLAYLIST, RECEIVE_PLAYLIST_ERRORS } from '../actions/current_playlist_actions';
 import merge from 'lodash/merge';
 
 const _nullPlaylist = {
