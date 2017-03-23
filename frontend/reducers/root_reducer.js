@@ -2,7 +2,7 @@ import {combineReducers} from 'redux';
 import sessionReducer from './session_reducer';
 import playerReducer from './player_reducer';
 import songListReducer from './song_list_reducer';
-import userPlaylistReducer from './user_playlist_reducer';
+import userPlaylistsReducer from './user_playlists_reducer';
 import currentPlaylistReducer from './current_playlist_reducer';
 import usersReducer from './users_reducer';
 import playlistFollowReducer from './playlist_follow_reducer';
