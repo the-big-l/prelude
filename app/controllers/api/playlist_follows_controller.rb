@@ -17,7 +17,11 @@ class Api::PlaylistFollowsController < ApplicationController
   end
 
   def destroy
-    @playlist_follow = PlaylistFollow.find(params[:id])
+    @playlist_follow = PlaylistFollow.where(
+      playlist: params[:playlist_id],
+      user: current_user
+    )
+    
     if @playlist_follow.destroy
       render json: @playlist_follow, status: 200
     else
