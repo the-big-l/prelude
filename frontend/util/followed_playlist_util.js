@@ -1,7 +1,7 @@
-export const fetchFollowedPlaylists = () => {
+export const fetchFollowedPlaylists = userId => {
   return $.ajax({
     method: 'GET',
-    url: '/api/playlist_follows'
+    url: `/api/playlist_follows?user=${userId}`
   });
 };
 
@@ -13,9 +13,9 @@ export const sendPlaylistFollow = playlistFollow => {
   });
 };
 
-export const deletePlaylistFollow = playlistFollowId => {
+export const deletePlaylistFollow = playlistId => {
   return $.ajax({
     method: 'DELETE',
-    url: `/api/playlist_follows/${playlistFollowId}`
+    url: `/api/playlist_follows?playlist=${playlistId}`
   });
 };
