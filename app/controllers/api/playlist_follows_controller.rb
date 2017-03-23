@@ -18,14 +18,15 @@ class Api::PlaylistFollowsController < ApplicationController
 
   def destroy
     @playlist_follow = PlaylistFollow.where(
-      playlist: params[:playlist_id],
+      playlist_id: params[:playlist],
       user: current_user
-    )
-    
-    if @playlist_follow.destroy
+    ).first
+
+    if @playlist_follow
+      @playlist_follow.destroy
       render json: @playlist_follow, status: 200
     else
-      render json: @playlist_follow.errors.full_messages, status: 404
+      render json: ['must currently be following'], status: 404
     end
   end
 
