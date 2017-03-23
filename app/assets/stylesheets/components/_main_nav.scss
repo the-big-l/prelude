@@ -1,10 +1,14 @@
-div#app #main-nav {
+div#main-nav {
   background-color: $black;
   color: $text-light-grey;
   flex: 0 0 200px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  .list-holder {
+    overflow-y: scroll;
+  }
 
   aside.new-playlist-btn-container {
     display: flex;
