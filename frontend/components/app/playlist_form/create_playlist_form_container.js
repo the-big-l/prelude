@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import PlaylistForm from './playlist_form';
-import { createPlaylist } from '../../../actions/playlist_actions';
+import { createPlaylist } from '../../../actions/current_playlist_actions';
 
 const mapStateToProps = ({currentPlaylist}, {closeFormModal, isFormShown, isOpen}) => ({
   closeFormModal,
