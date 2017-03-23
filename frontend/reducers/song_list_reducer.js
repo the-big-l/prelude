@@ -1,5 +1,5 @@
 import { POPULATE_SONG_LIST } from '../actions/song_list_actions';
-import { REMOVE_SONG, ADD_TO_LIST } from '../actions/playlist_actions';
+import { REMOVE_SONG, ADD_TO_LIST } from '../actions/current_playlist_actions';
 
 const _emptySongList = [];
 
