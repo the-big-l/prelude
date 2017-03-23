@@ -5,12 +5,12 @@ export const fetchFollowedPlaylists = userId => {
   });
 };
 
-export const sendPlaylistFollow = playlistFollow => {
+export const sendPlaylistFollow = playlistId => {
   return $.ajax({
     method: 'POST',
     url: '/api/playlist_follows',
     // playlistFollow: {playlist_id: 1}
-    data: playlistFollow
+    data: {playlist_follow: {playlist_id: playlistId}}
   });
 };
 
