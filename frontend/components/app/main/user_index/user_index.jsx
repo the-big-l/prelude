@@ -6,6 +6,10 @@ class UserIndex extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    this.props.requestCollection();
+  }
+
   render() {
     return (
       <div className='cc-index'>
