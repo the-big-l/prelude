@@ -1,32 +1,36 @@
 import React from 'react';
 import ListBillboard from '../list_billboard/list_billboard';
-import PlaylistCardCollectionContainer from './PlaylistCardCollectionContainer';
+import PlaylistCardCollectionContainer from '../card_collection/playlist_card_collection_container';
 
 class UserProfile extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {isOpen: false}
-    this.handlePlay = this.handlePlay.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.requestCollection(this.props.params.id);
   }
 
   render() {
-    const isPlaylist = false;
-    // const {description, listItems, title, type, author } = this.props;
+    const {lbInfo} = this.props;
+    const {type, title, subTitle, footer} = lbInfo;
 
     return (
       <div className='user-index'>
         <header className='index-header'>
           <ListBillboard
-            type={'User'}
-            title={`${firstName} ${lastName}`}
-            subTitle={description}
-            footer={`Joined in Jan 2017`}
+            type={type}
+            title={title}
+            subTitle={subTitle}
+            footer={footer}
             />
         </header>
         <div className='play-follow'>
           <button>Follow</button>
         </div>
-        <div>playlists go here</div>
+        <div className='cc-wrapper'>
+          <PlaylistCardCollectionContainer />
+        </div>
       </div>
     );
   }
