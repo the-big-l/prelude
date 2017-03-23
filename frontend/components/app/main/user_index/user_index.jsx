@@ -14,7 +14,7 @@ class UserIndex extends React.Component {
     return (
       <div className='cc-index'>
         <header className='cc-index-header'>
-          <h1>Users</h1>
+          <h1>Users</h1>{/*this could be passed down as a prop*/}
         </header>
         <div className='cc-wrapper'>
           <UserCardCollectionContainer />
