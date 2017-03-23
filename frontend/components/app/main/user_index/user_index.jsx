@@ -1,4 +1,5 @@
 import React from 'react';
+import UserCardCollectionContainer from '../card_collection/user_card_collection_container';
 
 class UserIndex extends React.Component {
   constructor(props) {
@@ -7,8 +8,13 @@ class UserIndex extends React.Component {
 
   render() {
     return (
-      <div className='user-index'>
-        <h1>content goes here</h1>
+      <div className='cc-index'>
+        <header className='cc-index-header'>
+          <h1>Users</h1>
+        </header>
+        <div className='cc-wrapper'>
+          <UserCardCollectionContainer />
+        </div>
       </div>
     );
   }

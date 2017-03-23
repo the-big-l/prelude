@@ -8,7 +8,7 @@ const mapStateToProps = ({currentPlaylist, listItems}, ownProps) => ({
   description: currentPlaylist.description,
   title: currentPlaylist.name,
   type: 'playlist',
-  author: currentPlaylist.author,
+  footer: `Created by: ${currentPlaylist.author} · ${listItems.length} songs`,
   currentPlaylist
 });
 
