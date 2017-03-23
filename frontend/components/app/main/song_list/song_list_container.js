@@ -9,7 +9,7 @@ const mapStateToProps = ({listItems, currentPlaylist}) => ({
   title: 'SONGS',
   type: 'browse',
   currentPlaylist,
-  author: 'Prelude'
+  footer: `Created by: Prelude · ${listItems.length} songs`
 });
 
 const mapDispatchToProps = dispatch => ({
