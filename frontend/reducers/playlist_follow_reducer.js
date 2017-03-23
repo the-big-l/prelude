@@ -1,8 +1,8 @@
-import { RECEIVE_FOLLOWED_PLAYLISTS } from '../actions/followed_playlist_actions';
+import { RECEIVE_FOLLOWED_PLAYLISTS } from '../actions/playlist_follow_actions';
 
 const _emptyList = [];
 
-const followedPlaylistReducer = (state = _emptyList, action) => {
+const playlist_follow_reducer = (state = _emptyList, action) => {
   Object.freeze(state)
   switch(action.type) {
     case RECEIVE_FOLLOWED_PLAYLISTS:
@@ -12,4 +12,4 @@ const followedPlaylistReducer = (state = _emptyList, action) => {
   }
 };
 
-export default followedPlaylistReducer;
+export default playlist_follow_reducer;

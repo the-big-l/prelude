@@ -9,6 +9,7 @@ export const sendPlaylistFollow = playlistFollow => {
   return $.ajax({
     method: 'POST',
     url: '/api/playlist_follows',
+    // playlistFollow: {playlist_id: 1}
     data: playlistFollow
   });
 };
