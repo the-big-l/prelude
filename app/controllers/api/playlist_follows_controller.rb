@@ -6,25 +6,31 @@ class Api::PlaylistFollowsController < ApplicationController
   end
 
   def create
-    @playlist_follow = PlaylistFollow.new(follow_params)
-    @playlist_follow.user = current_user
+    playlist_follow = PlaylistFollow
+                      .includes(playlist: [songs: [:artist, :album]])
+                      .new(follow_params)
+    playlist_follow.user = current_user
 
-    if @playlist_follow.save
-      render json: @playlist_follow
+    if playlist_follow.save
+      @playlist = playlist_follow.playlist
+      render 'api/playlists/show'
     else
-      render json: @playlist_follow.errors.full_messages, status: 422
+      render json: playlist_follow.errors.full_messages, status: 422
     end
   end
 
   def destroy
-    @playlist_follow = PlaylistFollow.where(
-      playlist_id: params[:playlist],
-      user: current_user
-    ).first
+    playlist_follow = PlaylistFollow
+                      .includes(playlist: [songs: [:artist, :album]])
+                      .where(
+                        playlist_id: params[:playlist],
+                        user: current_user
+                      ).first
 
-    if @playlist_follow
-      @playlist_follow.destroy
-      render json: @playlist_follow, status: 200
+    if playlist_follow
+      @playlist = playlist_follow.playlist
+      playlist_follow.destroy
+      render 'api/playlists/show'
     else
       render json: ['must currently be following'], status: 404
     end
