@@ -730,9 +730,9 @@ jane_the_main = User.create(
   last_name: 'Roe'
 )
 jane_playlist = Playlist.create(
-  name: 'relaxing songs',
+  name: 'relaxing songs to make you feel good',
   user: jane_the_main,
-  description: 'all the smoothest tunes'
+  description: "all the smoothest tunes to relax to while you have free time and aren't busy"
 )
 
 jane_playlist2 = Playlist.create(
