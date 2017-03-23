@@ -1,6 +1,6 @@
 class Api::PlaylistsController < ApplicationController
   def index
-    @playlists = Playlist.where(user_id: params[:user])
+    @playlists = Playlist.includes(:songs).where(user_id: params[:user])
   end
 
   def create
