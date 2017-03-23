@@ -16,18 +16,18 @@ class UserProfile extends React.Component {
     const {type, title, subTitle, footer} = lbInfo;
 
     return (
-      <div className='user-index'>
-        <header className='index-header'>
+      <div className='cc-profile'>
+        <header className='cc-profile-header'>
           <ListBillboard
             type={type}
             title={title}
             subTitle={subTitle}
             footer={footer}
             />
+          <div className='play-follow'>
+            <button>Follow</button>
+          </div>
         </header>
-        <div className='play-follow'>
-          <button>Follow</button>
-        </div>
         <div className='cc-wrapper'>
           <PlaylistCardCollectionContainer />
         </div>
