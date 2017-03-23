@@ -32,7 +32,7 @@ class UserProfile extends React.Component {
           {/*better to be in cc w/ props passed down to it?*/}
           <div className='cc-header'>
             <ul className='cc-tabs'>
-              <li>Playlists</li>
+              <li className='select'>Playlists</li>
             </ul>
           </div>
           <PlaylistCardCollectionContainer />
