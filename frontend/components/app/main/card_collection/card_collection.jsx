@@ -7,14 +7,17 @@ class UserIndex extends React.Component {
   }
 
   render() {
-    const collectionItems = this.props;
+    const {collectionItems} = this.props;
     const cards = collectionItems.map(item => (
-      <MediaCard
-        title={item.title}
-        subtitle={item.subtitle}
-        mediaInfo={item.mediaInfo}
-        footer={item.footer}>
-      </MediaCard>
+      <div className='mc-wrapper' key={item.id}>
+        <MediaCard
+          title={item.title}
+          subtitle={item.subtitle}
+          mediaInfo={item.mediaInfo}
+          footer={item.footer}
+          showPath={item.showPath}>
+        </MediaCard>
+      </div>
     ))
 
     return (
