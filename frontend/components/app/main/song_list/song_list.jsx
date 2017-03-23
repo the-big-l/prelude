@@ -10,6 +10,7 @@ class SongList extends React.Component {
     this.handlePlay = this.handlePlay.bind(this);
     this.closeDropdown = this.closeDropdown.bind(this);
     this.openDropdown = this.openDropdown.bind(this);
+    this.followHandler = this.followHandler.bind(this);
   }
 
   componentWillMount() {
@@ -26,10 +27,6 @@ class SongList extends React.Component {
     if (this.props.params.id) return this.props.params.id;
   }
 
-  isPlaylist() {
-    return this.props.type === 'playlist';
-  }
-
   handlePlay(e) {
     e.preventDefault();
     this.props.replaceQueue(this.props.listItems);
@@ -41,6 +38,39 @@ class SongList extends React.Component {
 
   openDropdown() {
     this.setState({isOpen: true});
+  }
+
+  followHandler(e) {
+    e.preventDefault();
+
+    if (this.props.currentPlaylist.following) {
+      this.props.unfollowHandler(this.props.currentPlaylist.id);
+    } else {
+      this.props.followHandler(this.props.currentPlaylist.id);
+    }
+  }
+
+  renderFollowButton() {
+    if (this.props.type === 'playlist') {
+      return (
+        <button
+          onClick={this.followHandler}>
+          {this.props.currentPlaylist.following ? 'unfollow' : 'follow'}
+        </button>
+      );
+    }
+  }
+
+  renderContextButton() {
+    if (this.props.type === 'playlist') {
+      return (
+        <button
+          id={'btn-context-playlist-billboard'}
+          onClick={this.openDropdown}>
+          {'...'}
+        </button>
+      );
+    }
   }
 
   renderContextDropdown() {
@@ -71,8 +101,8 @@ class SongList extends React.Component {
         </header>
         <div className='play-follow'>
           <button onClick={this.handlePlay} className='play'>Play</button>
-          {this.isPlaylist() ? <button>Follow</button> : null}
-          {this.isPlaylist() ? <button id={'btn-context-playlist-billboard'} onClick={this.openDropdown}>{'...'}</button> : null}
+          {this.renderFollowButton()}
+          {this.renderContextButton()}
         </div>
         {this.renderContextDropdown()}
         <SongListIndex listItems={this.props.listItems} type={type}/>
