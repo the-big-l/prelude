@@ -2,7 +2,7 @@ import { RECEIVE_PLAYLISTS } from '../actions/playlist_actions';
 
 const _emptyPlaylists = [];
 
-const playlistReducer = (state = _emptyPlaylists, action) => {
+const userPlaylistsReducer = (state = _emptyPlaylists, action) => {
   Object.freeze(state)
   switch(action.type) {
     case RECEIVE_PLAYLISTS:
@@ -12,4 +12,4 @@ const playlistReducer = (state = _emptyPlaylists, action) => {
   }
 };
 
-export default playlistReducer;
+export default userPlaylistsReducer;
