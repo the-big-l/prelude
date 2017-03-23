@@ -3,7 +3,13 @@ import merge from 'lodash/merge';
 
 const _defaultUsers = {
   users: [],
-  currentUser: null
+  currentUser: {
+    first_name: 'loading',
+    last_name: 'loading',
+    id: 1,
+    created_at: 'loading',
+    playlist_count: 0
+  }
 };
 
 const usersReducer = (state = _defaultUsers, action) => {
