@@ -6,7 +6,7 @@ import Modal from 'react-modal';
 
 // test
 import { requestUsers, requestUser } from './actions/user_actions';
-import { fetchUsers, fetchUser } from './util/user_util';
+import { requestFollowedPlaylists, followPlaylist, unfollowPlaylist } from './actions/playlist_follow_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
@@ -17,8 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
       configureStore();
 
     // Testing
-    window.requestUsers = requestUsers;
-    window.requestUser = requestUser;
+    window.requestFollowedPlaylists = requestFollowedPlaylists;
+    window.followPlaylist = followPlaylist;
+    window.unfollowPlaylist = unfollowPlaylist;
     window.store = store;
 
     ReactDOM.render(<Root store={store} />, root);
