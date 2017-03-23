@@ -16,6 +16,6 @@ export const sendPlaylistFollow = playlistFollow => {
 export const deletePlaylistFollow = playlistId => {
   return $.ajax({
     method: 'DELETE',
-    url: `/api/playlist_follows?playlist=${playlistId}`
+    url: `/api/playlist_follows/-1?playlist=${playlistId}`
   });
 };
