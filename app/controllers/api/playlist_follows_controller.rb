@@ -1,14 +1,16 @@
 class Api::PlaylistFollowsController < ApplicationController
   def index
-    @playlist_follows = PlaylistFollow.includes(:playlists).where(user_id: params[:user])
+    @playlist_follows = PlaylistFollow
+                        .includes(:playlist)
+                        .where(user_id: params[:user])
   end
 
   def create
-    @playlist_follow = PlaylistFollow.new(playlist_follow_params)
+    @playlist_follow = PlaylistFollow.new(follow_params)
     @playlist_follow.user = current_user
 
     if @playlist_follow.save
-      render :show
+      render json: @playlist_follow
     else
       render json: @playlist_follow.errors.full_messages, status: 422
     end
@@ -21,5 +23,11 @@ class Api::PlaylistFollowsController < ApplicationController
     else
       render json: @playlist_follow.errors.full_messages, status: 404
     end
+  end
+
+  private
+
+  def follow_params
+    params.require(:playlist_follow).permit(:playlist_id)
   end
 end
