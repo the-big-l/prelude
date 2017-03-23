@@ -1,4 +1,4 @@
-import { RECEIVE_PLAYLISTS } from '../actions/playlist_actions';
+import { RECEIVE_PLAYLISTS } from '../actions/current_playlist_actions';
 
 const _emptyPlaylists = [];
 
