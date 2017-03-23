@@ -13,8 +13,7 @@ const mapStateToProps = ({userPlaylists, session}, ownProps) => ({
 
 const mapDispatchToProps = dispatch => ({
   requestUserPlaylists: user => dispatch(requestUserPlaylists(user)),
-  addToPlaylist: playlistMember => dispatch(addToPlaylist(playlistMember)),
-  followHandler: playlistId => dispatch(followPlaylist(playlistId))
+  addToPlaylist: playlistMember => dispatch(addToPlaylist(playlistMember))
 });
 
 export default connect(
