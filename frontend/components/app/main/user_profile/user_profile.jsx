@@ -29,6 +29,12 @@ class UserProfile extends React.Component {
           </div>
         </header>
         <div className='cc-wrapper'>
+          {/*better to be in cc w/ props passed down to it?*/}
+          <div className='cc-header'>
+            <ul className='cc-tabs'>
+              <li>Playlists</li>
+            </ul>
+          </div>
           <PlaylistCardCollectionContainer />
         </div>
       </div>
