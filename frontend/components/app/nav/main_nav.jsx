@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router';
 import CreatePlaylistFormContainer from '../playlist_form/create_playlist_form_container';
+import PlaylistBrowseIndexContainer from './browse_index/playlist_browse_index_container';
+import NavBrowseIndexContainer from './browse_index/nav_browse_index_container';
 
 class MainNav extends React.Component {
   constructor(props) {
@@ -36,19 +38,12 @@ class MainNav extends React.Component {
 
     return (
       <div id='main-nav'>
-        <div className='list-holder'>
-          <div className='side-list-container'>
-            <h4>Browse</h4>
-            <ul className='side-list'>
-              <Link to='/songs'><li>Songs</li></Link>
-              <Link to='/users'><li>Users</li></Link>
-            </ul>
+        <div className='bi-container'>
+          <div className='bi-wrapper'>
+            <NavBrowseIndexContainer />
           </div>
-          <div className='side-list-container'>
-            <h4>Playlists</h4>
-            <ul className='side-list'>
-              {playlists}
-            </ul>
+          <div className='bi-wrapper'>
+            <PlaylistBrowseIndexContainer />
           </div>
         </div>
         <aside
