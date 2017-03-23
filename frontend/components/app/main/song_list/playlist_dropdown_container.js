@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import PlaylistDropdown from './playlist_dropdown';
-import { addToPlaylist, requestUserPlaylists } from '../../../../actions/playlist_actions';
+import { addToPlaylist, requestUserPlaylists } from '../../../../actions/current_playlist_actions';
 
 const mapStateToProps = ({userPlaylists, session}, ownProps) => ({
   userPlaylists,
@@ -13,7 +13,8 @@ const mapStateToProps = ({userPlaylists, session}, ownProps) => ({
 
 const mapDispatchToProps = dispatch => ({
   requestUserPlaylists: user => dispatch(requestUserPlaylists(user)),
-  addToPlaylist: playlistMember => dispatch(addToPlaylist(playlistMember))
+  addToPlaylist: playlistMember => dispatch(addToPlaylist(playlistMember)),
+  followHandler: playlistId => dispatch(followPlaylist(playlistId))
 });
 
 export default connect(
