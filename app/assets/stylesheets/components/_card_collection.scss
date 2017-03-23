@@ -1,3 +1,28 @@
+.cc-header {
+  padding-left: 32px;
+  color: $text-light-grey;
+
+
+
+  ul.cc-tabs {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    li {
+      border-bottom: 3px solid $light-green;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 14px;
+      padding: 10px;
+
+      &.select {
+        color: $text-light-white;
+      }
+    }
+  }
+}
+
 .card-collection {
   display: flex;
   flex-wrap: wrap;
