@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import MainNav from './main_nav';
-import { requestUserPlaylists } from '../../../actions/playlist_actions';
+import { requestUserPlaylists } from '../../../actions/current_playlist_actions';
 
 const mapStateToProps = ({userPlaylists, session}, ownProps) => ({
   userPlaylists,
