@@ -1,5 +1,5 @@
 import React from 'react';
-import ListBillboard from './list_billboard';
+import ListBillboard from '../list_billboard/list_billboard';
 import SongListIndex from './song_list_index';
 import PlaylistContextDropdownContainer from '../context_dropdown/playlist_context_dropdown_container';
 
@@ -57,7 +57,7 @@ class SongList extends React.Component {
 
   render() {
     const isPlaylist = false;
-    const {description, listItems, title, type, author } = this.props;
+    const {description, listItems, title, type, footer } = this.props;
 
     return (
       <div className='song-list'>
@@ -66,8 +66,7 @@ class SongList extends React.Component {
             type={type}
             title={title}
             subTitle={description}
-            author={author}
-            count={listItems.length}
+            footer={footer}
             />
         </header>
         <div className='play-follow'>
