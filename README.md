@@ -1,8 +1,6 @@
 # Prelude
 
-[prelude]: [http://prelude-music.herokuapp.com/]
-
-[Prelude][prelude] is a single page, music application built on a React/Redux frontend and a Ruby on Rails backend. Inspired by Spotify, Prelude allows users to create/edit playlists and browse for new music all while continuously playing music while navigating the site.
+[Prelude](http://prelude-music.herokuapp.com/) is a single page, music application built on a React/Redux frontend and a Ruby on Rails backend. Inspired by Spotify, Prelude allows users to create/edit playlists and browse for new music all while continuously playing music while navigating the site.
 
 ## Features
 
