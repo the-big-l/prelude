@@ -71,7 +71,7 @@ class Player extends React.Component {
       <div id='player'>
         <div id='now-playing'>
           <div className='album-art'>
-            {}
+            <img src={song.album_art_url}></img>
           </div>
           <div className='song-info'>
             <div className='song-title'>{song.title}</div>

@@ -59,6 +59,8 @@ export const requestPlaylist = playlistId => dispatch => (
     .then(res => dispatch(populateSongList(res.playlist.members)))
 );
 
+window.requestPlaylist = requestPlaylist;
+
 export const removeSong = memberId => dispatch => (
   Playlist.deletePlaylistMember(memberId)
     .then(member => dispatch(deletePlaylistMember(member)))
