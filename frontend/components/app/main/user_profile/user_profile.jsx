@@ -8,7 +8,13 @@ class UserProfile extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestCollection(this.props.params.id);
+    this.props.requestCollection(this.getUserId());
+  }
+
+  getUserId() {
+    return this.props.type === 'profile' ?
+      this.props.currentUserId :
+      this.props.params.id
   }
 
   render() {
