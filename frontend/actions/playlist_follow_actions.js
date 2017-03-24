@@ -1,5 +1,4 @@
 import * as FPUtil from '../util/playlist_follow_util';
-import {requestPlaylist} from './current_playlist_actions';
 
 export const RECEIVE_FOLLOWED_PLAYLISTS = 'RECEIVE_FOLLOWED_PLAYLISTS';
 export const RECEIVE_FOLLOWED_PLAYLIST = 'RECEIVE_FOLLOWED_PLAYLIST';
