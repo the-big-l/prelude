@@ -25,7 +25,7 @@ class AppHeader extends React.Component {
       <header className='app-header'>
         <div className='right-nav'>
           <div onClick={this.openModal} className='current-user-info'>
-            <p>{this.props.currentUser.username}</p><button id='pd-btn'>&or;</button>
+            <p>{this.props.currentUser && this.props.currentUser.username}</p><button id='pd-btn'>&or;</button>
           </div>
           <ProfileDropdown
             isOpen={this.state.isOpen}

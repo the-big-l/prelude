@@ -18,7 +18,7 @@ const mapStateToProps = ({session}, ownProps) => {
   return {
     indexItems,
     title: 'browse',
-    currentUserId: session.currentUser.id
+    currentUserId: session.currentUser && session.currentUser.id
   };
 };
 

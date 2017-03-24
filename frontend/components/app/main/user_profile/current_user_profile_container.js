@@ -5,12 +5,12 @@ import {requestUser} from '../../../../actions/user_actions';
 const mapStateToProps = ({session: {currentUser}}) => ({
   lbInfo: {
     type: 'User',
-    footer: `${currentUser.playlist_count} playlists`,
-    title: `${currentUser.first_name} ${currentUser.last_name}`,
-    subTitle: `Joined: ${currentUser.created_at.substring(0, 7)}`
+    footer: `${currentUser && currentUser.playlist_count} playlists`,
+    title: `${currentUser && currentUser.first_name} ${currentUser && currentUser.last_name}`,
+    subTitle: `Joined: ${currentUser && currentUser.created_at.substring(0, 7)}`
   },
   type: 'profile',
-  currentUserId: currentUser.id
+  currentUserId: currentUser && currentUser.id
 });
 
 const mapDispatchToProps = dispatch => ({

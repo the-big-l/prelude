@@ -14,7 +14,7 @@ const mapStateToProps = ({followedPlaylists, session}, ownProps) => {
   return {
     indexItems,
     title: 'playlists',
-    currentUserId: session.currentUser.id
+    currentUserId: session.currentUser && session.currentUser.id
   };
 };
 
