@@ -1,5 +1,5 @@
 import * as FPUtil from '../util/playlist_follow_util';
-import {receivePlaylist} from './current_playlist_actions';
+import {requestPlaylist} from './current_playlist_actions';
 
 export const RECEIVE_FOLLOWED_PLAYLISTS = 'RECEIVE_FOLLOWED_PLAYLISTS';
 export const RECEIVE_FOLLOWED_PLAYLIST = 'RECEIVE_FOLLOWED_PLAYLIST';
@@ -29,11 +29,9 @@ export const requestFollowedPlaylists = userId => dispatch => (
 export const followPlaylist = playlistId => dispatch => (
   FPUtil.sendPlaylistFollow(playlistId)
     .then(playlist => dispatch(receiveFollowedPlaylist(playlist)))
-    .then(res => dispatch(receivePlaylist(res.playlist)))
 );
 
 export const unfollowPlaylist = playlistId => dispatch => (
   FPUtil.deletePlaylistFollow(playlistId)
     .then(playlist => dispatch(removeFollowedPlaylist(playlist)))
-    .then(res => dispatch(receivePlaylist(res.playlist)))
 );
