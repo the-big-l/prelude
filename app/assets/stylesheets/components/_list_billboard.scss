@@ -3,14 +3,14 @@ div.list-billboard {
   flex-direction: row;
   justify-content: flex-start;
   color: $text-light-grey;
+
+  .lb-img {
+    width: 0;
+    height: 140px;
+    // margin-right: 25px;
+  }
 }
 
-div.list-billboard figure.album-art {
-  background-color: blue;
-  width: 140px;
-  height: 140px;
-  margin-right: 25px;
-}
 
 div.list-billboard .media-info {
   display: flex;
