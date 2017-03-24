@@ -9,14 +9,14 @@ export const receiveFollowedPlaylists = followedPlaylists => ({
   followedPlaylists
 });
 
-export const receiveFollowedPlaylist = followedPlaylist => ({
+export const receiveFollowedPlaylist = playlist => ({
   type:RECEIVE_FOLLOWED_PLAYLIST,
-  followedPlaylist
+  playlist
 });
 
-export const removeFollowedPlaylist = followedPlaylist => ({
+export const removeFollowedPlaylist = playlist => ({
   type:REMOVE_FOLLOWED_PLAYLIST,
-  followedPlaylist
+  playlist
 });
 
 // async
