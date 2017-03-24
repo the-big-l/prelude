@@ -13,10 +13,10 @@ const playlistFollowReducer = (state = _emptyList, action) => {
     case RECEIVE_FOLLOWED_PLAYLISTS:
       return action.followedPlaylists;
     case RECEIVE_FOLLOWED_PLAYLIST:
-      newState.push(action.followedPlaylist);
+      newState.push(action.playlist);
       return newState;
     case REMOVE_FOLLOWED_PLAYLIST:
-      return newState.filter(pl => (pl.id !== action.followedPlaylist.id));
+      return newState.filter(pl => (pl.id !== action.playlist.id));
     default:
       return state;
   }
