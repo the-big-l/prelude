@@ -31,6 +31,7 @@ class PlaylistForm extends React.Component {
 
   handleCancel(e) {
     e.preventDefault();
+    this.setState({name: '', description: ''})
     this.props.closeFormModal();
   }
 
