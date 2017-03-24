@@ -1,5 +1,6 @@
 # Prelude
 
+![Prelude User/Playlist show](/docs/screenshots/side-by-side.gif)
 
 [prelude]: [http://prelude-music.herokuapp.com/]
 
@@ -40,7 +41,8 @@ Browse through other user's playlist and add them to your own. Conveniently acce
 
 Prelude utilizes the following technologies:
 
-- Ruby on Rails
+- Ruby
+- Rails
 - jBuilder
 - React.js
 - Redux
@@ -49,7 +51,84 @@ Prelude utilizes the following technologies:
 - AWS S3
 - jQuery
 
+### Rails
+  The Prelude backend employs Ruby on Rails to build a RESTful api in order to uniformly integrate with the frontend. Jbuilder is used format JSON objects to respond to frontend AJAX requests.
 
+### React/Redux
+  React and Redux was used on the frontend to create modular components with easy to use apis and a single source of truth for the apps current state.
+
+  A MediaCard can be used to display users, playlists, or artists.
+  User cards
+  ![user_card](/docs/images/users.png)
+  Playlist cards
+  ![playlist_card](/docs/images/playlists.png)
+
+  ```javascript
+  render() {
+    const {
+      id,
+      title,
+      subtitle,
+      mediaInfo,
+      footer,
+      showPath} = this.props;
+
+    return (
+      <Link to={showPath}>
+        <div className='media-card'>
+          <h2>{title}</h2>
+          <h3>{subtitle}</h3>
+          <p className='footer'>{mediaInfo}</p>
+          <p className='footer'>{footer}</p>
+        </div>
+      </Link>
+    );
+  }
+  ```
+  The playlist form is used for both creating and updating playlists
+
+  On creation a create function is passed in, along with initial state and appropiate text.
+  ```javascript
+  const mapStateToProps = ({currentPlaylist}, {closeFormModal, isFormShown, isOpen}) => ({
+    closeFormModal,
+    isFormShown,
+    isOpen,
+    titleText: 'Create Playlist',
+    submitText: 'Create',
+    initialState: {name: '', description: '', id: null},
+    errors: currentPlaylist.errors
+  });
+
+  const mapDispatchToProps = dispatch => ({
+    submitFunction: playlist => dispatch(createPlaylist(playlist))
+  });
+  ```
+
+  On update the update action is dispatched
+  ```javascript
+  const mapStateToProps = ({currentPlaylist}, {closeFormModal, isFormShown, isOpen}) => ({
+    closeFormModal,
+    isFormShown,
+    isOpen,
+    titleText: 'Update Playlist',
+    submitText: 'Update',
+    initialState: {
+      name: currentPlaylist.name,
+      description: currentPlaylist.description,
+      id: currentPlaylist.id
+    },
+    errors: currentPlaylist.errors
+  });
+
+  const mapDispatchToProps = dispatch => ({
+    submitFunction: playlist => dispatch(updatePlaylist(playlist))
+  });
+  ```
+
+### SASS
+```css
+
+```
 
 ## Future
 
