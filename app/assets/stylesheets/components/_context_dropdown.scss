@@ -40,6 +40,11 @@
       padding: 4px 16px;
       cursor: pointer;
 
+      a {
+        width: 100%;
+        display: inline-block;
+      }
+
       &:hover {
         background-color: $background-lightest-grey;
       }
