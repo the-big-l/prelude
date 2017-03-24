@@ -9,28 +9,6 @@ import {
   CHANGE_VOLUME,
   REPLACE_QUEUE } from '../actions/player_actions.js';
 
-const sampleQueue = [
-  {
-    src: "https://s3-us-west-1.amazonaws.com/prelude-prd/music/Keane%20-%20Strangeland%20%5B2012%2CCD%2CCherrytree%20Records%2CB0016739-02%5D%20-%20V0%2FKeane%20-%20Strangeland%20-%201-1%20-%20You%20Are%20Young.mp3",
-    title: 'Long Song Name(You Are Young)',
-    album_image: 'Strangeland',
-    artist: 'Really, Really long artist name (Keane)'
-  },
-  {
-    src: "https://s3-us-west-1.amazonaws.com/prelude-prd/music/Keane%20-%20Strangeland%20%5B2012%2CCD%2CCherrytree%20Records%2CB0016739-02%5D%20-%20V0%2FKeane%20-%20Strangeland%20-%201-10%20-%20Day%20Will%20Come.mp3",
-    title: 'Day Will Come',
-    album_image: 'Strangeland',
-    artist: 'Keane'
-  },
-    {
-    src: "https://s3-us-west-1.amazonaws.com/prelude-prd/music/Keane-Perfect_Symmetry-2008-V0%2F02-Keane-The_Lovers_Are_Losing.mp3",
-    title: 'The Lovers Are Losing',
-    album_image: 'Perfect Symmetry',
-    artist: 'Keane'
-  }
-
-]
-
 const _defaultPlayer = Object.freeze({
   playing: false,
   loop: false,
@@ -78,7 +56,7 @@ const playerReducer = (state = _defaultPlayer, action) => {
       return merge({}, state, {volume});
     case REPLACE_QUEUE:
       queue = action.newQueue;
-      return merge({}, state, {queue});
+      return merge({}, state, {queue, playing: true});
     default:
       return state;
   }
