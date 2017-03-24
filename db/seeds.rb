@@ -11,8 +11,8 @@
 # DatabaseCleaner.clean
 Album.destroy_all
 Artist.destroy_all
-Playlist_follow.destroy_all
-Playlist_member.destroy_all
+PlaylistFollow.destroy_all
+PlaylistMember.destroy_all
 Playlist.destroy_all
 Song.destroy_all
 User.destroy_all
@@ -732,7 +732,7 @@ usernames = %w(
 )
 
 playlist_descriptions = [
-  "an effervescent dose of gender bending witch - electronica",
+  "an effervescent dose of time bending witch - electronica",
   "a creationist cruelty of rabble-rousing nu - house",
   "an oxidised quasi-tsunami of four-to-the-floor meta - pop",
   "a rich treasure trove of arachnophobic mono - tech",
@@ -880,11 +880,12 @@ end
 playlists = []
 users.each do |user|
   (5..8).to_a.sample.times do
-    playlist = user.playlists.create(
-      name: playlist_name.sample,
+    playlist = Playlist.new(
+      name: playlist_names.sample,
       description: playlist_descriptions.sample
     )
-
+    playlist.user = user
+    playlist.save
     playlists << playlist
     PlaylistFollow.create(user: user, playlist: playlist)
   end
@@ -897,34 +898,55 @@ guest = User.create(
   last_name: 'Doe'
 )
 
-l1 = Playlist.create(
+users << guest
+
+pl1 = Playlist.create(
   name: 'favorites',
   user: guest,
   description: 'all the best tracks'
 )
+PlaylistFollow.create(user: guest, playlist: pl1)
 
-l2 = Playlist.create(
+pl2 = Playlist.create(
   name: 'morning workout',
   user: guest,
   description: 'these will pump you up!!!'
 )
+PlaylistFollow.create(user: guest, playlist: pl2)
 
-l3 = Playlist.create(
+pl3 = Playlist.create(
 name: 'relaxing songs to make you feel relaxed',
 user: guest,
 description: "all the smoothest tunes to relax to while you have free time and aren't busy"
 )
+PlaylistFollow.create(user: guest, playlist: pl3)
 
-l4 = Playlist.create(
+pl4 = Playlist.create(
 name: 'morning commute',
 user: guest,
 description: 'spice up your boring ride'
 )
+PlaylistFollow.create(user: guest, playlist: pl4)
+
+pl5 = Playlist.create(
+name: 'road tripping',
+user: guest,
+description: 'summer songs for cross country trips'
+)
+PlaylistFollow.create(user: guest, playlist: pl5)
+
+pl6 = Playlist.create(
+name: 'shower songs',
+user: guest,
+description: 'best songs to sing in the shower'
+)
+PlaylistFollow.create(user: guest, playlist: pl6)
+playlists.concat([pl1, pl2, pl3, pl4, pl5, pl6])
 
 # Filling playlists
 songs = Song.all
 playlists.each do |playlist|
-  (13.30).to_a.times do
+  (13..30).to_a.sample.times do
     PlaylistMember.create(playlist: playlist, song: songs.sample)
   end
 end
@@ -933,6 +955,6 @@ end
 users.each do |user|
   lists = Playlist.where.not(user: user)
   (4..7).to_a.sample.times do
-    PlaylistFollow.create(user: user, playlist: lists.sample)
+    follow = PlaylistFollow.create(user: user, playlist: lists.sample)
   end
 end
