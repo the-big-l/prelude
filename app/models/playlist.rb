@@ -11,7 +11,7 @@
 #
 
 class Playlist < ApplicationRecord
-  validates :name, :user_id, presence: true
+  validates :name, :description, :user_id, presence: true
 
   belongs_to :user
   has_many :playlist_members, dependent: :destroy
