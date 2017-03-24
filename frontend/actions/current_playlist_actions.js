@@ -1,6 +1,6 @@
 import * as Playlist from '../util/playlist_util';
 import { populateSongList } from './song_list_actions.js';
-import { receiveFollowedPlaylist } from './playlist_follow_actions.js';
+import { receiveFollowedPlaylist, removeFollowedPlaylist } from './playlist_follow_actions.js';
 import {hashHistory} from 'react-router';
 
 export const RECEIVE_PLAYLISTS = 'RECEIVE_PLAYLISTS';
@@ -41,12 +41,14 @@ export const createPlaylist = playlist => dispatch => (
     .then(res => dispatch(receiveFollowedPlaylist(res.playlist)))
     .fail(errors => dispatch(receivePlaylistErrors(errors)))
 );
+window.createPlaylist = createPlaylist;
 
 export const updatePlaylist = playlist => dispatch => (
   Playlist.updatePlaylist(playlist)
     .then(playlist => dispatch(receivePlaylist(playlist)))
     .fail(errors => dispatch(receivePlaylistErrors(errors)))
 );
+window.updatePlaylist = updatePlaylist;
 
 export const requestUserPlaylists = user => dispatch => (
   Playlist.fetchUserPlaylists(user)
@@ -59,8 +61,6 @@ export const requestPlaylist = playlistId => dispatch => (
     .then(res => dispatch(populateSongList(res.playlist.members)))
 );
 
-window.requestPlaylist = requestPlaylist;
-
 export const removeSong = memberId => dispatch => (
   Playlist.deletePlaylistMember(memberId)
     .then(member => dispatch(deletePlaylistMember(member)))
@@ -68,6 +68,7 @@ export const removeSong = memberId => dispatch => (
 
 export const removePlaylist = playlistId => dispatch => (
   Playlist.deletePlaylist(playlistId)
+    .then(playlist => dispatch(removeFollowedPlaylist(playlist)))
     .then(() => hashHistory.push('/songs'))
 )
 
