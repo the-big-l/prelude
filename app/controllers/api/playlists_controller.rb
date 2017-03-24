@@ -8,6 +8,7 @@ class Api::PlaylistsController < ApplicationController
     @playlist.user = current_user
 
     if @playlist.save
+      PlaylistFollow.create(user: current_user, playlist: @playlist)
       render :show
     else
       render json: @playlist.errors.full_messages, status: 422
