@@ -10,7 +10,7 @@ const mapStateToProps = ({currentPlaylist}, {closeFormModal, isFormShown, isOpen
   submitText: 'Update',
   initialState: {
     name: currentPlaylist.name,
-    description: currentPlaylist.description || '',
+    description: currentPlaylist.description,
     id: currentPlaylist.id
   },
   errors: currentPlaylist.errors
