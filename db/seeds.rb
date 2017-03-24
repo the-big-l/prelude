@@ -9,11 +9,19 @@
 # require 'database_cleaner'
 # DatabaseCleaner.strategy = :transaction
 # DatabaseCleaner.clean
+Album.destroy_all
+Artist.destroy_all
+Playlist_follow.destroy_all
+Playlist_member.destroy_all
+Playlist.destroy_all
+Song.destroy_all
+User.destroy_all
 
 albums = [
   {
     artist: 'Ariana Grande',
     title: 'Dangerous Woman',
+    album_art_url: "",
     tracks: [
       {
         url: 'https://s3-us-west-1.amazonaws.com/prelude-prd/music/Ariana_Grande-Dangerous_Woman-BONUS_TRACKS-WEB-2016-ENTiTLED%2F01-ariana_grande-moonlight-a644cff8.mp3',
@@ -80,6 +88,7 @@ albums = [
   {
     artist: 'Drake',
     title: 'Views',
+    album_art_url: "",
     tracks: [
       {
         url: "https://s3-us-west-1.amazonaws.com/prelude-prd/music/Drake%20-%20Views%2F01.Keep%20the%20Family%20Close.mp3",
@@ -166,6 +175,7 @@ albums = [
   {
     artist: 'Ed Sheeran',
     title: 'Divide',
+    album_art_url: "",
     tracks: [
       {
         url: "https://s3-us-west-1.amazonaws.com/prelude-prd/music/Ed%20Sheeran%20-%20(2017)%20-%20Divide%20(Deluxe%20Edition)%20-%20%5BReQ%5D%2F01.%20Eraser.mp3",
@@ -236,6 +246,7 @@ albums = [
   {
     artist: 'Keane',
     title: 'Strangeland',
+    album_art_url: "",
     tracks: [
       {
         url: "https://s3-us-west-1.amazonaws.com/prelude-prd/music/Keane%20-%20Strangeland%20%5B2012%2CCD%2CCherrytree%20Records%2CB0016739-02%5D%20-%20V0%2FKeane%20-%20Strangeland%20-%201-1%20-%20You%20Are%20Young.mp3",
@@ -290,6 +301,7 @@ albums = [
   {
     artist: 'MKTO',
     title: 'MKTO',
+    album_art_url: "",
     tracks: [
       {
         url: "https://s3-us-west-1.amazonaws.com/prelude-prd/music/MKTO%2F01%20Thank%20You.mp3",
@@ -340,6 +352,7 @@ albums = [
   {
     artist: 'Of Monsters And Men',
     title: 'Beneath The Skin (Deluxe)',
+    album_art_url: "",
     tracks: [
       {
         url: "https://s3-us-west-1.amazonaws.com/prelude-prd/music/Of%20Monsters%20And%20Men%20-%20Beneath%20The%20Skin%20(Deluxe)%20(2015)%2F01.Crystals.mp3",
@@ -406,6 +419,7 @@ albums = [
   {
     artist: 'Rebelution',
     title: 'Live At Red Rocks (2016)',
+    album_art_url: "",
     tracks: [
       {
         url: "https://s3-us-west-1.amazonaws.com/prelude-prd/music/Rebelution%20-%20Live%20At%20Red%20Rocks%20(2016)%20%5B320%5D%2F01.%20intro.mp3",
@@ -496,6 +510,7 @@ albums = [
   {
     artist: 'Shakira',
     title: 'Shakira.',
+    album_art_url: "",
     tracks: [
       {
         url: "https://s3-us-west-1.amazonaws.com/prelude-prd/music/Shakira%20-%20Shakira%202014-Felined81-IPT%2F01.%20Dare%20(La%20La%20La).mp3",
@@ -554,6 +569,7 @@ albums = [
   {
     artist: 'Tom Waits',
     title: 'Rain Dogs',
+    album_art_url: "",
     tracks: [
       {
         url: "https://s3-us-west-1.amazonaws.com/prelude-prd/music/Tom%20Waits%20-%20Rain%20Dogs%20-%20%5B1985%5D%20-%20%5B320%5D%2F01%20-%20Singapore%20-%20Tom%20Waits.mp3",
@@ -636,6 +652,7 @@ albums = [
   {
     artist: 'Aventura',
     title: 'We Broke The Rules',
+    album_art_url: "",
     tracks: [
       {
         url: "https://s3-us-west-1.amazonaws.com/prelude-prd/music/Aventura-We_Broke_The_Rules-SP-2004-SSR%2F01-aventura-obsesion-ssr.mp3",
@@ -681,6 +698,170 @@ albums = [
   }
 ]
 
+usernames = %w(
+  akangers
+  american_skater
+  bank_foot
+  Beekeda
+  believer_agent
+  big_angel
+  Binglaghbo
+  Borgiewaii
+  BrainyLummo
+  Bridgew
+  Cabartexa
+  Cianborad
+  Coderato
+  Dancelroyed
+  Dixitho
+  Emsentv
+  Floodensa
+  froopy_hood
+  Hartneware
+  Hayarden
+  Incometer
+  JinEats
+  Kittideuter
+  Knighterpe
+  mars_my_hero
+  Maxgament
+  Natexion
+  Poineshw
+  Powercondwo
+  Prefanev
+)
+
+playlist_descriptions = [
+  "an effervescent dose of gender bending witch - electronica",
+  "a creationist cruelty of rabble-rousing nu - house",
+  "an oxidised quasi-tsunami of four-to-the-floor meta - pop",
+  "a rich treasure trove of arachnophobic mono - tech",
+  "a trite wading pool of rash-inducing meta - bass",
+  "an unorthodox insurrection of positively hands-in-the-air pre - metal",
+  "a bathetic tiramisu of excoriating proto - tech",
+  "a calloused ritual of turnt butterscotch solar - pop",
+  "a bathetic iteration of excoriating euro - grime",
+  "a bicameral exploration of sweet and sour mulled - house",
+  "a dessicated cant of onanistically intimate chill - folk",
+  "a tremulous wading pool of hair-tinged euro - psych",
+  "a continental roar of damningly colonial gutter - wave",
+  "a synaesthetic olive tapenade of rarely forgiving boogie - house",
+  "a trite cant of turnt butterscotch euro - punk",
+  "an unprecedented tour-de-force of stewed lentils served over spicy chill - grime",
+  "a trite ebullience of (at-times-vorpal) blustering nu - electronica",
+  "a rippling orchard grove of cole tricklingly supercharged acid - pop",
+  "a steaming coral atoll of undeniably jaw-dropping outer - pop",
+  "a vintage analysis of shockingly perfunctory trilby - club",
+  "a rich analysis of vitamin packed gutter - punk",
+  "a lymphomic corduroy satchel of hubris-laden politico - wave",
+  "a garrulous calendar month of rabble-rousing post - punk",
+  "an ambivalent tryptich of vitamin packed industrial - d,i,y",
+  "a nonconformist enchantment of rabble-rousing outer - drone",
+  "a  wading pool of re-encapsulated mono - rock",
+  "a lymphomic gusset's worth of outwardly introspective gutter - metal",
+  "an unorthodox singularity of shockingly perfunctory crustacean - trance",
+  "a sublime obelisk of vitamin packed prog - punk",
+  "a  race against time comprised of bratty gutter - tech",
+  "an absolute analysis of turnt butterscotch agit - haze",
+  "an archetypal susurration of turnt butterscotch dream - trance",
+  "a didactic injection of pocky-chomping deep - electronica"
+]
+
+playlist_names =[
+  "Permissible Boats",
+  "Interesting Inkcopy playlist",
+  "Cowardly Arithmetic",
+  "Symptomatic Silver",
+  "Various Stitch",
+  "Psychedelic Need",
+  "Polite North",
+  "Automatic Respect",
+  "Ancient Power",
+  "Beautiful Waste",
+  "Necessary Achieve",
+  "Empty Death",
+  "Stupendous Ship",
+  "Absent Gun",
+  "Swanky Car",
+  "Loud Card",
+  "Rapid Bubble",
+  "Stormy Spot",
+  "Infamous Shade",
+  "Black Army",
+  "Deserted Frog",
+  "Dead Pickle",
+  "Juicy Branch",
+  "Melodic Ship",
+  "Alluring Apple",
+  "Wiry Chin",
+  "Fearless Harmony",
+  "Aback Art",
+  "Hushed Rhythm",
+  "Plain House",
+  "Chivalrous Edge",
+  "Imperfect Balance",
+  "Endurable Juice",
+  "Lowly Yak",
+  "Enormous Cattle",
+  "Domineering Laugh",
+  "High-pitched Hill",
+  "Obscene Offer",
+  "Hysterical Downtown",
+  "Awful Zipper",
+  "Round Hammer",
+  "Careful Attraction",
+  "Icy Banana",
+  "Momentous Existence",
+  "Imaginary Regret",
+  "Lively Jump",
+  "Crazy Steel",
+  "Smiling Grip",
+  "Whimsical Window - Hissing Hope",
+  "Sleep Dammit! - Gives Me Chills",
+  "Good Night Earthlings",
+  "JukeBox - My Haven",
+  "Elixir - Nirvana - Grumpy Glove",
+  "Instrumentally Yours",
+  "Secret of Happiness - Calm Rainy Nights",
+  "Bittersweet - Regular Request",
+  "Obsolete Magic - Serenity",
+  "Old-fashioned Ladybug",
+  "Tremor - Rhythm 'n' Soul",
+  "Depressed Pizzas",
+  "Pour Your Misery Down",
+  "Gymboy - Disco Devil",
+  "Empty Experience",
+  "Sunshine and Cocktails",
+  "Tralalalala - Repose",
+  "Between Sundays - Trippy Times",
+  "Good Stuff - Nightly Lovesickness",
+  "iChill - iThrill - Cosmic Jazzmic",
+  "Rock Bottom - Damp Day",
+  "Cribbin' - Satisfying Adjustment",
+  "Sound of Madness - Smoggy Rhythm",
+  "Blast from the Past (Oldies)",
+  "Gun Shots - Pumped Up",
+  "Reminiscent Range - The After Party",
+  "Focus on Rhythm - Helpless Line",
+  "Psychedelic Thing - Frantic Form"
+]
+
+
+# User seeds
+users = []
+usernames.each do |username|
+  fname = Faker::Name.first_name
+  lname = Faker::Name.last_name
+  password = "password_#{rand(10000)}"
+  users << User.create(
+  first_name: fname,
+  last_name: lname,
+  password: password,
+  username: username
+  )
+end
+
+# Music seeds
 albums.each do |seed_album|
   artist = Artist.create(name: seed_album[:artist])
   album = Album.create(artist_id: artist[:id], title: seed_album[:title])
@@ -695,58 +876,63 @@ albums.each do |seed_album|
   end
 end
 
+# Playlist Seeds
+playlists = []
+users.each do |user|
+  (5..8).to_a.sample.times do
+    playlist = user.playlists.create(
+      name: playlist_name.sample,
+      description: playlist_descriptions.sample
+    )
+
+    playlists << playlist
+    PlaylistFollow.create(user: user, playlist: playlist)
+  end
+end
+
 guest = User.create(
   username: 'guest',
   password: 'password',
   first_name: 'John',
   last_name: 'Doe'
 )
-guest_playlist = Playlist.create(
+
+l1 = Playlist.create(
   name: 'favorites',
   user: guest,
   description: 'all the best tracks'
 )
 
-guest_playlist2 = Playlist.create(
+l2 = Playlist.create(
   name: 'morning workout',
   user: guest,
   description: 'these will pump you up!!!'
 )
 
-song_count = Song.count
-
-40.times do
-  PlaylistMember.create(playlist: guest_playlist, song_id: rand(song_count))
-end
-
-15.times do
-  PlaylistMember.create(playlist: guest_playlist2, song_id: rand(song_count))
-end
-
-jane_the_main = User.create(
-  username: 'jane_the_main',
-  password: 'password',
-  first_name: 'Jane',
-  last_name: 'Roe'
-)
-jane_playlist = Playlist.create(
-  name: 'relaxing songs to make you feel good',
-  user: jane_the_main,
-  description: "all the smoothest tunes to relax to while you have free time and aren't busy"
+l3 = Playlist.create(
+name: 'relaxing songs to make you feel relaxed',
+user: guest,
+description: "all the smoothest tunes to relax to while you have free time and aren't busy"
 )
 
-jane_playlist2 = Playlist.create(
-  name: 'morning commute',
-  user: jane_the_main,
-  description: 'spice up your boring ride'
+l4 = Playlist.create(
+name: 'morning commute',
+user: guest,
+description: 'spice up your boring ride'
 )
 
-song_count = Song.count
-
-40.times do
-  PlaylistMember.create(playlist: jane_playlist, song_id: rand(song_count))
+# Filling playlists
+songs = Song.all
+playlists.each do |playlist|
+  (13.30).to_a.times do
+    PlaylistMember.create(playlist: playlist, song: songs.sample)
+  end
 end
 
-15.times do
-  PlaylistMember.create(playlist: jane_playlist2, song_id: rand(song_count))
+# Following playlists
+users.each do |user|
+  lists = Playlist.where.not(user: user)
+  (4..7).to_a.sample.times do
+    PlaylistFollow.create(user: user, playlist: lists.sample)
+  end
 end
