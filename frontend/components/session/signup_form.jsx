@@ -51,7 +51,7 @@ class SignupForm extends React.Component {
     return (
       <div className="signup-form-container">
         <div className='small-logo'>
-          <img src='https://s3-us-west-1.amazonaws.com/prelude-prd/images/logo.png' />
+          <img src='https://s3-us-west-1.amazonaws.com/prelude-prd/images/prelude-logo-large.png' />
         </div>
         {this.renderErrors()}
         <h3>Create your free Prelude account</h3>
