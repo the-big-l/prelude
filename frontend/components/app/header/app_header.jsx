@@ -21,7 +21,6 @@ class AppHeader extends React.Component {
   }
 
   render() {
-    debugger
     return (
       <header className='app-header'>
         <div className='right-nav'>
