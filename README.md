@@ -49,6 +49,7 @@ Prelude utilizes the following technologies:
 
 ### Rails
   The Prelude backend employs Ruby on Rails to build a RESTful api in order to uniformly integrate with the frontend. Jbuilder is used format JSON objects to respond to frontend AJAX requests.
+  
   Sample playlist JSON object
   ```javascript
   {
