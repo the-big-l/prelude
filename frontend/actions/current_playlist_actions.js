@@ -1,5 +1,6 @@
 import * as Playlist from '../util/playlist_util';
 import { populateSongList } from './song_list_actions.js';
+import { receiveFollowedPlaylist } from './playlist_follow_actions.js';
 import {hashHistory} from 'react-router';
 
 export const RECEIVE_PLAYLISTS = 'RECEIVE_PLAYLISTS';
@@ -37,6 +38,7 @@ export const updateListItems = listItem => ({
 export const createPlaylist = playlist => dispatch => (
   Playlist.sendPlaylist(playlist)
     .then(playlist => dispatch(receivePlaylist(playlist)))
+    .then(res => dispatch(receiveFollowedPlaylist(res.playlist)))
     .fail(errors => dispatch(receivePlaylistErrors(errors)))
 );
 
