@@ -21,7 +21,7 @@ albums = [
   {
     artist: 'Ariana Grande',
     title: 'Dangerous Woman',
-    album_art_url: "",
+    album_art_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/4c53c51fa3a531b3e5ea3766acc203a96636ee45.jpeg",
     tracks: [
       {
         url: 'https://s3-us-west-1.amazonaws.com/prelude-prd/music/Ariana_Grande-Dangerous_Woman-BONUS_TRACKS-WEB-2016-ENTiTLED%2F01-ariana_grande-moonlight-a644cff8.mp3',
@@ -88,7 +88,7 @@ albums = [
   {
     artist: 'Drake',
     title: 'Views',
-    album_art_url: "",
+    album_art_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/e73c706e842eb5233eab7afd3404218a2696d568.jpeg",
     tracks: [
       {
         url: "https://s3-us-west-1.amazonaws.com/prelude-prd/music/Drake%20-%20Views%2F01.Keep%20the%20Family%20Close.mp3",
@@ -175,7 +175,7 @@ albums = [
   {
     artist: 'Ed Sheeran',
     title: 'Divide',
-    album_art_url: "",
+    album_art_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/e6a84983ed9b0a04ce633b021329f7df034e7c7c.jpeg",
     tracks: [
       {
         url: "https://s3-us-west-1.amazonaws.com/prelude-prd/music/Ed%20Sheeran%20-%20(2017)%20-%20Divide%20(Deluxe%20Edition)%20-%20%5BReQ%5D%2F01.%20Eraser.mp3",
@@ -246,7 +246,7 @@ albums = [
   {
     artist: 'Keane',
     title: 'Strangeland',
-    album_art_url: "",
+    album_art_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/68b66740dad5de1caf0517e1278693e238055700.jpeg",
     tracks: [
       {
         url: "https://s3-us-west-1.amazonaws.com/prelude-prd/music/Keane%20-%20Strangeland%20%5B2012%2CCD%2CCherrytree%20Records%2CB0016739-02%5D%20-%20V0%2FKeane%20-%20Strangeland%20-%201-1%20-%20You%20Are%20Young.mp3",
@@ -301,7 +301,7 @@ albums = [
   {
     artist: 'MKTO',
     title: 'MKTO',
-    album_art_url: "",
+    album_art_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/83d2f708ca39e2026067efe7cecf2d9cb82728c4.jpeg",
     tracks: [
       {
         url: "https://s3-us-west-1.amazonaws.com/prelude-prd/music/MKTO%2F01%20Thank%20You.mp3",
@@ -419,7 +419,7 @@ albums = [
   {
     artist: 'Rebelution',
     title: 'Live At Red Rocks (2016)',
-    album_art_url: "",
+    album_art_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/1a732c990396ccd6816ef5f2c1b485ccaf05d99d.jpeg",
     tracks: [
       {
         url: "https://s3-us-west-1.amazonaws.com/prelude-prd/music/Rebelution%20-%20Live%20At%20Red%20Rocks%20(2016)%20%5B320%5D%2F01.%20intro.mp3",
@@ -510,7 +510,7 @@ albums = [
   {
     artist: 'Shakira',
     title: 'Shakira.',
-    album_art_url: "",
+    album_art_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/6263e5c40fdd4468a91964e353b92f716ea5778d.jpeg",
     tracks: [
       {
         url: "https://s3-us-west-1.amazonaws.com/prelude-prd/music/Shakira%20-%20Shakira%202014-Felined81-IPT%2F01.%20Dare%20(La%20La%20La).mp3",
@@ -569,7 +569,7 @@ albums = [
   {
     artist: 'Tom Waits',
     title: 'Rain Dogs',
-    album_art_url: "",
+    album_art_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/74986bd1eb1e5f4409acb0b83c9c0555480f4978.jpeg",
     tracks: [
       {
         url: "https://s3-us-west-1.amazonaws.com/prelude-prd/music/Tom%20Waits%20-%20Rain%20Dogs%20-%20%5B1985%5D%20-%20%5B320%5D%2F01%20-%20Singapore%20-%20Tom%20Waits.mp3",
@@ -652,7 +652,7 @@ albums = [
   {
     artist: 'Aventura',
     title: 'We Broke The Rules',
-    album_art_url: "",
+    album_art_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/8ad827aec16962e4f1053c0aad85ffb2748b7eca.jpeg",
     tracks: [
       {
         url: "https://s3-us-west-1.amazonaws.com/prelude-prd/music/Aventura-We_Broke_The_Rules-SP-2004-SSR%2F01-aventura-obsesion-ssr.mp3",
@@ -871,7 +871,8 @@ albums.each do |seed_album|
       track_no: idx + 1,
       album_id: album.id,
       artist_id: artist.id,
-      song_url: song[:url]
+      song_url: song[:url],
+      album_art_url: seed_album[:album_art_url]
     )
   end
 end
