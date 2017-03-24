@@ -25,8 +25,8 @@ class PlaylistForm extends React.Component {
     e.preventDefault();
     const playlist = this.state;
     this.props.submitFunction({playlist})
-      .then(res => this.props.router.push(`/playlists/${res.playlist.id}`))
-      .then(() => this.props.closeFormModal());
+      .then(() => this.props.closeFormModal())
+      .then(res => this.props.router.push(`/playlists/${res.playlist.id}`));
   }
 
   handleCancel(e) {
