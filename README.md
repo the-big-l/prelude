@@ -1,73 +1,60 @@
 # Prelude
 
-[Heroku link][heroku] This will be a link to my production site
 
-[Trello link][trello]
+[prelude]: [http://prelude-music.herokuapp.com/]
 
-[heroku]: http://prelude-music.herokuapp.com
-[trello]: https://trello.com/b/RbVSsXx9/prelude-spotify-clone
+[Prelude][prelude] is a single page, music application built on a React/Redux frontend and a Ruby on Rails backend. Inspired by Spotify, Prelude allows users to create/edit playlists and browse for new music all while continuously playing music while navigating the site.
 
-## Minimum Viable Product
+## Features
 
-Prelude is a web application inspired by Spotify built using Ruby on Rails
-and React/Redux.  By the end of Week 9, this app will, at a minimum, satisfy the
-following criteria with smooth, bug-free navigation, adequate seed data and
-sufficient CSS styling:
+- Robust authentication
+- Create, update, and delete playlists
+- Browse for music and add to playlists
+- View other users playlists and add them to your own
 
-- [ ] Hosting on Heroku
-- [ ] New account creation, login, and guest/demo login
-- [ ] Continuous play while navigating site
-- [ ] Playlist CRUD
-- [ ] Playlist sharing
-- [ ] Following/Friending
-- [ ] Production README [sample](docs/production_readme.md)
+### Authentication
 
-## Design Docs
-* [View Wireframes][wireframes]
-* [React Components][components]
-* [API endpoints][api-endpoints]
-* [DB schema][schema]
-* [Sample State][sample-state]
+User's passwords are stored in the database as a salted hash using BCrypt. Salting a password prepends a random string the password so even users with duplicate passwords will not have the same hash stored in the backend.
 
-[wireframes]: docs/wireframes
-[components]: docs/component-hierarchy.md
-[sample-state]: docs/sample-state.md
-[api-endpoints]: docs/api-endpoints.md
-[schema]: docs/schema.md
+![signup_flow](/docs/images/signup_flow.png)
+![signup_form](/docs/images/signup_form.png)
 
-## Implementation Timeline
+### Playlist CRUD
 
-### Phase 1: Backend setup and Front End User Authentication (2 days)
+Create playlists instantly from any page no matter where it was you were inspired. Easily update existing playlists to adapt to your evolving tastes. Music can be added to playlists from the browse page or directly from the current playlist.
 
-**Objective:** Functioning rails project with front-end Authentication
 
-### Phase 2: Song, Artist, Album, Discography, API, and components (2 days)
+![playlist_create](/docs/images/playlist_create.gif)
+![playlist_update](/docs/images/playlist_update.gif)
+![add_playlist](/docs/images/add_playlist.gif)
 
-**Objective:** Build utility functions that use Spotify's API to
-populate "card" components.
 
-### Phase 3: Browsing functionality (1 days)
 
-**Objective:** Add index components for Song, Artist, Album, Discography
+### Follow Playlists
 
-### Phase 4: Audio player Model, API, and components (2 day)
+Browse through other user's playlist and add them to your own. Conveniently access all the playlists you're following by scrolling through the main navigation bar. Follow and unfollow playlists from the view page.
+![follow_playlist](/docs/images/follow_playlist.gif)
 
-**Objective:** Audio player component plays continuously during navigation
 
-### Phase 5: Playlist Model, API, and components (1 days)
+## Implementation
 
-**Objective:** Playlists CRUD and sharing through the API.
+Prelude utilizes the following technologies:
 
-### Phase 6: Friending and following (1 day)
+- Ruby on Rails
+- jBuilder
+- React.js
+- Redux
+- JQuery
+- SASS
+- AWS S3
+- jQuery
 
-**Objective:** Allow users to add other users as friends and/or follow
-other users
 
-### Phase 7: - Additional Styling, Refactoring, Bonus (1 day)
 
-**Objective:** Refactoring, bug squashing, bonus features
+## Future
 
-### Bonus Features (TBD)
-- [ ] Browse
-- [ ] Friend Activity feed
-- [ ] Multiple sessions
+* [ ] User follows
+* [ ] Image uploads for profiles/playlists
+* [ ] Artist/Album browse pages
+* [ ] Live updates
+* [ ] Messages Search
