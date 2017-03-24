@@ -1,16 +1,22 @@
 import React from 'react';
 import Modal from 'react-modal';
-import { Link } from 'react-router';
+import { hashHistory } from 'react-router';
 
 class ProfileDropdown extends React.Component {
   constructor(props) {
     super(props);
     this.handleLogout = this.handleLogout.bind(this);
+    this.handleProfile = this.handleProfile.bind(this);
   }
 
   handleLogout(e) {
     e.preventDefault();
     this.props.logout();
+  }
+
+  handleProfile(e) {
+    this.props.closeModal();
+    hashHistory.push('/profile');
   }
 
   render() {
@@ -33,7 +39,7 @@ class ProfileDropdown extends React.Component {
         contentLabel="Modal">
         <div className="context-dropdown">
           <ul>
-            <li><Link to='/profile'>Profile</Link></li>
+            <li onClick={this.handleProfile}>Profile</li>
             <li onClick={this.handleLogout}>Logout</li>
           </ul>
         </div>
