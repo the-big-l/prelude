@@ -1,7 +1,5 @@
 # Prelude
 
-![Prelude User/Playlist show](/docs/screenshots/side-by-side.gif)
-
 [prelude]: [http://prelude-music.herokuapp.com/]
 
 [Prelude][prelude] is a single page, music application built on a React/Redux frontend and a Ruby on Rails backend. Inspired by Spotify, Prelude allows users to create/edit playlists and browse for new music all while continuously playing music while navigating the site.
@@ -53,6 +51,43 @@ Prelude utilizes the following technologies:
 
 ### Rails
   The Prelude backend employs Ruby on Rails to build a RESTful api in order to uniformly integrate with the frontend. Jbuilder is used format JSON objects to respond to frontend AJAX requests.
+  Sample playlist JSON object
+  ```javascript
+  {
+    name: "Newest favs",
+    description: "mostly pop",
+    author: "guest",
+    following: true,
+    id: 3176,
+    members: [
+      {
+        member_id: 34416,
+        playlist_id: 3176,
+        song: {
+          album: "Views",
+          album_art_url: "<path>",
+          artist: "Drake",
+          id: 3530,
+          src: "<path>",
+          title: "Views"
+        }
+      },
+      {
+        member_id: 34420
+        playlist_id: 3176
+        song: {
+          album: "Divide"
+          album_art_url: "<path>"
+          artist: "Ed Sheeran"
+          id: 3535
+          src: "<path>"
+          title: "Shape Of You"
+        }
+      }
+    ],
+    errors: []
+  }
+  ```
 
 ### React/Redux
   React and Redux was used on the frontend to create modular components with easy to use apis and a single source of truth for the apps current state.
@@ -126,7 +161,73 @@ Prelude utilizes the following technologies:
   ```
 
 ### SASS
-```css
+Thoughtful class names allowed reusable styling. Styling was organized by CSS nesting rules which is supported by the use of SASS.
+  ```css
+  .cc-header {
+    padding-left: 32px;
+    color: $text-light-grey;
+
+    ul.cc-tabs {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+
+      li {
+        border-bottom: 3px solid $light-green;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: 14px;
+        padding: 10px;
+
+        &.select {
+          color: $text-light-white;
+        }
+      }
+    }
+  }
+
+  .card-collection {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 16px;
+
+    .mc-wrapper {
+      width: 155px;
+      background: $background-lighter-grey;
+      margin: 12px;
+
+      &:hover {
+        background: $background-lightest-grey;
+      }
+    }
+
+    .media-card {
+      padding: 16px;
+      h2 {
+        height: 72px;
+        font-size: 28px;
+        color: $text-light-grey;
+        font-weight: bold;
+
+      }
+
+      h3 {
+        height: 38px;
+        color: $text-light-white;
+        margin-bottom: 16px;
+
+      }
+
+      p.footer {
+        color: $text-light-grey;
+        font-size:  14px;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
 
 ```
 
