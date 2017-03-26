@@ -48,8 +48,9 @@ Prelude utilizes the following technologies:
 - jQuery
 
 ### Rails
-  The Prelude backend employs Ruby on Rails to build a RESTful api in order to uniformly integrate with the frontend. Jbuilder is used format JSON objects to respond to frontend AJAX requests.
-  
+
+  The Prelude backend employs Ruby on Rails to build a RESTful api in order to uniformly integrate with the frontend. Jbuilder is used to format JSON objects in order to respond to frontend AJAX requests.
+
   Sample playlist JSON object
   ```javascript
   {
@@ -89,11 +90,13 @@ Prelude utilizes the following technologies:
   ```
 
 ### React/Redux
-  React and Redux was used on the frontend to create modular components with easy to use apis and a single source of truth for the apps current state.
+  React and Redux were used on the frontend to create modular components with easy to use apis and a single source of truth for the apps current state.
 
   A MediaCard can be used to display users, playlists, or artists.
+
   User cards
   ![user_card](/docs/images/users.png)
+
   Playlist cards
   ![playlist_card](/docs/images/playlists.png)
 
@@ -161,6 +164,7 @@ Prelude utilizes the following technologies:
 
 ### SASS
 Thoughtful class names allowed reusable styling. Styling was organized by CSS nesting rules which is supported by the use of SASS.
+
   ```css
   .cc-header {
     padding-left: 32px;
