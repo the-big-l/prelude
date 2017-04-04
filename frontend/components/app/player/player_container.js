@@ -1,14 +1,6 @@
 import { connect } from 'react-redux';
 import Player from './player';
-import {
-  togglePlay,
-  toggleLoop,
-  toggleMute,
-  previousSong,
-  nextSong,
-  shuffleSongs,
-  changeVolume,
-  replaceQueue } from '../../../actions/player_actions';
+import PlayerActions from '../../../Redux/PlayerRedux';
 
 const mapStateToProps = ({ player }) => ({
   playing: player.playing,
@@ -19,13 +11,13 @@ const mapStateToProps = ({ player }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  togglePlay: () => dispatch(togglePlay()),
-  toggleLoop: () => dispatch(toggleLoop()),
-  toggleMute: () => dispatch(toggleMute()),
-  previousSong: () => dispatch(previousSong()),
-  nextSong: () => dispatch(nextSong()),
-  shuffleSongs: () => dispatch(shuffleSongs()),
-  changeVolume: volume => dispatch(changeVolume(volume))
+  togglePlay: () => dispatch(PlayerActions.togglePlay()),
+  toggleLoop: () => dispatch(PlayerActions.toggleLoop()),
+  toggleMute: () => dispatch(PlayerActions.toggleMute()),
+  previousSong: () => dispatch(PlayerActions.previousSong()),
+  nextSong: () => dispatch(PlayerActions.nextSong()),
+  shuffleSongs: () => dispatch(PlayerActions.shuffleSongs()),
+  changeVolume: volume => dispatch(PlayerActions.changeVolume(volume))
 });
 
 export default connect(
