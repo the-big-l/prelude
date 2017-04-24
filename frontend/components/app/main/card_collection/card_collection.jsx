@@ -11,8 +11,8 @@ class UserIndex extends React.Component {
     const cards = collectionItems.map(item => (
       <div className='mc-wrapper' key={item.id}>
         <MediaCard
+          imageUrl={item.imageUrl}
           title={item.title}
-          subtitle={item.subtitle}
           mediaInfo={item.mediaInfo}
           footer={item.footer}
           showPath={item.showPath}>

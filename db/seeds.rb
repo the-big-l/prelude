@@ -698,38 +698,38 @@ albums = [
   }
 ]
 
-usernames = %w(
-  akangers
-  american_skater
-  bank_foot
-  Beekeda
-  believer_agent
-  big_angel
-  Binglaghbo
-  Borgiewaii
-  BrainyLummo
-  Bridgew
-  Cabartexa
-  Cianborad
-  Coderato
-  Dancelroyed
-  Dixitho
-  Emsentv
-  Floodensa
-  froopy_hood
-  Hartneware
-  Hayarden
-  Incometer
-  JinEats
-  Kittideuter
-  Knighterpe
-  mars_my_hero
-  Maxgament
-  Natexion
-  Poineshw
-  Powercondwo
-  Prefanev
-)
+user_profiles = [
+  {username: 'akangers', avatar_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/profiles/Screen%20Shot%202017-04-23%20at%205.30.16%20PM.jpg"},
+  {username: 'american_skater', avatar_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/profiles/Screen%20Shot%202017-04-23%20at%205.30.27%20PM.jpg"},
+  {username: 'bank_foot', avatar_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/profiles/Screen%20Shot%202017-04-23%20at%205.30.37%20PM.jpg"},
+  {username: 'Beekeda', avatar_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/profiles/Screen%20Shot%202017-04-23%20at%205.30.43%20PM.jpg"},
+  {username: 'believer_agent', avatar_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/profiles/Screen%20Shot%202017-04-23%20at%205.30.51%20PM.jpg"},
+  {username: 'big_angel', avatar_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/profiles/Screen%20Shot%202017-04-23%20at%205.31.03%20PM.jpg"},
+  {username: 'Binglaghbo', avatar_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/profiles/Screen%20Shot%202017-04-23%20at%205.31.13%20PM.jpg"},
+  {username: 'Borgiewaii', avatar_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/profiles/Screen%20Shot%202017-04-23%20at%205.31.23%20PM.jpg"},
+  {username: 'BrainyLummo', avatar_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/profiles/Screen%20Shot%202017-04-23%20at%205.31.33%20PM.jpg"},
+  {username: 'Bridgew', avatar_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/profiles/Screen%20Shot%202017-04-23%20at%205.31.39%20PM.jpg"},
+  {username: 'Cabartexa', avatar_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/profiles/Screen%20Shot%202017-04-23%20at%205.31.46%20PM.jpg"},
+  {username: 'Cianborad', avatar_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/profiles/Screen%20Shot%202017-04-23%20at%205.31.53%20PM.jpg"},
+  {username: 'Coderato', avatar_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/profiles/Screen%20Shot%202017-04-23%20at%205.31.59%20PM.jpg"},
+  {username: 'Dancelroyed', avatar_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/profiles/Screen%20Shot%202017-04-23%20at%205.32.06%20PM.jpg"},
+  {username: 'Dixitho', avatar_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/profiles/Screen%20Shot%202017-04-23%20at%205.32.13%20PM.jpg"},
+  {username: 'Emsentv', avatar_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/profiles/Screen%20Shot%202017-04-23%20at%205.32.19%20PM.jpg"},
+  {username: 'Floodensa', avatar_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/profiles/Screen%20Shot%202017-04-23%20at%205.32.26%20PM.jpg"},
+  {username: 'froopy_hood', avatar_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/profiles/Screen%20Shot%202017-04-23%20at%205.32.32%20PM.jpg"},
+  {username: 'Hartneware', avatar_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/profiles/Screen%20Shot%202017-04-23%20at%205.32.43%20PM.jpg"},
+  {username: 'Hayarden', avatar_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/profiles/Screen%20Shot%202017-04-23%20at%205.32.49%20PM.jpg"},
+  {username: 'Incometer', avatar_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/profiles/Screen%20Shot%202017-04-23%20at%205.32.55%20PM.jpg"},
+  {username: 'JinEats', avatar_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/profiles/Screen%20Shot%202017-04-23%20at%205.33.02%20PM.jpg"},
+  {username: 'Kittideuter', avatar_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/profiles/Screen%20Shot%202017-04-23%20at%205.33.09%20PM.jpg"},
+  {username: 'Knighterpe', avatar_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/profiles/Screen%20Shot%202017-04-23%20at%205.33.14%20PM.jpg"},
+  {username: 'mars_my_hero', avatar_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/profiles/Screen%20Shot%202017-04-23%20at%205.33.21%20PM.jpg"},
+  {username: 'Maxgament', avatar_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/profiles/Screen%20Shot%202017-04-23%20at%205.33.28%20PM.jpg"},
+  {username: 'Natexion', avatar_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/profiles/Screen%20Shot%202017-04-23%20at%205.33.33%20PM.jpg"},
+  {username: 'Poineshw', avatar_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/profiles/Screen%20Shot%202017-04-23%20at%205.33.38%20PM.jpg"},
+  {username: 'Powercondwo', avatar_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/profiles/Screen%20Shot%202017-04-23%20at%205.33.44%20PM.jpg"},
+  {username: 'Prefanev', avatar_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/profiles/Screen%20Shot%202017-04-23%20at%205.33.48%20PM.jpg"}
+]
 
 playlist_descriptions = [
   "an effervescent dose of time bending witch - electronica",
@@ -849,7 +849,7 @@ playlist_names =[
 
 # User seeds
 users = []
-usernames.each do |username|
+user_profiles.each do |user|
   fname = Faker::Name.first_name
   lname = Faker::Name.last_name
   password = "password_#{rand(10000)}"
@@ -857,7 +857,8 @@ usernames.each do |username|
   first_name: fname,
   last_name: lname,
   password: password,
-  username: username
+  username: user[:username],
+  avatar_url: user[:avatar_url]
   )
 end
 
@@ -896,7 +897,8 @@ guest = User.create(
   username: 'guest',
   password: 'password',
   first_name: 'John',
-  last_name: 'Doe'
+  last_name: 'Doe',
+  avatar_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/profiles/Screen+Shot+2017-04-23+at+5.33.54+PM.jpg"
 )
 
 users << guest
