@@ -1,9 +1,9 @@
-import React from 'react';
-import {Link} from 'react-router';
+import React from 'react'
+import {Link} from 'react-router'
 
 class MediaCard extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
   }
 
   render() {
@@ -13,19 +13,28 @@ class MediaCard extends React.Component {
       title,
       mediaInfo,
       footer,
-      showPath} = this.props;
+      showPath
+    } = this.props
+
+    const imageStyle = {
+      backgroundImage: `url(${imageUrl})`
+    }
 
     return (
       <Link to={showPath}>
         <div className='media-card'>
-          <img src={imageUrl} alt="art"></img>
-          <h2>{title}</h2>
-          <p className='footer'>{mediaInfo}</p>
-          <p className='footer'>{footer}</p>
+          <div className='mc-img-wrapper'>
+            <div className='mc-img' style={imageStyle}></div>
+          </div>
+          <div className='mc-info'>
+            <h2>{title}</h2>
+            <p className='footer'>{mediaInfo}</p>
+            <p className='footer'>{footer}</p>
+          </div>
         </div>
       </Link>
-    );
+    )
   }
 }
 
-export default MediaCard;
+export default MediaCard
