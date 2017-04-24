@@ -897,7 +897,8 @@ guest = User.create(
   username: 'guest',
   password: 'password',
   first_name: 'John',
-  last_name: 'Doe'
+  last_name: 'Doe',
+  avatar_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/profiles/Screen+Shot+2017-04-23+at+5.33.54+PM.jpg"
 )
 
 users << guest
