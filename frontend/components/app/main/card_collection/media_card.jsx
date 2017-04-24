@@ -9,8 +9,8 @@ class MediaCard extends React.Component {
   render() {
     const {
       id,
+      imageUrl,
       title,
-      subtitle,
       mediaInfo,
       footer,
       showPath} = this.props;
@@ -18,8 +18,8 @@ class MediaCard extends React.Component {
     return (
       <Link to={showPath}>
         <div className='media-card'>
+          <img src={imageUrl} alt="art"></img>
           <h2>{title}</h2>
-          <h3>{subtitle}</h3>
           <p className='footer'>{mediaInfo}</p>
           <p className='footer'>{footer}</p>
         </div>
