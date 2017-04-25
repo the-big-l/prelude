@@ -2,9 +2,15 @@ div#app header.app-header {
   display: flex;
   background-color: $black;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
   flex: 0 0 36px;
   padding-right: 16px;
+
+  .left-nav {
+    width: 120px;
+    box-sizing: border-box;
+    padding: 4px;
+  }
 
   .right-nav {
     display: flex;
