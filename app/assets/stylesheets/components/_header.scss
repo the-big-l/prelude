@@ -1,13 +1,14 @@
 div#app header.app-header {
   display: flex;
-  background-color: $black;
+  background-color: $background-lighter-grey;
   flex-direction: row;
   justify-content: space-between;
   flex: 0 0 36px;
   padding-right: 16px;
+  border-bottom: 1px solid $black;
 
   .left-nav {
-    width: 120px;
+    width: 110px;
     box-sizing: border-box;
     padding: 4px;
   }
