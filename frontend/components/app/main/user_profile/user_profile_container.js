@@ -4,6 +4,7 @@ import {requestUser} from '../../../../actions/user_actions';
 
 const mapStateToProps = ({users: {currentUser}}) => ({
   lbInfo: {
+    imageUrl: currentUser.avatar_url,
     type: 'User',
     footer: `${currentUser.playlist_count} playlists`,
     title: `${currentUser.first_name} ${currentUser.last_name}`,

@@ -352,7 +352,7 @@ albums = [
   {
     artist: 'Of Monsters And Men',
     title: 'Beneath The Skin (Deluxe)',
-    album_art_url: "",
+    album_art_url: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/9d4e2203297910609b60968b804c0b1d5a4f00eb.jpeg",
     tracks: [
       {
         url: "https://s3-us-west-1.amazonaws.com/prelude-prd/music/Of%20Monsters%20And%20Men%20-%20Beneath%20The%20Skin%20(Deluxe)%20(2015)%2F01.Crystals.mp3",
@@ -847,6 +847,7 @@ playlist_names =[
 ]
 
 
+
 # User seeds
 users = []
 user_profiles.each do |user|
@@ -879,12 +880,14 @@ albums.each do |seed_album|
 end
 
 # Playlist Seeds
+playlist_images = "https://s3-us-west-1.amazonaws.com/prelude-prd/images/playlists/playlist_"
 playlists = []
 users.each do |user|
   (5..8).to_a.sample.times do
     playlist = Playlist.new(
       name: playlist_names.sample,
-      description: playlist_descriptions.sample
+      description: playlist_descriptions.sample,
+      image_url: "#{playlist_images}#{rand(18) + 1}.png"
     )
     playlist.user = user
     playlist.save
@@ -906,42 +909,48 @@ users << guest
 pl1 = Playlist.create(
   name: 'favorites',
   user: guest,
-  description: 'all the best tracks'
+  description: 'all the best tracks',
+  image_url: "#{playlist_images}#{rand(18) + 1}.png"
 )
 PlaylistFollow.create(user: guest, playlist: pl1)
 
 pl2 = Playlist.create(
   name: 'morning workout',
   user: guest,
-  description: 'these will pump you up!!!'
+  description: 'these will pump you up!!!',
+  image_url: "#{playlist_images}#{rand(18) + 1}.png"
 )
 PlaylistFollow.create(user: guest, playlist: pl2)
 
 pl3 = Playlist.create(
 name: 'relaxing songs to make you feel relaxed',
 user: guest,
-description: "all the smoothest tunes to relax to while you have free time and aren't busy"
+description: "all the smoothest tunes to relax to while you have free time and aren't busy",
+image_url: "#{playlist_images}#{rand(18) + 1}.png"
 )
 PlaylistFollow.create(user: guest, playlist: pl3)
 
 pl4 = Playlist.create(
 name: 'morning commute',
 user: guest,
-description: 'spice up your boring ride'
+description: 'spice up your boring ride',
+image_url: "#{playlist_images}#{rand(18) + 1}.png"
 )
 PlaylistFollow.create(user: guest, playlist: pl4)
 
 pl5 = Playlist.create(
 name: 'road tripping',
 user: guest,
-description: 'summer songs for cross country trips'
+description: 'summer songs for cross country trips',
+image_url: "#{playlist_images}#{rand(18) + 1}.png"
 )
 PlaylistFollow.create(user: guest, playlist: pl5)
 
 pl6 = Playlist.create(
 name: 'shower songs',
 user: guest,
-description: 'best songs to sing in the shower'
+description: 'best songs to sing in the shower',
+image_url: "#{playlist_images}#{rand(18) + 1}.png"
 )
 PlaylistFollow.create(user: guest, playlist: pl6)
 playlists.concat([pl1, pl2, pl3, pl4, pl5, pl6])

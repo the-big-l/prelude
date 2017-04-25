@@ -7,6 +7,7 @@ class ListBillboard extends React.Component {
 
   render() {
     const {
+      imageUrl,
       type,
       title,
       subTitle,
@@ -14,7 +15,9 @@ class ListBillboard extends React.Component {
 
     return (
       <div className='list-billboard'>
-        <figure className='lb-img'></figure>
+        <figure className='lb-img'>
+          <img src={imageUrl} alt="art"></img>
+        </figure>
         <aside className='media-info'>
           <h4 className='type'>{type}</h4>
           <h1 className='title'>{title}</h1>

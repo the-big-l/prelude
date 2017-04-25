@@ -41,14 +41,12 @@ export const createPlaylist = playlist => dispatch => (
     .then(res => dispatch(receiveFollowedPlaylist(res.playlist)))
     .fail(errors => dispatch(receivePlaylistErrors(errors)))
 );
-window.createPlaylist = createPlaylist;
 
 export const updatePlaylist = playlist => dispatch => (
   Playlist.updatePlaylist(playlist)
     .then(playlist => dispatch(receivePlaylist(playlist)))
     .fail(errors => dispatch(receivePlaylistErrors(errors)))
 );
-window.updatePlaylist = updatePlaylist;
 
 export const requestUserPlaylists = user => dispatch => (
   Playlist.fetchUserPlaylists(user)

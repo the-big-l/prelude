@@ -5,9 +5,10 @@ div.list-billboard {
   color: $text-light-grey;
 
   .lb-img {
-    width: 0;
+    width: 140px;
     height: 140px;
-    // margin-right: 25px;
+    margin-right: 25px;
+    overflow: hidden;
   }
 }
 

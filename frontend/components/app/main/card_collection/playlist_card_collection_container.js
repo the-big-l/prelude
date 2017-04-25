@@ -3,11 +3,11 @@ import CardCollection from './card_collection';
 
 const mapStateToProps = ({userPlaylists}, ownProps) => {
   const collectionItems = userPlaylists.map(list => {
-    const {id, name, description, created_at, song_count} = list;
+    const {id, name, description, created_at, song_count, image_url} = list;
     return {
       id,
+      imageUrl: image_url,
       title: name,
-      subtitle: description,
       mediaInfo: `Created: ${created_at.substring(0, 7)}`,
       footer: `${song_count} songs`,
       showPath: `/playlists/${id}`
