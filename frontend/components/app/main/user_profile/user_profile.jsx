@@ -19,12 +19,13 @@ class UserProfile extends React.Component {
 
   render() {
     const {lbInfo} = this.props;
-    const {type, title, subTitle, footer} = lbInfo;
+    const {imageUrl, type, title, subTitle, footer} = lbInfo;
 
     return (
       <div className='cc-profile'>
         <header className='cc-profile-header'>
           <ListBillboard
+            imageUrl={imageUrl}
             type={type}
             title={title}
             subTitle={subTitle}

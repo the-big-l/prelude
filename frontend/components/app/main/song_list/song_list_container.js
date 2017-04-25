@@ -6,6 +6,7 @@ import {replaceQueue} from '../../../../actions/player_actions';
 const mapStateToProps = ({listItems, currentPlaylist}) => ({
   listItems,
   description: 'All the songs',
+  imageUrl: "https://s3-us-west-1.amazonaws.com/prelude-prd/images/playlists/all_songs.png",
   title: 'SONGS',
   type: 'browse',
   currentPlaylist,

@@ -87,12 +87,13 @@ class SongList extends React.Component {
 
   render() {
     const isPlaylist = false;
-    const {description, listItems, title, type, footer } = this.props;
+    const {description, imageUrl, listItems, title, type, footer } = this.props;
 
     return (
       <div className='song-list'>
         <header className='song-list'>
           <ListBillboard
+            imageUrl={imageUrl}
             type={type}
             title={title}
             subTitle={description}

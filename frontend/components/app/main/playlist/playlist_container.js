@@ -7,6 +7,7 @@ import {followPlaylist, unfollowPlaylist} from '../../../../actions/playlist_fol
 const mapStateToProps = ({currentPlaylist, listItems}, ownProps) => ({
   listItems,
   description: currentPlaylist.description,
+  imageUrl: currentPlaylist.image_url,
   title: currentPlaylist.name,
   type: 'playlist',
   footer: `Created by: ${currentPlaylist.author} · ${listItems.length} songs`,
