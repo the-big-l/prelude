@@ -1,4 +1,4 @@
-json.extract! @playlist, :id, :name, :description
+json.extract! @playlist, :id, :name, :description, :image_url
 json.author @playlist.user.username
 json.members @playlist.playlist_members.order(:created_at) do |member|
   json.member_id member.id
