@@ -12,6 +12,7 @@
     "npm": "2.1.x"
   },
   "scripts": {
+    "test": "jest",
     "heroku-postbuild": "webpack --config webpack.config.prod.js"
   },
   "repository": {
